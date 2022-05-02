@@ -32,7 +32,11 @@ const Home = () => {
     return <div>Loading...</div>;
   } else {
     // return <img src={items.data[0].card_images[0].image_url}></img>;
-    return <img src={cards.card_images[0].image_url}></img>;
+    return (
+      <Fragment>
+        <img alt="card" src={cards.card_images[0].image_url}></img>
+      </Fragment>
+    );
   }
 };
 

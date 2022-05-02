@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Random.css";
+import CardDiv from "./CardDiv/CardDiv";
 const Random = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,10 +30,14 @@ const Random = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   } else {
     // return <img src={items.data[0].card_images[0].image_url}></img>;
-    return <img src={cards.card_images[0].image_url}></img>;
+    return (
+      <Fragment>
+        <CardDiv cardData={cards} />
+      </Fragment>
+    );
   }
 };
 export default Random;

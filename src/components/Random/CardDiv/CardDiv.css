@@ -1,0 +1,29 @@
+.card-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 921px;
+  background-color: white;
+  border-radius: 10px;
+}
+.card-img{
+  border-radius: 10px;
+
+}
+.rightside-div{
+  width: 500px;
+}
+
+.card-name{
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.card-attribute{
+  font-weight: bold;
+}
+.effect-div{
+  width: 100%;
+}

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
-
-const Home = () => {
+import "./Random.css";
+const Random = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
@@ -35,5 +35,4 @@ const Home = () => {
     return <img src={cards.card_images[0].image_url}></img>;
   }
 };
-
-export default Home;
+export default Random;

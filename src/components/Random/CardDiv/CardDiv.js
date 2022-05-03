@@ -5,26 +5,34 @@ const CardDiv = ({ cardData }) => {
     "pics",
     "pics_artgame"
   );
-
-  return (
-    <Fragment>
-      <div className="card-div">
-        <img
-          className="card-img"
-          alt="card"
-          width={421}
-          height={614}
-          src={result}
-        ></img>
-        <div className="rightside-div">
-          <p className="card-name">{cardData.name}</p>
-          <p className="card-attribute">{cardData.attribute}</p>
-          <div className="effect-div">
-            <p className="card-effect">{cardData.desc}</p>
+  // width={421}
+  // height={614}
+  if ((cardData.type = "Effect Monster")) {
+    return (
+      <Fragment>
+        <div className="card-div">
+          <img
+            className="card-img"
+            alt="card"
+            width={624}
+            height={624}
+            src={result}
+          ></img>
+          <div className="rightside-div">
+            <div className="rightside-title-div">
+              <p className="card-name">{cardData.name}</p>
+              <span className="rightside-span">
+                <p className="card-attribute">{cardData.attribute}</p>
+                <p className="card-level">{cardData.level}</p>
+              </span>
+            </div>
+            <div className="effect-div">
+              <p className="card-effect">{cardData.desc}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </Fragment>
-  );
+      </Fragment>
+    );
+  }
 };
 export default CardDiv;

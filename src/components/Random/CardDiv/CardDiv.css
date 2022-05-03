@@ -4,25 +4,43 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 921px;
+  width: 50%;
   background-color: white;
   border-radius: 10px;
 }
 .card-img{
   border-radius: 10px;
+  width: 50%;
+  height: auto;
 
 }
 .rightside-div{
   width: 500px;
 }
-
+.rightside-title-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.rightside-span{
+  display: flex;
+}
 .card-name{
+  display: inline;
   font-size: 1vw;
   font-weight: bold;
 }
 
 .card-attribute{
-  font-weight: bold;
+  display: inline;
+  font-size: 1vw;
+
+  margin-right: 10px;
+}
+.card-level{
+  display: inline;
+  font-size: 1vw;
+
 }
 .effect-div{
   width: 100%;

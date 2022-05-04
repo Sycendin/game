@@ -8,14 +8,23 @@
   background-color: white;
   border-radius: 10px;
 }
-.card-img{
-  border-radius: 10px;
+.card-img-div2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+}
+.card-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   height: auto;
+  border-radius: 10px;
 
 }
 .rightside-div{
-  width: 500px;
+  width: 50%;
 }
 .rightside-title-div{
   display: flex;

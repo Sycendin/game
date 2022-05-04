@@ -14,13 +14,15 @@ const CardDiv = ({ cardData }) => {
     return (
       <Fragment>
         <div className="card-div">
-          <img
-            className="card-img"
-            alt="card"
-            width={624}
-            height={624}
-            src={result}
-          ></img>
+          <div className="card-img-div2">
+            <img
+              className="card-img"
+              alt="card"
+              width={624}
+              height={624}
+              src={result}
+            ></img>
+          </div>
           <div className="rightside-div">
             <div className="rightside-title-div">
               <p className="card-name">{cardData.name}</p>

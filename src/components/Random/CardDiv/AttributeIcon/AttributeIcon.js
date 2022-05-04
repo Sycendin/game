@@ -3,7 +3,7 @@ import "./AttributeIcon.css";
 const AttributeIcon = ({ attribute }) => {
   let icon = "";
   switch (attribute) {
-    case "DARk":
+    case "DARK":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903429876699176/dark.webp";
       break;

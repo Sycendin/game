@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 import "./CardDiv.css";
+import AttributeIcon from "./AttributeIcon/AttributeIcon";
+import LevelIcon from "./LevelIcon/LevelIcon";
+// import RaceIcon from "./RaceIcon/RaceIcon";
 const CardDiv = ({ cardData }) => {
   let result = cardData.card_images[0].image_url.replace(
     "pics",
@@ -21,10 +24,12 @@ const CardDiv = ({ cardData }) => {
           <div className="rightside-div">
             <div className="rightside-title-div">
               <p className="card-name">{cardData.name}</p>
-              <span className="rightside-span">
+              <div className="rightside-span">
                 <p className="card-attribute">{cardData.attribute}</p>
+                <AttributeIcon attribute={cardData.attribute} />
                 <p className="card-level">{cardData.level}</p>
-              </span>
+                <LevelIcon />
+              </div>
             </div>
             <div className="effect-div">
               <p className="card-effect">{cardData.desc}</p>

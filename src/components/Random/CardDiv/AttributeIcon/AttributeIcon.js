@@ -1,3 +1,5 @@
+import React, { Fragment } from "react";
+import "./AttributeIcon.css";
 const AttributeIcon = ({ attribute }) => {
   let icon = "";
   switch (attribute) {
@@ -10,29 +12,37 @@ const AttributeIcon = ({ attribute }) => {
         "https://cdn.discordapp.com/attachments/958975018816131132/970903430098976798/light.webp";
       break;
     case "FIRE":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903429054599188/fire.webp";
       break;
     case "WATER":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903430677807124/water.webp";
       break;
     case "WIND":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903429297881088/wind.webp";
       break;
     case "EARTH":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903429541163009/earth.webp";
+      break;
     case "DIVINE":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970903428836491334/divine.webp";
+      break;
     default:
       break;
   }
   return (
     <Fragment>
-      <img alt="attribute" height={64} width={64} src={icon}></img>
+      <img
+        className="attribute-icon"
+        alt="attribute"
+        height={64}
+        width={64}
+        src={icon}
+      ></img>
     </Fragment>
   );
 };

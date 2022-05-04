@@ -12,21 +12,21 @@ const RaceIcon = ({ race }) => {
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264643837962/continous.webp";
       break;
     case "Field":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264006316052/field.webp";
       break;
     case "Quickplay":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904265545617448/quickplay.webp";
       break;
     case "Ritual":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970907315840630824/ritual.webp";
       break;
     case "Normal":
-      day =
+      icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264895508490/normal.webp";
-
+      break;
     default:
       break;
   }

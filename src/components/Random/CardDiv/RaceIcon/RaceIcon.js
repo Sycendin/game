@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-
+import "./RaceIcon.css";
 const RaceIcon = ({ race }) => {
   let icon = "";
   switch (race) {
@@ -7,7 +7,7 @@ const RaceIcon = ({ race }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264241209404/counter.webp";
       break;
-    case "Continous":
+    case "Continuous":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264643837962/continous.webp";
       break;
@@ -15,7 +15,7 @@ const RaceIcon = ({ race }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264006316052/field.webp";
       break;
-    case "Quickplay":
+    case "Quick-Play":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904265545617448/quickplay.webp";
       break;
@@ -32,7 +32,13 @@ const RaceIcon = ({ race }) => {
   }
   return (
     <Fragment>
-      <img alt="race" height={64} width={64} src={icon}></img>
+      <img
+        className="race-icon"
+        alt="race"
+        height={64}
+        width={64}
+        src={icon}
+      ></img>
     </Fragment>
   );
 };

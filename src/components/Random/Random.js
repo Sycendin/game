@@ -27,11 +27,14 @@ const Random = () => {
         }
       );
   }, []);
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div className="loading">Loading...</div>;
   } else {
+    let x = cards.id.toString().substring(0, 3);
+    console.log(x);
     // return <img src={items.data[0].card_images[0].image_url}></img>;
     return (
       <Fragment>

@@ -46,9 +46,10 @@ const CardDiv = ({ cardData }) => {
               <p className="card-effect">{cardData.desc}</p>
             </div>
             <div className="stats-div">
-              <p className="stats-text">
-                ATK/{cardData.atk} DEF/{cardData.def}
-              </p>
+              <p className="stats-text">ATK</p>
+              <p className="stats-atk">/{cardData.atk}</p>{" "}
+              <p className="stats-text">DEF</p>
+              <p className="stats-def">/{cardData.def}</p>
             </div>
           </div>
         </div>

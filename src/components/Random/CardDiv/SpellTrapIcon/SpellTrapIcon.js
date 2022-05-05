@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-
+import "./SpellTrapIcon.css";
 const SpellTrapIcon = ({ type }) => {
   let icon = "";
-  switch (race) {
+  switch (type) {
     case "Spell Card":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904265319145493/spell.webp";
@@ -16,7 +16,13 @@ const SpellTrapIcon = ({ type }) => {
   }
   return (
     <Fragment>
-      <img alt="type" height={64} width={64} src={icon}></img>
+      <img
+        className="spell-trap-icon"
+        alt="type"
+        height={64}
+        width={64}
+        src={icon}
+      ></img>
     </Fragment>
   );
 };

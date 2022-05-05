@@ -10,6 +10,10 @@ const CardDiv = ({ cardData }) => {
   );
   // width={421}
   // height={614}
+
+  let type = cardData.type.slice();
+  let typeArray = type.split(" ");
+
   if ((cardData.type = "Effect Monster")) {
     return (
       <Fragment>
@@ -33,8 +37,18 @@ const CardDiv = ({ cardData }) => {
                 <LevelIcon />
               </div>
             </div>
+            <div className="type-div">
+              <p className="type-text">
+                [{cardData.race}/{typeArray[0]}]
+              </p>
+            </div>
             <div className="effect-div">
               <p className="card-effect">{cardData.desc}</p>
+            </div>
+            <div className="stats-div">
+              <p className="stats-text">
+                ATK/{cardData.atk} DEF/{cardData.def}
+              </p>
             </div>
           </div>
         </div>

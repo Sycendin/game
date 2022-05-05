@@ -58,6 +58,14 @@
   font-size: 1vw;
 
 }
+.type-div{
+  display: flex;
+  justify-content: left;
+}
 .effect-div{
   width: 100%;
+}
+.stats-div{
+  display: flex;
+  justify-content: left;
 }

@@ -1,5 +1,5 @@
 .spell-trap-icon{
-  width: 1vw;
-  height: 1vw;
+  width: calc(16px + 0.5vw);
+  height: calc(16px + 0.5vw);
   margin-right: 10px;
 }

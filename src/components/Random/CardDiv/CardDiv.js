@@ -4,6 +4,7 @@ import AttributeIcon from "./AttributeIcon/AttributeIcon";
 import LevelIcon from "./LevelIcon/LevelIcon";
 import SpellTrapIcon from "./SpellTrapIcon/SpellTrapIcon";
 import RaceIcon from "./RaceIcon/RaceIcon";
+import PendIcon from "./PendIcon/PendIcon";
 const CardDiv = ({ cardData }) => {
   const [load, setLoad] = useState(true);
   const [imageResult, setImageResult] = useState("");
@@ -42,7 +43,6 @@ const CardDiv = ({ cardData }) => {
   let type = cardData.type.slice();
   let typeArray = type.split(" ");
   // Render when async function is done loading
-  console.log(cardData);
   if (load === false) {
     return (
       <Fragment>
@@ -66,6 +66,12 @@ const CardDiv = ({ cardData }) => {
                   <SpellTrapIcon type={cardData.type} />
                   <p className="card-level">{cardData.race}</p>
                   <RaceIcon race={cardData.race} />
+                  {cardData.type === "Pendulum Effect Monster" ? (
+                    <Fragment>
+                      <PendIcon />
+                      <p className="card-level">{cardData.scale}</p>
+                    </Fragment>
+                  ) : null}
                 </div>
               ) : (
                 <div className="rightside-span">
@@ -76,12 +82,22 @@ const CardDiv = ({ cardData }) => {
                 </div>
               )}
             </div>
-            <div className="type-div">
-              <p className="type-text">
-                [{cardData.race}/{typeArray[0]}]
-              </p>
-            </div>
-
+            {cardData.type === "Spell Card" ||
+            cardData.type === "Trap Card" ? null : (
+              <div className="type-div">
+                <p className="type-text">
+                  [{cardData.race}/{typeArray[0]}
+                  {cardData.type === "Fusion Monster" ||
+                  cardData.type === "XYZ Monster" ||
+                  cardData.type === "Synchro Monster" ||
+                  cardData.type === "Pendulum Effect Monster" ||
+                  cardData.type === "Link Monster"
+                    ? "/Effect"
+                    : null}
+                  ]
+                </p>
+              </div>
+            )}
             <div className="effect-div">
               <p className="card-effect">{cardData.desc}</p>
             </div>

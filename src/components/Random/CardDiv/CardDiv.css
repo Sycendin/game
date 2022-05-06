@@ -43,19 +43,19 @@
 }
 .card-name{
   display: inline;
-  font-size: 1vw;
+  font-size: calc(16px + 1vw);
   font-weight: bold;
 }
 
 .card-attribute{
   display: inline;
-  font-size: 1vw;
+  font-size: calc(16px + 0.5vw);
 
   margin-right: 10px;
 }
 .card-level{
   display: inline;
-  font-size: 1vw;
+  font-size: calc(16px + 0.5vw);
 
 }
 .type-div{
@@ -64,7 +64,11 @@
   margin-left: 10px;
   font-weight: bold;
 }
+.type-text{
+  font-size: calc(16px + 0.5vw);
+}
 .effect-div{
+  font-size: calc(16px + 0.1vw);
   width: 100%;
 }
 .stats-div{
@@ -73,8 +77,18 @@
   margin-left: 10px;
 }
 .stats-text{
+  font-size: calc(16px + 0.3vw);
   font-weight: bold;
 }
 .stats-atk{
+  font-size: calc(16px + 0.3vw);
   margin-right: 10px;
+}
+.stats-def{
+  
+  font-size: calc(16px + 0.3vw);
+}
+.stats-rating{
+  display: flex;
+  flex-direction: row;
 }

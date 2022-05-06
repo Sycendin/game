@@ -42,6 +42,7 @@ const CardDiv = ({ cardData }) => {
   let type = cardData.type.slice();
   let typeArray = type.split(" ");
   // Render when async function is done loading
+  console.log(cardData);
   if (load === false) {
     return (
       <Fragment>
@@ -89,8 +90,17 @@ const CardDiv = ({ cardData }) => {
               <div className="stats-div">
                 <p className="stats-text">ATK</p>
                 <p className="stats-atk">/{cardData.atk}</p>{" "}
-                <p className="stats-text">DEF</p>
-                <p className="stats-def">/{cardData.def}</p>
+                {cardData.type !== "Link Monster" ? (
+                  <div className="stats-rating">
+                    <p className="stats-text">DEF</p>
+                    <p className="stats-def">/{cardData.def}</p>{" "}
+                  </div>
+                ) : (
+                  <div className="stats-rating">
+                    <p className="stats-text">Link</p>
+                    <p className="stats-def">/{cardData.linkval}</p>{" "}
+                  </div>
+                )}
               </div>
             )}
           </div>

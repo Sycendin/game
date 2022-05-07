@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
 import "./CardTypeWithIcons.css";
-import SpellTrapIcon from "../../SpellTrapIcon/SpellTrapIcon";
-import RaceIcon from "../../RaceIcon/RaceIcon";
-import LevelIcon from "../../LevelIcon/LevelIcon";
-import AttributeIcon from "../../AttributeIcon/AttributeIcon";
-import PendIcon from "../../PendIcon/PendIcon";
+import SpellTrapIcon from "./SpellTrapIcon/SpellTrapIcon";
+import RaceIcon from "./RaceIcon/RaceIcon";
+import LevelIcon from "./LevelIcon/LevelIcon";
+import AttributeIcon from "./AttributeIcon/AttributeIcon";
+import PendIcon from "./PendIcon/PendIcon";
 const CardTypeWithIcons = ({ cardData }) => {
   if (cardData.type === "Spell Card" || cardData.type === "Trap Card") {
     return (

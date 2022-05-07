@@ -1,6 +1,10 @@
-.card-img-div{
+
+.card-img{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+
 }

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./CardDiv.css";
-
+import LeftSideDiv from "./LeftSideDiv/LeftSideDiv";
 import RightSideDiv from "./RightSideDiv/RightSideDiv";
 const CardDiv = ({ cardData }) => {
   const [load, setLoad] = useState(true);
@@ -44,15 +44,7 @@ const CardDiv = ({ cardData }) => {
     return (
       <Fragment>
         <div className="card-div">
-          <div className="card-img-div2">
-            <img
-              className="card-img"
-              alt="card"
-              width={624}
-              height={624}
-              src={imageResult}
-            ></img>
-          </div>
+          <LeftSideDiv imageResult={imageResult} />
           <div className="rightside-div">
             <RightSideDiv cardData={cardData} typeArray={typeArray} />
           </div>

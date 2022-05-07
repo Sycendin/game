@@ -1,0 +1,9 @@
+.type-div{
+  display: flex;
+  justify-content: left;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.type-text{
+  font-size: calc(16px + 0.5vw);
+}

@@ -1,0 +1,21 @@
+.stats-div{
+  display: flex;
+  justify-content: left;
+  margin-left: 10px;
+}
+.stats-text{
+  font-size: calc(16px + 0.3vw);
+  font-weight: bold;
+}
+.stats-atk{
+  font-size: calc(16px + 0.3vw);
+  margin-right: 10px;
+}
+.stats-def{
+  
+  font-size: calc(16px + 0.3vw);
+}
+.stats-rating{
+  display: flex;
+  flex-direction: row;
+}

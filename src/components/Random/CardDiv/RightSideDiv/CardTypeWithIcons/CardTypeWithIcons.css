@@ -1,0 +1,23 @@
+.rightside-span{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-attribute{
+  display: inline;
+  font-size: calc(16px + 0.5vw);
+
+  margin-right: 10px;
+}
+.card-level{
+  display: inline;
+  font-size: calc(16px + 0.5vw);
+
+}

@@ -1,0 +1,5 @@
+.card-name{
+  display: inline;
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+}

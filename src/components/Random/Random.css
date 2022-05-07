@@ -1,4 +1,11 @@
-.loading{
-  font-size: x-large;
+.loading-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text{
+  font-size: calc(16px + 1vw);
   font-weight: bold;
 }

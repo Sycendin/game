@@ -7,6 +7,7 @@ const Random = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
+  const [newCard, setNewCard] = useState(0);
 
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -28,7 +29,7 @@ const Random = () => {
           setError(error);
         }
       );
-  }, []);
+  }, [newCard]);
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -43,7 +44,7 @@ const Random = () => {
     // return <img src={items.data[0].card_images[0].image_url}></img>;
     return (
       <Fragment>
-        <RandomButton />
+        <RandomButton newCard={newCard} setNewCard={setNewCard} />
         <CardDiv cardData={cards} />
       </Fragment>
     );

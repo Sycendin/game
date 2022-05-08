@@ -1,10 +1,15 @@
 import React, { Fragment } from "react";
 import "./RandomButton.css";
-const RandomButton = () => {
+const RandomButton = ({ newCard, setNewCard }) => {
   return (
     <Fragment>
       <div className="random-button-div">
-        <button className="random-button">New Card</button>
+        <button
+          onClick={() => setNewCard(newCard + 1)}
+          className="random-button"
+        >
+          New Card
+        </button>
       </div>
     </Fragment>
   );

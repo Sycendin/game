@@ -1,0 +1,21 @@
+.random-button-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+.random-button{
+  background-color: rgb(67, 190, 67);
+  color: rgb(255, 255, 255);
+  font-size: calc(16px + 1vw);
+  border-radius: 10px;
+  transition: .2s ease-in-out 0s;
+}
+
+.random-button:hover{
+  cursor: pointer;
+  filter: brightness(110%);
+  transform: scale(1.1);
+
+}

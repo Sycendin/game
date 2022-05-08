@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import "./CardDiv.css";
 import LeftSideDiv from "./LeftSideDiv/LeftSideDiv";
 import RightSideDiv from "./RightSideDiv/RightSideDiv";
+
 const CardDiv = ({ cardData }) => {
   const [load, setLoad] = useState(true);
   const [imageResult, setImageResult] = useState("");

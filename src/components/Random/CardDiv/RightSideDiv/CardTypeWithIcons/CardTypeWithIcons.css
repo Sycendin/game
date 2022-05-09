@@ -8,12 +8,9 @@
   justify-content: center;
   align-items: center;
 }
-
-
 .card-attribute{
   display: inline;
   font-size: calc(16px + 0.5vw);
-
   margin-right: 10px;
 }
 .card-level{

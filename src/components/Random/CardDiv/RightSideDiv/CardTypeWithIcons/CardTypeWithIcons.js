@@ -9,10 +9,10 @@ const CardTypeWithIcons = ({ cardData }) => {
   if (cardData.type === "Spell Card" || cardData.type === "Trap Card") {
     return (
       <div className="rightside-span">
-        <p className="card-attribute">{cardData.type}</p>
         <SpellTrapIcon type={cardData.type} />
-        <p className="card-level">{cardData.race}</p>
+        <p className="card-attribute">{cardData.type}</p>
         <RaceIcon race={cardData.race} />
+        <p className="card-level">{cardData.race}</p>
         {cardData.type === "Pendulum Effect Monster" ? (
           <Fragment>
             <PendIcon />
@@ -24,10 +24,10 @@ const CardTypeWithIcons = ({ cardData }) => {
   } else {
     return (
       <div className="rightside-span">
-        <p className="card-attribute">{cardData.attribute}</p>
         <AttributeIcon attribute={cardData.attribute} />
-        <p className="card-level">{cardData.level}</p>
+        <p className="card-attribute">{cardData.attribute}</p>
         <LevelIcon />
+        <p className="card-level">{cardData.level}</p>
       </div>
     );
   }

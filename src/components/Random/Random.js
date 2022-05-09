@@ -41,10 +41,10 @@ const Random = () => {
       </div>
     );
   } else {
-    // return <img src={items.data[0].card_images[0].image_url}></img>;
     return (
       <Fragment>
         <RandomButton newCard={newCard} setNewCard={setNewCard} />
+
         <CardDiv cardData={cards} />
       </Fragment>
     );

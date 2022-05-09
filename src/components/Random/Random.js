@@ -8,7 +8,6 @@ const Random = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
   const [newCard, setNewCard] = useState(0);
-
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -43,8 +42,11 @@ const Random = () => {
   } else {
     return (
       <Fragment>
-        <RandomButton newCard={newCard} setNewCard={setNewCard} />
-
+        <RandomButton
+          // offset={targetRef.current.childNodes[0].offsetTop}
+          newCard={newCard}
+          setNewCard={setNewCard}
+        />
         <CardDiv cardData={cards} />
       </Fragment>
     );

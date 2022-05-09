@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./RandomButton.css";
-const RandomButton = ({ newCard, setNewCard }) => {
+const RandomButton = ({ offset, newCard, setNewCard }) => {
   return (
     <Fragment>
       <div className="random-button-div">
@@ -8,7 +8,7 @@ const RandomButton = ({ newCard, setNewCard }) => {
           onClick={() => setNewCard(newCard + 1)}
           className="random-button"
         >
-          New Card
+          New Card {offset}
         </button>
       </div>
     </Fragment>

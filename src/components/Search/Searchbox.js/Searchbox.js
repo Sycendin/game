@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./Searchbox.css";
 
-const Searchbox = ({ data, onInputChange }) => {
+const Searchbox = ({ data, onInputChange, newImage }) => {
   // console.log(data);
   return (
     <Fragment>
@@ -14,7 +14,14 @@ const Searchbox = ({ data, onInputChange }) => {
         />
         <ul className="search-list">
           {data.map((option, i) => {
-            return <p key={i}>{option.name}</p>;
+            return (
+              <p
+                key={i}
+                onClick={() => newImage(option.card_images[0].image_url)}
+              >
+                {option.name}
+              </p>
+            );
           })}
         </ul>
       </div>

@@ -1,0 +1,17 @@
+.search-div{
+  display: flex;
+justify-content: center;
+flex-direction: column;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+.search-box{
+height: 50px;
+font-size: calc(16px + 0.5vw);
+
+}
+.search-list{
+  width: 100%;
+  text-align: left;
+}

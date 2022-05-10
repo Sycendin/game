@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import "./Searchbox.css";
 
 const Searchbox = ({ data, onInputChange, newImage }) => {
-  // console.log(data);
   return (
     <Fragment>
       <div className="search-div">

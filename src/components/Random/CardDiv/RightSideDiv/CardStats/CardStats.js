@@ -1,7 +1,11 @@
 import React from "react";
 import "./CardStats.css";
 const CardStats = ({ cardData }) => {
-  if (cardData.type === "Spell Card" || cardData.type === "Trap Card") {
+  if (
+    cardData.type === "Spell Card" ||
+    cardData.type === "Trap Card" ||
+    cardData.type === "Skill Card"
+  ) {
     return null;
   } else {
     return (

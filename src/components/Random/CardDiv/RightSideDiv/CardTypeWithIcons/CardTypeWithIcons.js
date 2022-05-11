@@ -21,6 +21,10 @@ const CardTypeWithIcons = ({ cardData }) => {
         ) : null}
       </div>
     );
+  }
+  // Don't render any icons or information for a skill card
+  else if (cardData.type === "Skill Card") {
+    return null;
   } else {
     return (
       <div className="rightside-span">

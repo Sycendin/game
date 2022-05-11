@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import "./Search.css";
 
 import Searchbox from "./Searchbox.js/Searchbox";
+import SearchImage from "./SearchImage/SearchImage";
 
 const Search = () => {
   const [options, setOptions] = useState([]);
@@ -36,31 +37,28 @@ const Search = () => {
         )}`
       )
         .then((res) => res.json())
-        .then(
-          (result) => {
-            setOptions(result.data.slice(0, 5));
-          },
-
-          (error) => {
-            console.log(error);
-          }
-        );
+        .then((result) => {
+          setOptions(result.data.slice(0, 10));
+        })
+        .catch((error) => {
+          setOptions([{ name: "No results" }]);
+        });
     }
   }
   const newImage = (image) => {
     setCardImage(image);
+    setOptions([]);
   };
   return (
     <Fragment>
-      <h1>Search a card.</h1>
+      <h1>Search a card</h1>
+
       <Searchbox
         data={options}
         onInputChange={debounce(onInputChange, 250)}
         newImage={newImage}
       />
-      {cardImage !== "" ? (
-        <img src={cardImage} height={614} width={421} alt="cardimage" />
-      ) : null}
+      <SearchImage cardImage={cardImage} />
     </Fragment>
   );
 };

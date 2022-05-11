@@ -1,0 +1,10 @@
+.search-list{
+  text-align: left;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search-list-text{
+  font-weight: bold;
+  font-size: calc(16px + 0.1vw);
+}

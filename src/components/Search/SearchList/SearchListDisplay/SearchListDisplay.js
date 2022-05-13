@@ -24,8 +24,18 @@ const SearchListDisplay = ({ version, data }) => {
         <div className="search-display-div">
           <AttributeIcon attribute={data.attribute} display={"search"} />
           {data.attribute}
-          <LevelIcon race={data.level} display={"search"} />
+          {data.type === "Link Monster" ? (
+            " Link-" + data.linkval
+          ) : (
+            <LevelIcon race={data.level} display={"search"} />
+          )}
           {data.level}
+          {data.type === "Pendulum Effect Monster" ? (
+            <Fragment>
+              <PendIcon display={"search"} />
+              {data.scale}
+            </Fragment>
+          ) : null}
         </div>
       </Fragment>
     );

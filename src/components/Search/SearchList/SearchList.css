@@ -1,11 +1,16 @@
 .search-list{
-  text-align: left;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
   background-color: white;
   border-radius: 10px;
-  width: 80;
+
 }
 
 .search-list-text{
   font-weight: bold;
   font-size: calc(16px + 0.1vw);
+}
+
+.search-list:hover{
+  cursor: pointer;
 }

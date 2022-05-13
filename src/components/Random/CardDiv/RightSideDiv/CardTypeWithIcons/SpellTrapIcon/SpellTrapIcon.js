@@ -1,7 +1,13 @@
 import React, { Fragment } from "react";
 import "./SpellTrapIcon.css";
-const SpellTrapIcon = ({ type }) => {
+const SpellTrapIcon = ({ type, display }) => {
   let icon = "";
+  let cName = "";
+  if (display === "search") {
+    cName = "search-spell-trap-icon";
+  } else {
+    cName = "spell-trap-icon";
+  }
   switch (type) {
     case "Spell Card":
       icon =
@@ -16,13 +22,7 @@ const SpellTrapIcon = ({ type }) => {
   }
   return (
     <Fragment>
-      <img
-        className="spell-trap-icon"
-        alt="type"
-        height={64}
-        width={64}
-        src={icon}
-      ></img>
+      <img className={cName} alt="type" height={64} width={64} src={icon}></img>
     </Fragment>
   );
 };

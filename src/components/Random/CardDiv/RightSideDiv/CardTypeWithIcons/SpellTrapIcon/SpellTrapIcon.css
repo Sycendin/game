@@ -3,3 +3,9 @@
   height: calc(16px + 0.5vw);
   margin-right: 10px;
 }
+
+.search-spell-trap-icon{
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}

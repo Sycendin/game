@@ -3,3 +3,10 @@
   height: calc(16px + 0.5vw);
   margin-right: 10px;
 }
+
+.search-level-icon{
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}

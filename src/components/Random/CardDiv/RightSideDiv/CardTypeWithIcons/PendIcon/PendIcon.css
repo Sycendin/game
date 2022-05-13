@@ -3,3 +3,9 @@
   height: calc(16px + 0.5vw);
   margin-left: 10px;
 }
+
+.search-pend-icon{
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}

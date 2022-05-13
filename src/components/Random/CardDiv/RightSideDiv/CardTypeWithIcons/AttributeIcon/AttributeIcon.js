@@ -1,7 +1,13 @@
 import React, { Fragment } from "react";
 import "./AttributeIcon.css";
-const AttributeIcon = ({ attribute }) => {
+const AttributeIcon = ({ attribute, display }) => {
   let icon = "";
+  let cName = "";
+  if (display === "search") {
+    cName = "search-attribute-icon";
+  } else {
+    cName = "attribute-icon";
+  }
   switch (attribute) {
     case "DARK":
       icon =
@@ -37,7 +43,7 @@ const AttributeIcon = ({ attribute }) => {
   return (
     <Fragment>
       <img
-        className="attribute-icon"
+        className={cName}
         alt="attribute"
         height={64}
         width={64}

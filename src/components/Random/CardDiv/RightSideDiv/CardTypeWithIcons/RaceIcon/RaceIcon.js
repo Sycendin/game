@@ -1,6 +1,12 @@
 import React, { Fragment } from "react";
 import "./RaceIcon.css";
-const RaceIcon = ({ race }) => {
+const RaceIcon = ({ race, display }) => {
+  let cName = "";
+  if (display === "search") {
+    cName = "search-race-icon";
+  } else {
+    cName = "race-icon";
+  }
   let icon = "";
   switch (race) {
     case "Counter":
@@ -32,13 +38,7 @@ const RaceIcon = ({ race }) => {
   }
   return (
     <Fragment>
-      <img
-        className="race-icon"
-        alt="race"
-        height={64}
-        width={64}
-        src={icon}
-      ></img>
+      <img className={cName} alt="race" height={64} width={64} src={icon}></img>
     </Fragment>
   );
 };

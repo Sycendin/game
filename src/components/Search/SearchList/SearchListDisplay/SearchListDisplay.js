@@ -27,7 +27,7 @@ const SearchListDisplay = ({ version, data }) => {
           {data.type === "Link Monster" ? (
             " Link-" + data.linkval
           ) : (
-            <LevelIcon race={data.level} display={"search"} />
+            <LevelIcon display={"search"} type={data.type} />
           )}
           {data.level}
           {data.type === "Pendulum Effect Monster" ? (

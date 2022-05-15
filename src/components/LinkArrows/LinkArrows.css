@@ -3,8 +3,14 @@
   height: calc(16px + 0.5vw);
   margin-right: 10px;
 }
+.link-icon{
+  margin-left: 10px;
+}
+.link-row{
+  display: flex;
+}
 .search-linkarrows-icon{
-  width: 20px;
+  width:10px;
   height: auto;
-  margin-right: 10px;
+
 }

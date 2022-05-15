@@ -5,7 +5,7 @@ import LevelIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/Le
 import PendIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/PendIcon/PendIcon";
 import RaceIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/RaceIcon/RaceIcon";
 import SpellTrapIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/SpellTrapIcon/SpellTrapIcon";
-
+import LinkArrows from "../../../LinkArrows/LinkArrows";
 const SearchListDisplay = ({ version, data }) => {
   if (version === "Spell Card" || version === "Trap Card") {
     return (
@@ -25,7 +25,10 @@ const SearchListDisplay = ({ version, data }) => {
           <AttributeIcon attribute={data.attribute} display={"search"} />
           {data.attribute}
           {data.type === "Link Monster" ? (
-            " Link-" + data.linkval
+            <Fragment>
+              <LinkArrows display={"search"} linkMarkers={data.linkmarkers} />
+              <p> -{data.linkval}</p>
+            </Fragment>
           ) : (
             <LevelIcon display={"search"} type={data.type} />
           )}

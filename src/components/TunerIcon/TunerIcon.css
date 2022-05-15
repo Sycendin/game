@@ -1,0 +1,10 @@
+.tuner-icon{
+  width: calc(16px + 0.5vw);
+  height: calc(16px + 0.5vw);
+  margin-right: 10px;
+}
+.search-tuner-icon{
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+}

@@ -1,0 +1,10 @@
+.linkarrows-icon{
+  width: calc(16px + 0.5vw);
+  height: calc(16px + 0.5vw);
+  margin-right: 10px;
+}
+.search-linkarrows-icon{
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+}

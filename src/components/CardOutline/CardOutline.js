@@ -10,10 +10,12 @@ const CardOutline = ({ outline, display }) => {
   }
   switch (outline) {
     case "Effect Monster":
+    case "Tuner Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890712988528700/effect.png";
       break;
     case "Normal Monster":
+    case "Normal Tuner Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890750867304449/normal.png";
       break;
@@ -29,7 +31,8 @@ const CardOutline = ({ outline, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890797885456444/trap.png";
       break;
-    case "Ritual":
+    case "Ritual Effect Monster":
+    case "Ritual Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890750548529192/ritual.png";
       break;
@@ -53,15 +56,15 @@ const CardOutline = ({ outline, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890713311506452/pendnormal.png";
       break;
-    case "Pendulum Fusion Monster":
+    case "Fusion Pendulum Effect Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890749114060830/pendfusion.png";
       break;
-    case "Pendulum Synchro Monster":
+    case "Synchro Pendulum Effect Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890748895977502/pendsynchro.png";
       break;
-    case "Pendulum XYZ Monster":
+    case "XYZ Pendulum Effect Monster":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/974890748665266206/penxyz.png";
       break;

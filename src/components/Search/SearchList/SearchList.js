@@ -15,16 +15,14 @@ const SearchList = ({ data, newImage }) => {
           }
           return (
             <div
+              key={i}
               style={{
                 display: "flex",
                 borderBottom: border,
               }}
+              onClick={() => newImage(option.card_images[0].image_url)}
             >
-              <p
-                className="search-list-text"
-                key={i}
-                onClick={() => newImage(option.card_images[0].image_url)}
-              >
+              <p className="search-list-text" key={i}>
                 {option.name}
               </p>
               {option.name === "No results" ? null : (

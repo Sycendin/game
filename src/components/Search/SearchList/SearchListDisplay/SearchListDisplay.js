@@ -5,8 +5,11 @@ import LevelIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/Le
 import PendIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/PendIcon/PendIcon";
 import RaceIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/RaceIcon/RaceIcon";
 import SpellTrapIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/SpellTrapIcon/SpellTrapIcon";
+import CardOutline from "../../../CardOutline/CardOutline";
 import LinkArrows from "../../../LinkArrows/LinkArrows";
 const SearchListDisplay = ({ version, data }) => {
+  let type = data.type.slice();
+  let typeArray = type.split(" ");
   if (version === "Spell Card" || version === "Trap Card") {
     return (
       <Fragment>
@@ -15,6 +18,7 @@ const SearchListDisplay = ({ version, data }) => {
           {data.type}
           <RaceIcon race={data.race} display={"search"} />
           {data.race}
+          <CardOutline display={"search"} outline={data.type} />
         </div>
       </Fragment>
     );
@@ -26,19 +30,20 @@ const SearchListDisplay = ({ version, data }) => {
           {data.attribute}
           {data.type === "Link Monster" ? (
             <Fragment>
-              <LinkArrows display={"search"} linkMarkers={data.linkmarkers} />
+              <LinkArrows linkMarkers={data.linkmarkers} display={"search"} />
               <p> -{data.linkval}</p>
             </Fragment>
           ) : (
-            <LevelIcon display={"search"} type={data.type} />
+            <LevelIcon type={data.type} display={"search"} />
           )}
           {data.level}
-          {data.type === "Pendulum Effect Monster" ? (
+          {typeArray.includes("Pendulum") ? (
             <Fragment>
               <PendIcon display={"search"} />
               {data.scale}
             </Fragment>
           ) : null}
+          <CardOutline display={"search"} outline={data.type} />
         </div>
       </Fragment>
     );

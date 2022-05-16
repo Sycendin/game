@@ -11,66 +11,71 @@ const CardOutline = ({ outline, display }) => {
   switch (outline) {
     case "Effect Monster":
     case "Tuner Monster":
+    case "Flip Effect Monster":
+    case "Gemini Effect Monster":
+    case "Spirit Effect Monster":
+    case "Union Effect Monster":
+    case "Toon Effect Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890712988528700/effect.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640333494939698/effect.webp";
       break;
     case "Normal Monster":
     case "Normal Tuner Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890750867304449/normal.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640453867245598/normalcard.webp";
       break;
     case "Token Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890749931962378/token.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640454534168626/token.webp";
       break;
     case "Spell Card":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890798174859315/spell.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640489346859128/spellcard.webp";
       break;
     case "Trap Card":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890797885456444/trap.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640489535610920/trapcard.webp";
       break;
     case "Ritual Effect Monster":
     case "Ritual Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890750548529192/ritual.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640454089564170/ritualcard.webp";
       break;
     case "Fusion Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890750212997150/fusion.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640454299275314/fusion.webp";
       break;
     case "Synchro Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890714037116928/synchro.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640332647694366/synchro.webp";
       break;
     case "XYZ Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890713605087252/xyz.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640332890943548/xyz.webp";
       break;
     case "Pendulum Effect Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890749353160754/pendeffect.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640454764851211/pendeffect.webp";
       break;
     case "Pendulum Normal Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890713311506452/pendnormal.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640333222297640/pendnormal.webp";
       break;
     case "Fusion Pendulum Effect Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890749114060830/pendfusion.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640454991331378/pendfusion.webp";
       break;
     case "Synchro Pendulum Effect Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890748895977502/pendsynchro.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640455196856330/pendsynchro.webp";
       break;
     case "XYZ Pendulum Effect Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890748665266206/penxyz.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640455419133992/penxyz.webp";
       break;
     case "Link Monster":
       icon =
-        "https://cdn.discordapp.com/attachments/958975018816131132/974890798413905960/link.png";
+        "https://cdn.discordapp.com/attachments/958975018816131132/975640489124573184/link.webp";
       break;
     default:
       break;

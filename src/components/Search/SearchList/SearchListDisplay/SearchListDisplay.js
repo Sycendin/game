@@ -7,6 +7,8 @@ import RaceIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/Rac
 import SpellTrapIcon from "../../../Random/CardDiv/RightSideDiv/CardTypeWithIcons/SpellTrapIcon/SpellTrapIcon";
 import CardOutline from "../../../CardOutline/CardOutline";
 import LinkArrows from "../../../LinkArrows/LinkArrows";
+import TunerIcon from "../../../TunerIcon/TunerIcon";
+import MonsterType from "../../../MonsterType/MonsterType";
 const SearchListDisplay = ({ version, data }) => {
   let type = data.type.slice();
   let typeArray = type.split(" ");
@@ -43,6 +45,10 @@ const SearchListDisplay = ({ version, data }) => {
               {data.scale}
             </Fragment>
           ) : null}
+          {typeArray.includes("Tuner") ? (
+            <TunerIcon display={"search"} />
+          ) : null}
+          <MonsterType monsterType={data.race} display={"search"} />
           <CardOutline display={"search"} outline={data.type} />
         </div>
       </Fragment>

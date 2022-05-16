@@ -24,7 +24,7 @@ const CardOutline = ({ outline, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640453867245598/normalcard.webp";
       break;
-    case "Token Monster":
+    case "Token":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640454534168626/token.webp";
       break;

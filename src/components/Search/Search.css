@@ -1,0 +1,25 @@
+.archetype-button{
+  background-color: rgb(20, 163, 20);
+  color: white;
+  height: 50px;
+  margin-bottom: 10px;
+  font-size: calc(16px + 0.1vw);
+  border-radius: 10px;
+}
+
+.archetype-button-pressed{
+  background-color: rgb(12, 92, 12);
+  color: white;
+  height: 50px;
+  margin-bottom: 10px;
+  font-size: calc(16px + 0.1vw);
+  border-radius: 10px;
+}
+
+.archetype-button:hover{
+  cursor: pointer;
+}
+
+.archetype-button-pressed{
+  cursor: pointer;
+}

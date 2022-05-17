@@ -52,7 +52,6 @@ const Search = () => {
 
       fetch(searchUrl)
         .then((res) => res.json())
-
         .then((result) => {
           setOptions(result.data.slice(0, 10));
         })

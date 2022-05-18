@@ -1,6 +1,7 @@
 .search-display-div{
 display: flex;
 align-items: center;
+justify-content: space-between;
 margin-left: auto;
-margin-right: 10px;
+
 }

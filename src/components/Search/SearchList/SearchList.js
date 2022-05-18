@@ -7,6 +7,7 @@ const SearchList = ({ data, newImage }) => {
     <Fragment>
       <ul className="search-list">
         {data.map((option, i) => {
+          // Check if there is another entry for list, if not don't make a bottom border
           let next = data[i + 1];
           if (!next) {
             border = "";

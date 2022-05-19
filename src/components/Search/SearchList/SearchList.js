@@ -16,9 +16,11 @@ const SearchList = ({ data, newImage }) => {
           }
           return (
             <div
+              className="searchlist-div"
               key={i}
               style={{
                 display: "flex",
+
                 borderBottom: border,
               }}
               onClick={() => newImage(option.card_images[0].image_url)}

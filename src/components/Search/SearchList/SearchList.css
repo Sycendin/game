@@ -14,3 +14,9 @@
 .search-list:hover{
   cursor: pointer;
 }
+
+@media  (max-width: 600px) {
+  .searchlist-div{
+    flex-direction: column;
+  }
+ }

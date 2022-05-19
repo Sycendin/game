@@ -9,3 +9,10 @@
   height: 50%;
 
 }
+
+@media  (max-width: 600px) {
+  .search-spell-trap-icon{
+    width: auto;
+    height: 30%;
+  }
+ }

@@ -9,3 +9,10 @@
   height: 50%;
 
 }
+
+@media  (max-width: 600px) {
+  .search-race-icon{
+    width: auto;
+    height: 30%;
+  }
+ }

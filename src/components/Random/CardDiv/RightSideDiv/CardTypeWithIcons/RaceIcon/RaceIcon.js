@@ -29,10 +29,15 @@ const RaceIcon = ({ race, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970907315840630824/ritual.webp";
       break;
+    case "Equip":
+      icon =
+        "https://cdn.discordapp.com/attachments/958975018816131132/976701738402852894/equip.webp";
+      break;
     case "Normal":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/970904264895508490/normal.webp";
       break;
+
     default:
       break;
   }

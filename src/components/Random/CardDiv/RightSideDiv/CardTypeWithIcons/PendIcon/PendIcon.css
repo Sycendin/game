@@ -9,3 +9,11 @@
   height: 50%;
 
 }
+
+
+@media  (max-width: 600px) {
+  .search-pend-icon{
+    width: auto;
+    height: 30%;
+  }
+ }

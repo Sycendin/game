@@ -6,5 +6,11 @@
 .search-monstertype-icon{
   width: auto;
   height: 50%;
-
 }
+
+@media  (max-width: 600px) {
+  .search-monstertype-icon{
+    width: auto;
+    height: 30%;
+  }
+ }

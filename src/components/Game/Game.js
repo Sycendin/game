@@ -3,17 +3,18 @@ import Loading from "../Random/Loading/Loading";
 import Searchbox from "../Search/Searchbox.js/Searchbox";
 import "./Game.css";
 const Game = () => {
+  const [pick, setPick] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
   const [options, setOptions] = useState([]);
   const [cardImage, setCardImage] = useState("");
+  const [card, setCard] = useState(0);
   const [archetypeSearch, setArchetypeSearch] = useState(false);
   const [searchButtonClass, setSearchButtonClass] =
     useState("archetype-button");
 
   let searchUrl = "";
-  let cardSelect = 0;
 
   function debounce(func, wait, immediate) {
     var timeout;
@@ -68,6 +69,10 @@ const Game = () => {
     setCardImage(image);
     setOptions([]);
   };
+  const setChoice = (image) => {
+    setPick(image);
+    setOptions([]);
+  };
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -81,7 +86,9 @@ const Game = () => {
         (result) => {
           setIsLoaded(true);
           setCards(result);
+          setCard(result.data[Math.floor(Math.random() * result.data.length)]);
         },
+
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
@@ -101,20 +108,19 @@ const Game = () => {
       </div>
     );
   } else {
-    cardSelect = Math.floor(Math.random() * cards.data.length);
-    // return <img src={items.data[0].card_images[0].image_url}></img>;
     return (
       <Fragment>
         <Searchbox
+          setPick={setPick}
+          pick={pick}
           data={options}
           // Call debounce function with inputchange so that it doesn't run more than 4 times a second
           onInputChange={debounce(onInputChange, 250)}
           newImage={newImage}
-        />
-        {/* <img
-          alt="card"
-          src={cards.data[cardSelect].card_images[0].image_url}
-        ></img> */}
+        />{" "}
+        {pick.length !== 0 ? (
+          <img alt="card" src={pick[0].card_images[0].image_url}></img>
+        ) : null}
       </Fragment>
     );
   }

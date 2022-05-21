@@ -29,7 +29,7 @@ const MonsterType = ({ monsterType, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640631940632586/beast.webp";
       break;
-    case "Beast=Warrior":
+    case "Beast-Warrior":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640631672176720/beast-warrior.webp";
       break;

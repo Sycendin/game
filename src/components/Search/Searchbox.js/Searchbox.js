@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./Searchbox.css";
 import SearchList from "../SearchList/SearchList";
-const Searchbox = ({ data, onInputChange, newImage }) => {
+const Searchbox = ({ data, onInputChange, newImage, pick, setPick }) => {
   return (
     <Fragment>
       <div className="search-div">
@@ -11,7 +11,12 @@ const Searchbox = ({ data, onInputChange, newImage }) => {
           placeholder="Search"
           onChange={onInputChange}
         />
-        <SearchList data={data} newImage={newImage} />
+        <SearchList
+          data={data}
+          newImage={newImage}
+          setPick={setPick}
+          pick={pick}
+        />
       </div>
     </Fragment>
   );

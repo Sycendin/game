@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Loading from "../Random/Loading/Loading";
 import Searchbox from "../Search/Searchbox.js/Searchbox";
+import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import "./Game.css";
 const Game = () => {
   const [pick, setPick] = useState([]);
@@ -119,7 +120,8 @@ const Game = () => {
           newImage={newImage}
         />{" "}
         {pick.length !== 0 ? (
-          <img alt="card" src={pick[0].card_images[0].image_url}></img>
+          // <img alt="card" src={pick[0].card_images[0].image_url}></img>
+          <SelectedDiv list={pick} mainCard={card} />
         ) : null}
       </Fragment>
     );

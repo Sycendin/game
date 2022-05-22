@@ -1,0 +1,36 @@
+.selected-checks-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.selected-checks-text{
+  font-weight: bold;
+  font-size: calc(16px + 0.1vw);
+  margin-right: 10px;
+}
+.selected-checks-text-higher{
+  font-weight: bold;
+  font-size: calc(16px + 0.1vw);
+  margin-right: 10px;
+  border-radius: 10px;
+ background-color: blueviolet;
+}
+
+
+.selected-checks-text-lower{
+  font-weight: bold;
+  font-size: calc(16px + 0.1vw);
+  margin-right: 10px;
+  border-radius: 10px;
+ background-color: red;
+}
+
+.selected-checks-text-correct{
+  font-weight: bold;
+  font-size: calc(16px + 0.1vw);
+  margin-right: 10px;
+  border-radius: 10px;
+ background-color: green;
+}

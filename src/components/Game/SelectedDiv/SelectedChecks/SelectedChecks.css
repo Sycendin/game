@@ -1,4 +1,5 @@
 .selected-checks-div{
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,38 +8,48 @@
 .selected-checks-stats-div-higher{
   display: flex;
   align-items: center;
-  height: 100%; 
+  height:80%; 
   width: auto;
   background-color: blueviolet;
+  border-radius: 10px;
+}
+
+.selected-checks-stats-div-wrong{
+  display: flex;
+  align-items: center;
+  height: 80%; 
+  width: auto;
+  background-color: rgb(252, 135, 1);
+  border-radius: 10px;
 }
 .selected-checks-stats-div-lower{
   display: flex;
   align-items: center;
-  height: 100%; 
+  height: 80%; 
   width: auto;
   background-color: red;
+  border-radius: 10px;
  
  }
  .selected-checks-stats-div-correct{
   display: flex;
   align-items: center;
-  height: 100%; 
+  height: 80%; 
   width: auto;
   background-color: green;
+  border-radius: 10px;
   
  }
 .selected-checks-text-atk{
   
   font-weight: bold;
   font-size: calc(16px + 0.1vw);
-  margin-right: 10px;
 
 }
 .selected-checks-text-def{
   font-weight: bold;
   font-size: calc(16px + 0.1vw);
-  margin-left: 10px;
-  margin-right: 10px;
+
 
 }
 .selected-checks-text{

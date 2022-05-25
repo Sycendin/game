@@ -2,8 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import Loading from "../Random/Loading/Loading";
 import Searchbox from "../Search/Searchbox.js/Searchbox";
 import SelectedDiv from "./SelectedDiv/SelectedDiv";
+
 import "./Game.css";
-const Game = () => {
+const Game = ({ open }) => {
   const [pick, setPick] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -123,6 +124,7 @@ const Game = () => {
           // <img alt="card" src={pick[0].card_images[0].image_url}></img>
           <SelectedDiv list={pick} mainCard={card} />
         ) : null}
+        <button onClick={() => open(true)}>Modal</button>
       </Fragment>
     );
   }

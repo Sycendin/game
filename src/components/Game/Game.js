@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import Loading from "../Random/Loading/Loading";
 import Searchbox from "../Search/Searchbox.js/Searchbox";
 import SelectedDiv from "./SelectedDiv/SelectedDiv";
-
+import Modal from "../Modal/Modal";
 import "./Game.css";
 const Game = ({ open }) => {
   const [pick, setPick] = useState([]);
@@ -15,7 +15,7 @@ const Game = ({ open }) => {
   const [archetypeSearch, setArchetypeSearch] = useState(false);
   const [searchButtonClass, setSearchButtonClass] =
     useState("archetype-button");
-
+  const [isOpen, setIsOpen] = useState(false);
   let searchUrl = "";
 
   function debounce(func, wait, immediate) {
@@ -124,7 +124,12 @@ const Game = ({ open }) => {
           // <img alt="card" src={pick[0].card_images[0].image_url}></img>
           <SelectedDiv list={pick} mainCard={card} />
         ) : null}
-        <button onClick={() => open(true)}>Modal</button>
+        <button onClick={() => setIsOpen(true)}>Modal</button>
+        <Modal
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          card={card}
+        ></Modal>
       </Fragment>
     );
   }

@@ -16,6 +16,8 @@ const Game = ({ open }) => {
   const [searchButtonClass, setSearchButtonClass] =
     useState("archetype-button");
   const [isOpen, setIsOpen] = useState(false);
+  const [modalExit, setModalExit] = useState(0);
+  const [gameReset, setGameReset] = useState(0);
   let searchUrl = "";
 
   function debounce(func, wait, immediate) {
@@ -71,9 +73,11 @@ const Game = ({ open }) => {
     setCardImage(image);
     setOptions([]);
   };
-  const setChoice = (image) => {
-    setPick(image);
-    setOptions([]);
+
+  //
+  const resetGame = () => {
+    setPick([]);
+    setGameReset(gameReset + 1);
   };
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -99,7 +103,7 @@ const Game = ({ open }) => {
           setError(error);
         }
       );
-  }, []);
+  }, [gameReset]);
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -110,6 +114,13 @@ const Game = ({ open }) => {
       </div>
     );
   } else {
+    console.log(card.name);
+    if (pick.length > 0 && modalExit === 0) {
+      if (card.name === pick[pick.length - 1].name) {
+        setModalExit(1);
+        setIsOpen(true);
+      }
+    }
     return (
       <Fragment>
         <Searchbox
@@ -124,8 +135,9 @@ const Game = ({ open }) => {
           // <img alt="card" src={pick[0].card_images[0].image_url}></img>
           <SelectedDiv list={pick} mainCard={card} />
         ) : null}
-        <button onClick={() => setIsOpen(true)}>Modal</button>
+        <button onClick={() => resetGame()}>Reset</button>
         <Modal
+          exitFunc={setModalExit}
           open={isOpen}
           onClose={() => setIsOpen(false)}
           card={card}

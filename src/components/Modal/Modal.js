@@ -2,7 +2,11 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
-const Modal = ({ open, onClose, card }) => {
+const Modal = ({ open, onClose, card, exitFunc }) => {
+  const closeModal = () => {
+    // exitFunc(0);
+    onClose();
+  };
   // Don't display Modal if open state is not true
   if (!open) return null;
   // Render Modal if open state is true
@@ -13,7 +17,7 @@ const Modal = ({ open, onClose, card }) => {
           <p className="modal-text">You guessed it!</p>
           <img alt="main-card" src={card.card_images[0].image_url}></img>
 
-          <button className="modal-button" onClick={onClose}>
+          <button className="modal-button" onClick={closeModal}>
             Close
           </button>
         </div>

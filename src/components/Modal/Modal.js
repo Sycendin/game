@@ -4,7 +4,6 @@ import "./Modal.css";
 
 const Modal = ({ open, onClose, card, exitFunc }) => {
   const closeModal = () => {
-    // exitFunc(0);
     onClose();
   };
   // Don't display Modal if open state is not true
@@ -14,12 +13,18 @@ const Modal = ({ open, onClose, card, exitFunc }) => {
     <Fragment>
       <div className="modal-styles">
         <div className="modal-card-div">
+          <div className="modal-close-div">
+            <img
+              alt="x-button"
+              src={
+                "https://cdn.discordapp.com/attachments/958975018816131132/979975817805324338/x.webp"
+              }
+              className="modal-button"
+              onClick={closeModal}
+            ></img>
+          </div>
           <p className="modal-text">You guessed it!</p>
           <img alt="main-card" src={card.card_images[0].image_url}></img>
-
-          <button className="modal-button" onClick={closeModal}>
-            Close
-          </button>
         </div>
       </div>
     </Fragment>,

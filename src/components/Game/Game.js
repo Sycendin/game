@@ -77,6 +77,7 @@ const Game = ({ open }) => {
   //
   const resetGame = () => {
     setPick([]);
+    setModalExit(0);
     setGameReset(gameReset + 1);
   };
   // Note: the empty deps array [] means

@@ -74,7 +74,7 @@ const Game = ({ open }) => {
     setOptions([]);
   };
 
-  //
+  // Reset game by resetting picks, reset modal and re-render using gameReset state
   const resetGame = () => {
     setPick([]);
     setModalExit(0);

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Confetti from "react-confetti";
 import "./Modal.css";
 
-const Modal = ({ open, onClose, card, exitFunc }) => {
+const Modal = ({ open, onClose, card, numGuesses }) => {
   const closeModal = () => {
     onClose();
   };
@@ -32,7 +32,7 @@ const Modal = ({ open, onClose, card, exitFunc }) => {
                 onClick={closeModal}
               ></img>
             </div>
-            <p className="modal-text">You guessed it!</p>
+            <p className="modal-text">You guessed it in {numGuesses} tries!</p>
             <img alt="main-card" src={card.card_images[0].image_url}></img>
           </div>
         </div>

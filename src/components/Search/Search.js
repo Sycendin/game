@@ -73,10 +73,13 @@ const Search = () => {
     }
   };
   // Set store card image to state and clear searchlist
-  const newImage = (image) => {
-    setCardImage(image);
+  const clickCard = (image) => {
+    if (image) {
+      setCardImage(image);
+    }
     setOptions([]);
   };
+
   return (
     <Fragment>
       <h1>Search a card</h1>
@@ -90,7 +93,7 @@ const Search = () => {
         data={options}
         // Call debounce function with inputchange so that it doesn't run more than 4 times a second
         onInputChange={debounce(onInputChange, 250)}
-        newImage={newImage}
+        clickCard={clickCard}
       />
       <SearchImage cardImage={cardImage} />
     </Fragment>

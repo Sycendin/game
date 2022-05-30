@@ -10,7 +10,6 @@ const Game = ({ open }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
   const [options, setOptions] = useState([]);
-  const [cardImage, setCardImage] = useState("");
   const [card, setCard] = useState(0);
   const [archetypeSearch, setArchetypeSearch] = useState(false);
   const [searchButtonClass, setSearchButtonClass] =
@@ -37,7 +36,7 @@ const Game = ({ open }) => {
   }
   function onInputChange(event) {
     // Clear card image on input change of searchbar
-    setCardImage("");
+    // setCardImage("");
     //  Show no searchlist on empty input
     if (event.target.value === "") {
       setOptions([]);
@@ -68,17 +67,15 @@ const Game = ({ open }) => {
     }
   }
 
-  // Set store card image to state and clear searchlist
-  const newImage = (image) => {
-    setCardImage(image);
-    setOptions([]);
-  };
-
   // Reset game by resetting picks, reset modal and re-render using gameReset state
   const resetGame = () => {
     setPick([]);
     setModalExit(0);
     setGameReset(gameReset + 1);
+  };
+  // Set store card image to state and clear searchlist
+  const clickCard = () => {
+    setOptions([]);
   };
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -130,7 +127,7 @@ const Game = ({ open }) => {
           data={options}
           // Call debounce function with inputchange so that it doesn't run more than 4 times a second
           onInputChange={debounce(onInputChange, 250)}
-          newImage={newImage}
+          setOptions={setOptions}
         />{" "}
         {pick.length !== 0 ? (
           // <img alt="card" src={pick[0].card_images[0].image_url}></img>
@@ -142,6 +139,7 @@ const Game = ({ open }) => {
           open={isOpen}
           onClose={() => setIsOpen(false)}
           card={card}
+          numGuesses={pick.length}
         ></Modal>
       </Fragment>
     );

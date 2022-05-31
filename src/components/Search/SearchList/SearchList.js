@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import "./SearchList.css";
 import SearchListDisplay from "./SearchListDisplay/SearchListDisplay";
-const SearchList = ({ data, newImage, setPick, pick }) => {
+const SearchList = ({ data, clickCard, setPick, pick, setOptions }) => {
   let border = "";
-  // On click of div, add it to pick state
+  // On click of div, add it to pick state and clear pick options
   const playerChoice = (option) => {
-    setPick([...pick, option]);
+    setPick([option, ...pick]);
+    setOptions([]);
   };
   return (
     <Fragment>
@@ -30,7 +31,7 @@ const SearchList = ({ data, newImage, setPick, pick }) => {
               onClick={() => {
                 setPick
                   ? playerChoice(option)
-                  : newImage(option.card_images[0].image_url);
+                  : clickCard(option.card_images[0].image_url);
               }}
             >
               <p className="search-list-text" key={i}>

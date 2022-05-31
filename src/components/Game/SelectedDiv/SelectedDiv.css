@@ -11,5 +11,11 @@
 .selected-div-text{
   font-weight: bold;
   font-size: calc(16px + 0.1vw);
-
 }
+
+
+@media  (max-width: 1200px) {
+  .selected-div{
+    flex-direction: column;
+  }
+ }

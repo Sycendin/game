@@ -33,7 +33,11 @@ const Modal = ({ open, onClose, card, numGuesses }) => {
               ></img>
             </div>
             <p className="modal-text">You guessed it in {numGuesses} tries!</p>
-            <img alt="main-card" src={card.card_images[0].image_url}></img>
+            <img
+              alt="main-card"
+              className="main-card"
+              src={card.card_images[0].image_url}
+            ></img>
           </div>
         </div>
       </Fragment>,

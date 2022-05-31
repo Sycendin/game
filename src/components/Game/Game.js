@@ -73,10 +73,6 @@ const Game = ({ open }) => {
     setModalExit(0);
     setGameReset(gameReset + 1);
   };
-  // Set store card image to state and clear searchlist
-  const clickCard = () => {
-    setOptions([]);
-  };
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -114,7 +110,7 @@ const Game = ({ open }) => {
   } else {
     console.log(card.name);
     if (pick.length > 0 && modalExit === 0) {
-      if (card.name === pick[pick.length - 1].name) {
+      if (card.name === pick[0].name) {
         setModalExit(1);
         setIsOpen(true);
       }
@@ -133,7 +129,9 @@ const Game = ({ open }) => {
           // <img alt="card" src={pick[0].card_images[0].image_url}></img>
           <SelectedDiv list={pick} mainCard={card} />
         ) : null}
-        <button onClick={() => resetGame()}>Reset</button>
+        <button className="button-reset" onClick={() => resetGame()}>
+          Reset
+        </button>
         <Modal
           exitFunc={setModalExit}
           open={isOpen}

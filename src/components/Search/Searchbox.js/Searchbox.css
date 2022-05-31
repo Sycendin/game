@@ -1,3 +1,4 @@
+
 .searchbar {
   width: 100%;
   display: flex;
@@ -15,6 +16,9 @@
   font-size: calc(16px + 0.1vw);
   border-radius: 10px;
   background-color: rgb(20, 163, 20);
+  margin-left: 10px;
+  color: white;
+  
 }
 .search-box{
   width: 100%;
@@ -25,6 +29,7 @@
 
 .button-clear:hover{
 cursor: pointer;
+filter: brightness(110%);
 
 }
 @media  (max-width: 1200px) {

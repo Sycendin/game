@@ -3,6 +3,7 @@ import Loading from "../Random/Loading/Loading";
 import Searchbox from "../Search/Searchbox.js/Searchbox";
 import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import Modal from "../Modal/Modal";
+import Legend from "./Legend/Legend";
 import "./Game.css";
 const Game = ({ open }) => {
   const [pick, setPick] = useState([]);
@@ -117,6 +118,7 @@ const Game = ({ open }) => {
     }
     return (
       <Fragment>
+        <Legend />
         <Searchbox
           setPick={setPick}
           pick={pick}

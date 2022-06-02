@@ -10,7 +10,6 @@
 }
 
 .legend-text{
-    
   font-weight: bold;
   font-size: calc(16px + 0.1vw);
 }
@@ -20,7 +19,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: blueviolet;
-  
+
   border-radius: 10px;
   margin-right: 8px;
   padding-left: 8px;

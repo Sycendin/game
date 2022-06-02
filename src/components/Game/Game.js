@@ -4,6 +4,7 @@ import Searchbox from "../Search/Searchbox.js/Searchbox";
 import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import Modal from "../Modal/Modal";
 import Legend from "./Legend/Legend";
+import Filter from "../Filter/Filter";
 import "./Game.css";
 const Game = ({ open }) => {
   const [pick, setPick] = useState([]);
@@ -16,6 +17,8 @@ const Game = ({ open }) => {
   const [searchButtonClass, setSearchButtonClass] =
     useState("archetype-button");
   const [isOpen, setIsOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [filter, setFilter] = useState({});
   const [modalExit, setModalExit] = useState(0);
   const [gameReset, setGameReset] = useState(0);
   let searchUrl = "";
@@ -118,6 +121,7 @@ const Game = ({ open }) => {
     }
     return (
       <Fragment>
+        <button onClick={() => setFilterOpen(true)}>Filter</button>
         <Legend />
         <Searchbox
           setPick={setPick}
@@ -141,6 +145,11 @@ const Game = ({ open }) => {
           card={card}
           numGuesses={pick.length}
         ></Modal>
+        <Filter
+          filterOpen={filterOpen}
+          onClose={() => setFilterOpen(false)}
+          setFilter={setFilter}
+        ></Filter>
       </Fragment>
     );
   }

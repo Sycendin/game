@@ -5,8 +5,10 @@ import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import Modal from "../Modal/Modal";
 import Legend from "./Legend/Legend";
 import Filter from "../Filter/Filter";
+import { ToastContainer, toast } from "react-toastify";
 import "./Game.css";
-const Game = ({ open }) => {
+import "react-toastify/dist/ReactToastify.css";
+const Game = () => {
   const [pick, setPick] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,6 +25,11 @@ const Game = ({ open }) => {
   const [gameReset, setGameReset] = useState(0);
   let searchUrl = "";
 
+  // Toast message that will be played when the reset button is clicked
+  const notify = () =>
+    toast.info("Game has been reset!", { autoClose: 2000, pauseOnHover: true });
+
+  // Debounce function that limits the amount of function runs per second
   function debounce(func, wait, immediate) {
     var timeout;
     return function () {
@@ -39,8 +46,6 @@ const Game = ({ open }) => {
     };
   }
   function onInputChange(event) {
-    // Clear card image on input change of searchbar
-    // setCardImage("");
     //  Show no searchlist on empty input
     if (event.target.value === "") {
       setOptions([]);
@@ -59,7 +64,6 @@ const Game = ({ open }) => {
         )}`;
       }
       // Call API and set information from it, if no results then set that to be displayed instead
-
       fetch(searchUrl)
         .then((res) => res.json())
         .then((result) => {
@@ -72,16 +76,18 @@ const Game = ({ open }) => {
   }
 
   // Reset game by resetting picks, reset modal and re-render using gameReset state
+  // Alert user that the game as been reset with notify function that displays toast message
   const resetGame = () => {
     setPick([]);
     setModalExit(0);
     setGameReset(gameReset + 1);
+    // Remove the animation from reset button and clear searchbox
+    document.getElementById("reset").classList.remove("finish");
+    document.getElementById("text-input").value = "";
+    notify();
   };
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
+
   useEffect(() => {
-    // fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Tornado%20Dragon")
     fetch(
       "https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster"
     )
@@ -93,9 +99,7 @@ const Game = ({ open }) => {
           setCard(result.data[Math.floor(Math.random() * result.data.length)]);
         },
 
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
+        // Catch errors
         (error) => {
           setIsLoaded(true);
           setError(error);
@@ -113,10 +117,13 @@ const Game = ({ open }) => {
     );
   } else {
     console.log(card.name);
+    // Check if modal is closed and picked card matches main card then open "you win" modal
     if (pick.length > 0 && modalExit === 0) {
       if (card.name === pick[0].name) {
         setModalExit(1);
         setIsOpen(true);
+        // Add animation to reset button to get user to click it to reset the game
+        document.getElementById("reset").classList.add("finish");
       }
     }
     return (
@@ -131,11 +138,13 @@ const Game = ({ open }) => {
           onInputChange={debounce(onInputChange, 250)}
           setOptions={setOptions}
         />{" "}
-        {pick.length !== 0 ? (
-          // <img alt="card" src={pick[0].card_images[0].image_url}></img>
-          <SelectedDiv list={pick} mainCard={card} />
-        ) : null}
-        <button className="button-reset" onClick={() => resetGame()}>
+        {/* Display the user selections only if they have picked at least one card */}
+        {pick.length !== 0 ? <SelectedDiv list={pick} mainCard={card} /> : null}
+        <button
+          id={"reset"}
+          className="button-reset"
+          onClick={() => resetGame()}
+        >
           Reset
         </button>
         <Modal
@@ -150,6 +159,7 @@ const Game = ({ open }) => {
           onClose={() => setFilterOpen(false)}
           setFilter={setFilter}
         ></Filter>
+        <ToastContainer newestOnTop={true} />
       </Fragment>
     );
   }

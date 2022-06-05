@@ -37,7 +37,6 @@ const MonsterType = ({ monsterType, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640631437299733/machine.webp";
       break;
-    //
     case "Winged Beast":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640631173079050/winged-beast.webp";
@@ -74,7 +73,7 @@ const MonsterType = ({ monsterType, display }) => {
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640579293712414/aqua.webp";
       break;
-    case "DIVINE":
+    case "Pyro":
       icon =
         "https://cdn.discordapp.com/attachments/958975018816131132/975640578974965790/pyro.webp";
       break;

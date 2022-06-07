@@ -68,11 +68,31 @@
 @media  (max-width: 1200px) {
   .selected-checks-div{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 50px;
+    height: 50px
   }
+ }
+
+
+ @media  (max-width: 800px) {
+  .selected-checks-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+  }
+   .selected-checks-div > div {
+   height: 40px;
+  
+
+ }
+
  }

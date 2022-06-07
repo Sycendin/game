@@ -27,14 +27,14 @@ const Searchbox = ({
           <button className="button-clear" onClick={() => resetText()}>
             Clear
           </button>
+          <SearchList
+            data={data}
+            clickCard={clickCard}
+            setPick={setPick}
+            pick={pick}
+            setOptions={setOptions}
+          />
         </div>
-        <SearchList
-          data={data}
-          clickCard={clickCard}
-          setPick={setPick}
-          pick={pick}
-          setOptions={setOptions}
-        />
       </div>
     </Fragment>
   );

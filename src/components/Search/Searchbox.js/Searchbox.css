@@ -2,15 +2,15 @@
 .searchbar {
   width: 100%;
   display: flex;
+ 
 }
 .search-div{
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+
   margin-left: auto;
   margin-right: auto;
   width: 50%;
- 
+  position: relative;
 }
 .button-clear{
   font-size: calc(16px + 0.1vw);

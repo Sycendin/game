@@ -69,6 +69,8 @@ const SelectedChecks = ({ item, mainCard }) => {
           <p className={`selected-checks-text`}>{item.level}</p>
           <img alt="arrow" className={`arrow`} src={levelArrow}></img>
         </div>
+        {/* </div> */}
+        {/* <div className="selected-checks-bot-row"> */}
         <div className={`selected-checks-stats-div-${raceDifference}`}>
           <MonsterType monsterType={item.race} display={"search"} />
           <p className={`selected-checks-text`}>{item.race}</p>

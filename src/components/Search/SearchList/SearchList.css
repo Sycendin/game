@@ -1,9 +1,15 @@
+
 .search-list{
-  padding-inline-start: 40px;
-  padding-inline-end: 40px;
+  box-sizing: border-box;
+ padding-inline-start: 10px;
+ padding-inline-end: 10px;
   background-color: white;
   border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  margin-top: 5%;
 
+ 
 }
 
 .search-list-text{

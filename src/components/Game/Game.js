@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Loading from "../Random/Loading/Loading";
-import Searchbox from "../Search/Searchbox.js/Searchbox";
+import Searchbox from "../Search/Searchbox/Searchbox";
 import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import Modal from "../Modal/Modal";
 import Legend from "./Legend/Legend";

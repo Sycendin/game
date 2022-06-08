@@ -9,13 +9,23 @@ const Searchbox = ({
   setPick,
   setOptions,
 }) => {
+  // const myRef = useRef();
+  // const [x, setX] = useState();
+  // const getPosition = () => {
+  //   const x = myRef.current.getBoundingClientRect().bottom;
+  //   setX(x);
+  // };
   const resetText = () => {
     document.getElementById("text-input").value = "";
     setOptions([]);
   };
+  // useEffect(() => {
+  //   getPosition();
+  // }, []);
   return (
     <Fragment>
       <div className="search-div">
+        {/* <div className="search-div" ref={myRef}> */}
         <div className="searchbar">
           <input
             id="text-input"
@@ -28,6 +38,7 @@ const Searchbox = ({
             Clear
           </button>
           <SearchList
+            // x={x}
             data={data}
             clickCard={clickCard}
             setPick={setPick}

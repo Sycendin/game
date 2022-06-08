@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./Search.css";
-import Searchbox from "./Searchbox.js/Searchbox";
+import Searchbox from "./Searchbox/Searchbox";
 import SearchImage from "./SearchImage/SearchImage";
 
 const Search = () => {

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./SearchList.css";
 import SearchListDisplay from "./SearchListDisplay/SearchListDisplay";
-const SearchList = ({ data, clickCard, setPick, pick, setOptions }) => {
+const SearchList = ({ data, clickCard, setPick, pick, setOptions, x }) => {
   let border = "";
   // On click of div, add it to pick state and clear pick options
   const playerChoice = (option) => {
@@ -10,7 +10,7 @@ const SearchList = ({ data, clickCard, setPick, pick, setOptions }) => {
   };
   return (
     <Fragment>
-      <ul className="search-list">
+      <ul className="search-list" style={{ top: 50 }}>
         {data.map((option, i) => {
           // Check if there is another entry for list, if not don't make a bottom border
           let next = data[i + 1];

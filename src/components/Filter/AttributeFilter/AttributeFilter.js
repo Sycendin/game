@@ -1,14 +1,20 @@
 import React, { Fragment } from "react";
 
 import "./AttributeFilter.css";
-const AttributeFilter = () => {
+const AttributeFilter = ({ values }) => {
+  const attributeChange = () => {
+    const attributeSelect = document.querySelector("#attribute").value;
+    values.attribute = attributeSelect;
+  };
   return (
     <Fragment>
-      <select id="framework" multiple>
-        <option disabled selected value>
-          {" "}
-          -- select an option --{" "}
-        </option>
+      <p className="select-text">Attribute:</p>
+      <select
+        id="attribute"
+        className="select-text"
+        onChange={() => attributeChange()}
+      >
+        <option value="none">None</option>
         <option value="DARK">DARK</option>
         <option value="LIGHT">LIGHT</option>
         <option value="WIND">WIND</option>

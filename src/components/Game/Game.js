@@ -23,6 +23,7 @@ const Game = () => {
   const [filter, setFilter] = useState({});
   const [modalExit, setModalExit] = useState(0);
   const [gameReset, setGameReset] = useState(0);
+  const [filterValue, setFilterValue] = useState({});
   let searchUrl = "";
 
   // Toast message that will be played when the reset button is clicked
@@ -46,6 +47,11 @@ const Game = () => {
     };
   }
   function onInputChange(event) {
+    let filterUrl = "";
+    Object.entries(filterValue).forEach(([key, val]) => {
+      filterUrl = filterUrl + `&${key}=${val}`;
+    });
+    console.log(filterUrl);
     //  Show no searchlist on empty input
     if (event.target.value === "") {
       setOptions([]);
@@ -58,10 +64,11 @@ const Game = () => {
           "%20"
         )}`;
       } else {
-        searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
-          " ",
-          "%20"
-        )}`;
+        searchUrl =
+          `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
+            " ",
+            "%20"
+          )}` + filterUrl;
       }
       // Call API and set information from it, if no results then set that to be displayed instead
       fetch(searchUrl)
@@ -158,6 +165,7 @@ const Game = () => {
           filterOpen={filterOpen}
           onClose={() => setFilterOpen(false)}
           setFilter={setFilter}
+          setFilterValue={setFilterValue}
         ></Filter>
         <ToastContainer newestOnTop={true} />
       </Fragment>

@@ -8,7 +8,10 @@ const TypeFilter = ({ values }) => {
   };
   return (
     <Fragment>
-      <p className="select-text">Type:</p>
+      <label className="select-text" htmlFor="type">
+        Type:
+      </label>
+
       <select
         id="type"
         className="select-text"

@@ -48,6 +48,7 @@ const Game = () => {
   }
   function onInputChange(event) {
     let filterUrl = "";
+    // Go through the filter and prepare the additional parameters in the url
     Object.entries(filterValue).forEach(([key, val]) => {
       filterUrl = filterUrl + `&${key}=${val}`;
     });
@@ -88,6 +89,7 @@ const Game = () => {
     setPick([]);
     setModalExit(0);
     setGameReset(gameReset + 1);
+    setFilterValue({});
     // Remove the animation from reset button and clear searchbox
     document.getElementById("reset").classList.remove("finish");
     document.getElementById("text-input").value = "";
@@ -135,7 +137,9 @@ const Game = () => {
     }
     return (
       <Fragment>
-        <button onClick={() => setFilterOpen(true)}>Filter</button>
+        <button className="button-reset" onClick={() => setFilterOpen(true)}>
+          Filter
+        </button>
         <Legend />
         <Searchbox
           setPick={setPick}

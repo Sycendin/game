@@ -8,7 +8,9 @@ const AttributeFilter = ({ values }) => {
   };
   return (
     <Fragment>
-      <p className="select-text">Attribute:</p>
+      <label className="select-text" htmlFor="attribute">
+        Attribute:
+      </label>
       <select
         id="attribute"
         className="select-text"

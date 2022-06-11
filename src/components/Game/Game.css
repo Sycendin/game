@@ -11,7 +11,20 @@
   cursor: pointer;
   filter: brightness(110%);
 }
+.button-filter-clear{
+  font-size: calc(16px + 0.4vw);
+  border-radius: 10px;
+  background-color: rgb(201, 155, 30);
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
 
+.button-filter-clear:hover{
+  cursor: pointer;
+  filter: brightness(110%);
+}
 .finish{
   animation: finish 2s infinite;
 }

@@ -16,20 +16,27 @@ const Game = () => {
   const [options, setOptions] = useState([]);
   const [card, setCard] = useState(0);
   const [archetypeSearch, setArchetypeSearch] = useState(false);
-  const [searchButtonClass, setSearchButtonClass] =
-    useState("archetype-button");
   const [isOpen, setIsOpen] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
-  const [filter, setFilter] = useState({});
   const [modalExit, setModalExit] = useState(0);
   const [gameReset, setGameReset] = useState(0);
   const [filterValue, setFilterValue] = useState({});
   let searchUrl = "";
 
   // Toast message that will be played when the reset button is clicked
-  const notify = () =>
-    toast.info("Game has been reset!", { autoClose: 2000, pauseOnHover: true });
-
+  const notify = (message) => {
+    if (message === "reset") {
+      toast.info("Game has been reset!", {
+        autoClose: 2000,
+        pauseOnHover: true,
+      });
+    } else if (message === "clear") {
+      toast.info("Filter has been reset", {
+        autoClose: 2000,
+        pauseOnHover: true,
+      });
+    }
+  };
   // Debounce function that limits the amount of function runs per second
   function debounce(func, wait, immediate) {
     var timeout;
@@ -54,33 +61,40 @@ const Game = () => {
     });
     console.log(filterUrl);
     //  Show no searchlist on empty input
-    if (event.target.value === "") {
-      setOptions([]);
-    }
-    if (event.target.value !== "") {
-      // Change URL that will be sent to API depending on whether the archetype button is pressed
-      if (archetypeSearch === true) {
-        searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${event.target.value.replace(
-          " ",
-          "%20"
-        )}`;
-      } else {
-        searchUrl =
-          `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
+    if ((event.target.value === "") & (filterUrl !== "")) {
+      searchUrl =
+        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster` +
+        filterUrl;
+    } else {
+      if (event.target.value === "") {
+        setOptions([]);
+      }
+      if (event.target.value !== "") {
+        // Change URL that will be sent to API depending on whether the archetype button is pressed
+        if (archetypeSearch === true) {
+          searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${event.target.value.replace(
             " ",
             "%20"
-          )}` + filterUrl;
+          )}`;
+        } else {
+          searchUrl =
+            `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
+              " ",
+              "%20"
+            )}` + filterUrl;
+        }
       }
-      // Call API and set information from it, if no results then set that to be displayed instead
-      fetch(searchUrl)
-        .then((res) => res.json())
-        .then((result) => {
-          setOptions(result.data.slice(0, 10));
-        })
-        .catch((error) => {
-          setOptions([{ name: "No results" }]);
-        });
     }
+
+    // Call API and set information from it, if no results then set that to be displayed instead
+    fetch(searchUrl)
+      .then((res) => res.json())
+      .then((result) => {
+        setOptions(result.data.slice(0, 10));
+      })
+      .catch((error) => {
+        setOptions([{ name: "No results" }]);
+      });
   }
 
   // Reset game by resetting picks, reset modal and re-render using gameReset state
@@ -93,7 +107,11 @@ const Game = () => {
     // Remove the animation from reset button and clear searchbox
     document.getElementById("reset").classList.remove("finish");
     document.getElementById("text-input").value = "";
-    notify();
+    notify("reset");
+  };
+  const filterClear = () => {
+    setFilterValue({});
+    notify("clear");
   };
 
   useEffect(() => {
@@ -140,6 +158,9 @@ const Game = () => {
         <button className="button-reset" onClick={() => setFilterOpen(true)}>
           Filter
         </button>
+        <button className="button-filter-clear" onClick={() => filterClear()}>
+          Clear Filter
+        </button>
         <Legend />
         <Searchbox
           setPick={setPick}
@@ -168,7 +189,6 @@ const Game = () => {
         <Filter
           filterOpen={filterOpen}
           onClose={() => setFilterOpen(false)}
-          setFilter={setFilter}
           setFilterValue={setFilterValue}
         ></Filter>
         <ToastContainer newestOnTop={true} />

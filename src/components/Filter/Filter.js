@@ -41,14 +41,15 @@ const Filter = ({ filterOpen, onClose, filterSet }) => {
       <Fragment>
         <div className="modal-styles">
           <div className="filter-div">
-            <AttributeFilter values={values} />
-            <TypeFilter values={values} />
-            <LevelFilter values={values} />
-            {currentUrlEnd === "search" ? (
-              <MonsterTypeFilter values={values} />
-            ) : null}
-            <br></br>
-            <div>
+            <div className="filter-options">
+              <AttributeFilter values={values} />
+              <TypeFilter values={values} />
+              <LevelFilter values={values} />
+              {currentUrlEnd === "search" ? (
+                <MonsterTypeFilter values={values} />
+              ) : null}
+            </div>
+            <div className="filter-buttons">
               <button className="filter-apply" onClick={() => closeModal(true)}>
                 Apply Filter
               </button>

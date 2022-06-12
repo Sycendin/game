@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import AttributeFilter from "./AttributeFilter/AttributeFilter";
 import TypeFilter from "./TypeFilter/TypeFilter";
@@ -6,7 +6,7 @@ import MonsterTypeFilter from "./MonsterTypeFilter/MonsterTypeFilter";
 import LevelFilter from "./LevelFilter/LevelFilter";
 import "./Filter.css";
 
-const Filter = ({ filterOpen, onClose, setFilterValue }) => {
+const Filter = ({ filterOpen, onClose, filterSet }) => {
   // Get end of current url
   const currentUrl = window.location.href.split("/");
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
@@ -14,7 +14,7 @@ const Filter = ({ filterOpen, onClose, setFilterValue }) => {
   let values = {};
   const closeModal = (apply) => {
     if (apply) {
-      setFilterValue(values);
+      filterSet(values);
       onClose();
     } else {
       onClose();
@@ -32,7 +32,7 @@ const Filter = ({ filterOpen, onClose, setFilterValue }) => {
     if (monsterTypeReset) {
       monsterTypeReset.selectedIndex = 0;
     }
-    setFilterValue({});
+    filterSet({});
   };
   if (!filterOpen) return null;
   // Render Modal if open state is true

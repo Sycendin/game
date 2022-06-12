@@ -35,6 +35,11 @@ const Game = () => {
         autoClose: 2000,
         pauseOnHover: true,
       });
+    } else if (message === "set") {
+      toast.info("Filter has been set", {
+        autoClose: 2000,
+        pauseOnHover: true,
+      });
     }
   };
   // Debounce function that limits the amount of function runs per second
@@ -109,9 +114,40 @@ const Game = () => {
     document.getElementById("text-input").value = "";
     notify("reset");
   };
-  const filterClear = () => {
-    setFilterValue({});
-    notify("clear");
+  // If filter has been set/cleared, call api with new filter and display filtered/unfiltered
+  // contents
+  const filterSet = (filterContent) => {
+    let url = "";
+    const searchSelect = document.querySelector("#text-input").value;
+    if (Object.keys(filterContent).length === 0) {
+      url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
+        " ",
+        "%20"
+      )}`;
+      setFilterValue({});
+      notify("clear");
+    } else {
+      let filterUrl = "";
+      // Go through the filter and prepare the additional parameters in the url
+      Object.entries(filterContent).forEach(([key, val]) => {
+        filterUrl = filterUrl + `&${key}=${val}`;
+      });
+      url =
+        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
+          " ",
+          "%20"
+        )}` + filterUrl;
+      setFilterValue({ filterContent });
+      notify("set");
+    }
+    fetch(url)
+      .then((res) => res.json())
+      .then((result) => {
+        setOptions(result.data.slice(0, 10));
+      })
+      .catch((error) => {
+        setOptions([{ name: "No results" }]);
+      });
   };
 
   useEffect(() => {
@@ -158,7 +194,7 @@ const Game = () => {
         <button className="button-reset" onClick={() => setFilterOpen(true)}>
           Filter
         </button>
-        <button className="button-filter-clear" onClick={() => filterClear()}>
+        <button className="button-filter-clear" onClick={() => filterSet({})}>
           Clear Filter
         </button>
         <Legend />
@@ -189,7 +225,7 @@ const Game = () => {
         <Filter
           filterOpen={filterOpen}
           onClose={() => setFilterOpen(false)}
-          setFilterValue={setFilterValue}
+          filterSet={filterSet}
         ></Filter>
         <ToastContainer newestOnTop={true} />
       </Fragment>

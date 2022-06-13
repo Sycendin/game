@@ -6,7 +6,13 @@ import MonsterTypeFilter from "./MonsterTypeFilter/MonsterTypeFilter";
 import LevelFilter from "./LevelFilter/LevelFilter";
 import "./Filter.css";
 
-const Filter = ({ filterOpen, onClose, filterSet }) => {
+const Filter = ({
+  filterOpen,
+  onClose,
+  filterSet,
+  setFilterValue,
+  setOptions,
+}) => {
   // Get end of current url
   const currentUrl = window.location.href.split("/");
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
@@ -14,7 +20,7 @@ const Filter = ({ filterOpen, onClose, filterSet }) => {
   let values = {};
   const closeModal = (apply) => {
     if (apply) {
-      filterSet(values);
+      filterSet(values, setFilterValue, setOptions);
       onClose();
     } else {
       onClose();
@@ -32,7 +38,7 @@ const Filter = ({ filterOpen, onClose, filterSet }) => {
     if (monsterTypeReset) {
       monsterTypeReset.selectedIndex = 0;
     }
-    filterSet({});
+    filterSet({}, setFilterValue, setOptions);
   };
   if (!filterOpen) return null;
   // Render Modal if open state is true

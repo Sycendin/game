@@ -9,12 +9,12 @@ const MonsterTypeFilter = ({ values }) => {
   return (
     <Fragment>
       <div className="filter-option-div">
-        <label class="select-text filter-selector" htmlFor="monstertype">
+        <label className="select-text" htmlFor="monstertype">
           MonsterType:
         </label>
         <select
           id="monstertype"
-          className="select-text"
+          className="select-text filter-selector"
           onChange={() => attributeChange()}
         >
           <option value="none">None</option>

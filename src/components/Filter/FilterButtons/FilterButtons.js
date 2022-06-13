@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-// import "./LevelFilter.css";
+import "./FilterButtons.css";
 const FilterButtons = ({
   setFilterOpen,
   filterSet,
@@ -9,7 +9,7 @@ const FilterButtons = ({
 }) => {
   return (
     <Fragment>
-      <div>
+      <div className="filter-buttons-div">
         <button className="button-reset" onClick={() => setFilterOpen(true)}>
           Filter
         </button>

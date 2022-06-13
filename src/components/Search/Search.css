@@ -3,8 +3,9 @@
   color: white;
   height: 50px;
   margin-bottom: 10px;
-  font-size: calc(16px + 0.1vw);
+  font-size: calc(16px + 0.4vw);
   border-radius: 10px;
+
 }
 
 .archetype-button-pressed{
@@ -12,7 +13,7 @@
   color: white;
   height: 50px;
   margin-bottom: 10px;
-  font-size: calc(16px + 0.1vw);
+  font-size: calc(16px + 0.4vw);
   border-radius: 10px;
 }
 
@@ -23,3 +24,4 @@
 .archetype-button-pressed{
   cursor: pointer;
 }
+

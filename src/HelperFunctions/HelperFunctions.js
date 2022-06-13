@@ -46,10 +46,17 @@ export const filterSet = (filterContent, setFilterValue, setOptions) => {
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
   const searchSelect = document.querySelector("#text-input").value;
   if (Object.keys(filterContent).length === 0) {
-    url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
-      " ",
-      "%20"
-    )}`;
+    if (currentUrlEnd === "game") {
+      url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
+        " ",
+        "%20"
+      )}`;
+    } else {
+      url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&fname=${searchSelect.replace(
+        " ",
+        "%20"
+      )}`;
+    }
     setFilterValue({});
     notify("clear");
   } else {
@@ -58,12 +65,21 @@ export const filterSet = (filterContent, setFilterValue, setOptions) => {
     Object.entries(filterContent).forEach(([key, val]) => {
       filterUrl = filterUrl + `&${key}=${val}`;
     });
-    url =
-      `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
-        " ",
-        "%20"
-      )}` + filterUrl;
-    setFilterValue({ filterContent });
+    if (currentUrlEnd === "game") {
+      url =
+        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
+          " ",
+          "%20"
+        )}` + filterUrl;
+    } else {
+      url =
+        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&fname=${searchSelect.replace(
+          " ",
+          "%20"
+        )}` + filterUrl;
+    }
+
+    setFilterValue(filterContent);
     notify("set");
   }
   fetch(url)

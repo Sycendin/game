@@ -1,7 +1,13 @@
 import React, { Fragment, useState } from "react";
-import "./Search.css";
+
 import Searchbox from "./Searchbox/Searchbox";
 import SearchImage from "./SearchImage/SearchImage";
+import FilterButtons from "../Filter/FilterButtons/FilterButtons";
+import Filter from "../Filter/Filter";
+import { debounce, filterSet } from "../../HelperFunctions/HelperFunctions";
+import { ToastContainer } from "react-toastify";
+import "./Search.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const Search = () => {
   const [options, setOptions] = useState([]);
@@ -9,47 +15,48 @@ const Search = () => {
   const [archetypeSearch, setArchetypeSearch] = useState(false);
   const [searchButtonClass, setSearchButtonClass] =
     useState("archetype-button");
-
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [filterValue, setFilterValue] = useState({});
   let searchUrl = "";
   // Debounce function that limits the amount of times a function will be able to run
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-      var context = this,
-        args = arguments;
-      var later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  }
 
   function onInputChange(event) {
-    // Clear card image on input change of searchbar
     setCardImage("");
-    //  Show no searchlist on empty input
-    if (event.target.value === "") {
-      setOptions([]);
-    }
-    if (event.target.value !== "") {
-      // Change URL that will be sent to API depending on whether the archetype button is pressed
-      if (archetypeSearch === true) {
-        searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${event.target.value.replace(
-          " ",
-          "%20"
-        )}`;
-      } else {
-        searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${event.target.value.replace(
-          " ",
-          "%20"
-        )}`;
-      }
-      // Call API and set information from it, if no results then set that to be displayed instead
+    let filterUrl = "";
+    // Go through the filter and prepare the additional parameters in the url
+    Object.entries(filterValue).forEach(([key, val]) => {
+      filterUrl = filterUrl + `&${key}=${val}`;
+    });
+    console.log(filterUrl);
+    // console.log(filterUrl);
+    if ((event.target.value === "") & (filterUrl !== "")) {
+      searchUrl =
+        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg` + filterUrl;
+    } else {
+      // Clear card image on input change of searchbar
 
+      //  Show no searchlist on empty input
+      if (event.target.value === "") {
+        setOptions([]);
+      }
+      if (event.target.value !== "") {
+        // Change URL that will be sent to API depending on whether the archetype button is pressed
+        if (archetypeSearch === true) {
+          searchUrl =
+            `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${event.target.value.replace(
+              " ",
+              "%20"
+            )}` + filterUrl;
+        } else {
+          searchUrl =
+            `https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${event.target.value.replace(
+              " ",
+              "%20"
+            )}` + filterUrl;
+          console.log(searchUrl);
+        }
+        // Call API and set information from it, if no results then set that to be displayed instead
+      }
       fetch(searchUrl)
         .then((res) => res.json())
         .then((result) => {
@@ -83,6 +90,12 @@ const Search = () => {
   return (
     <Fragment>
       <h1>Search a card</h1>
+      <FilterButtons
+        setFilterOpen={setFilterOpen}
+        filterSet={filterSet}
+        setFilterValue={setFilterValue}
+        setOptions={setOptions}
+      />
       <button
         className={searchButtonClass}
         onClick={() => changeArchetypeSearch()}
@@ -96,6 +109,14 @@ const Search = () => {
         clickCard={clickCard}
       />
       <SearchImage cardImage={cardImage} />
+      <Filter
+        filterOpen={filterOpen}
+        onClose={() => setFilterOpen(false)}
+        filterSet={filterSet}
+        setFilterValue={setFilterValue}
+        setOptions={setOptions}
+      ></Filter>
+      <ToastContainer newestOnTop={true} />
     </Fragment>
   );
 };

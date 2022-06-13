@@ -5,7 +5,13 @@ import SelectedDiv from "./SelectedDiv/SelectedDiv";
 import Modal from "../Modal/Modal";
 import Legend from "./Legend/Legend";
 import Filter from "../Filter/Filter";
-import { ToastContainer, toast } from "react-toastify";
+import FilterButtons from "../Filter/FilterButtons/FilterButtons";
+import {
+  notify,
+  debounce,
+  filterSet,
+} from "../../HelperFunctions/HelperFunctions";
+import { ToastContainer } from "react-toastify";
 import "./Game.css";
 import "react-toastify/dist/ReactToastify.css";
 const Game = () => {
@@ -23,41 +29,6 @@ const Game = () => {
   const [filterValue, setFilterValue] = useState({});
   let searchUrl = "";
 
-  // Toast message that will be played when the reset button is clicked
-  const notify = (message) => {
-    if (message === "reset") {
-      toast.info("Game has been reset!", {
-        autoClose: 2000,
-        pauseOnHover: true,
-      });
-    } else if (message === "clear") {
-      toast.info("Filter has been reset", {
-        autoClose: 2000,
-        pauseOnHover: true,
-      });
-    } else if (message === "set") {
-      toast.info("Filter has been set", {
-        autoClose: 2000,
-        pauseOnHover: true,
-      });
-    }
-  };
-  // Debounce function that limits the amount of function runs per second
-  function debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-      var context = this,
-        args = arguments;
-      var later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  }
   function onInputChange(event) {
     let filterUrl = "";
     // Go through the filter and prepare the additional parameters in the url
@@ -114,41 +85,6 @@ const Game = () => {
     document.getElementById("text-input").value = "";
     notify("reset");
   };
-  // If filter has been set/cleared, call api with new filter and display filtered/unfiltered
-  // contents
-  const filterSet = (filterContent) => {
-    let url = "";
-    const searchSelect = document.querySelector("#text-input").value;
-    if (Object.keys(filterContent).length === 0) {
-      url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
-        " ",
-        "%20"
-      )}`;
-      setFilterValue({});
-      notify("clear");
-    } else {
-      let filterUrl = "";
-      // Go through the filter and prepare the additional parameters in the url
-      Object.entries(filterContent).forEach(([key, val]) => {
-        filterUrl = filterUrl + `&${key}=${val}`;
-      });
-      url =
-        `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${searchSelect.replace(
-          " ",
-          "%20"
-        )}` + filterUrl;
-      setFilterValue({ filterContent });
-      notify("set");
-    }
-    fetch(url)
-      .then((res) => res.json())
-      .then((result) => {
-        setOptions(result.data.slice(0, 10));
-      })
-      .catch((error) => {
-        setOptions([{ name: "No results" }]);
-      });
-  };
 
   useEffect(() => {
     fetch(
@@ -191,12 +127,12 @@ const Game = () => {
     }
     return (
       <Fragment>
-        <button className="button-reset" onClick={() => setFilterOpen(true)}>
-          Filter
-        </button>
-        <button className="button-filter-clear" onClick={() => filterSet({})}>
-          Clear Filter
-        </button>
+        <FilterButtons
+          setFilterOpen={setFilterOpen}
+          filterSet={filterSet}
+          setFilterValue={setFilterValue}
+          setOptions={setOptions}
+        />
         <Legend />
         <Searchbox
           setPick={setPick}
@@ -226,6 +162,8 @@ const Game = () => {
           filterOpen={filterOpen}
           onClose={() => setFilterOpen(false)}
           filterSet={filterSet}
+          setFilterValue={setFilterValue}
+          setOptions={setOptions}
         ></Filter>
         <ToastContainer newestOnTop={true} />
       </Fragment>

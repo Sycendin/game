@@ -4,6 +4,8 @@ import AttributeFilter from "./AttributeFilter/AttributeFilter";
 import TypeFilter from "./TypeFilter/TypeFilter";
 import MonsterTypeFilter from "./MonsterTypeFilter/MonsterTypeFilter";
 import LevelFilter from "./LevelFilter/LevelFilter";
+import SpellTrapFilter from "./SpellTrapFilter/SpellTrapFilter";
+import SpellTrapRace from "./SpellTrapRace/SpellTrapRace";
 import "./Filter.css";
 
 const Filter = ({
@@ -32,11 +34,15 @@ const Filter = ({
     const typeReset = document.querySelector("#type");
     const levelReset = document.querySelector("#level");
     const monsterTypeReset = document.querySelector("#monstertype");
+    const spellTrapReset = document.querySelector("#spell-trap");
+    const spellTrapRaceReset = document.querySelector("#spell-trap-race");
     attributeReset.selectedIndex = 0;
     typeReset.selectedIndex = 0;
     levelReset.selectedIndex = 0;
     if (monsterTypeReset) {
       monsterTypeReset.selectedIndex = 0;
+      spellTrapReset.selectedIndex = 0;
+      spellTrapRaceReset.selectedIndex = 0;
     }
     filterSet({}, setFilterValue, setOptions);
   };
@@ -52,7 +58,11 @@ const Filter = ({
               <TypeFilter values={values} />
               <LevelFilter values={values} />
               {currentUrlEnd === "search" ? (
-                <MonsterTypeFilter values={values} />
+                <Fragment>
+                  <MonsterTypeFilter values={values} />
+                  <SpellTrapFilter values={values} />
+                  <SpellTrapRace values={values} />
+                </Fragment>
               ) : null}
             </div>
             <div className="filter-buttons">

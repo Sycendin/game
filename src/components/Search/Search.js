@@ -53,7 +53,6 @@ const Search = () => {
               " ",
               "%20"
             )}` + filterUrl;
-          console.log(searchUrl);
         }
         // Call API and set information from it, if no results then set that to be displayed instead
       }

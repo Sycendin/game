@@ -58,7 +58,7 @@ const Searchbox = ({
           />
         </div>
       </div>
-      <CardShow open={cardShowOpen} onClose={closeShowModal} />
+      <CardShow data={data} open={cardShowOpen} onClose={closeShowModal} />
     </Fragment>
   );
 };

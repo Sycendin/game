@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./CardShow.css";
 
-const CardShow = ({ open, onClose }) => {
+const CardShow = ({ data, open, onClose }) => {
   const closeModal = () => {
     onClose();
   };
@@ -24,6 +24,20 @@ const CardShow = ({ open, onClose }) => {
                 className="modal-button"
                 onClick={closeModal}
               ></img>
+            </div>
+            <div className="card-show-div">
+              {data.map((option, i) => {
+                return (
+                  <img
+                    key={i}
+                    className="card-show-img"
+                    alt="card"
+                    height={614}
+                    width={420}
+                    src={option.card_images[0].image_url}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

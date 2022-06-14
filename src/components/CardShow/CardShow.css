@@ -46,8 +46,17 @@
   cursor: pointer;
 }
 
-
-
+.card-show-div{
+display: flex;
+justify-content: center;
+flex-direction: row;
+flex-wrap: wrap;
+}
+.card-show-img{
+  width: 20%;
+  height: auto;
+  margin-right: 10px;
+}
 @media  (max-width: 1200px) {
   .modal-card-div{
     width: 70%;

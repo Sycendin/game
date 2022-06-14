@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./Searchbox.css";
 import SearchList from "../SearchList/SearchList";
+import CardShow from "../../CardShow/CardShow";
 const Searchbox = ({
   data,
   onInputChange,
@@ -9,6 +10,7 @@ const Searchbox = ({
   setPick,
   setOptions,
 }) => {
+  const [cardShowOpen, setCardShowOpen] = useState(false);
   // const myRef = useRef();
   // const [x, setX] = useState();
   // const getPosition = () => {
@@ -18,6 +20,9 @@ const Searchbox = ({
   const resetText = () => {
     document.getElementById("text-input").value = "";
     setOptions([]);
+  };
+  const closeShowModal = () => {
+    setCardShowOpen(false);
   };
   // useEffect(() => {
   //   getPosition();
@@ -37,6 +42,12 @@ const Searchbox = ({
           <button className="button-clear" onClick={() => resetText()}>
             Clear
           </button>
+          <button
+            className="button-clear"
+            onClick={() => setCardShowOpen(true)}
+          >
+            Show
+          </button>
           <SearchList
             // x={x}
             data={data}
@@ -47,6 +58,7 @@ const Searchbox = ({
           />
         </div>
       </div>
+      <CardShow open={cardShowOpen} onClose={closeShowModal} />
     </Fragment>
   );
 };

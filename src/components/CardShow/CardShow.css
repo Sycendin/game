@@ -35,7 +35,7 @@
   align-items: center;
   background-color: rgb(201, 201, 201);
   border-radius: 10px;
-  width: 30%;
+  width: 50%;
 }
 .modal-text{
   font-weight: bold;
@@ -47,15 +47,21 @@
 }
 
 .card-show-div{
-display: flex;
-justify-content: center;
-flex-direction: row;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .card-show-img{
   width: 20%;
   height: auto;
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.card-show-img:hover {
+  cursor: pointer;
+  filter: brightness(110%);
 }
 @media  (max-width: 1200px) {
   .modal-card-div{
@@ -67,4 +73,10 @@ flex-wrap: wrap;
   .modal-card-div{
     width: 100%;
   }
+  .card-show-img{
+    width: 20%;
+    height: auto;
+    margin-right: 10px;
+  }
  }
+

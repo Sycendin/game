@@ -1,4 +1,18 @@
 .search-image{
-  width: 30vw;
+  width: 20vw;
   height: auto;
+  margin-top: 1%
 }
+
+
+@media  (max-width: 1200px) {
+  .search-image{
+    width: 50vw
+  }
+ }
+ 
+ @media  (max-width: 800px) {
+   .search-image{
+     width: 60vw
+   }
+  }

@@ -58,7 +58,15 @@ const Searchbox = ({
           />
         </div>
       </div>
-      <CardShow data={data} open={cardShowOpen} onClose={closeShowModal} />
+      <CardShow
+        pick={pick}
+        setOptions={setOptions}
+        setPick={setPick}
+        clickCard={clickCard}
+        data={data}
+        open={cardShowOpen}
+        onClose={closeShowModal}
+      />
     </Fragment>
   );
 };

@@ -2,8 +2,26 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./CardShow.css";
 
-const CardShow = ({ data, open, onClose }) => {
+const CardShow = ({
+  data,
+  clickCard,
+  setPick,
+  pick,
+  setOptions,
+  open,
+  onClose,
+}) => {
   const closeModal = () => {
+    onClose();
+  };
+  // On click of div, add it to pick state and clear pick options
+  const playerChoice = (option) => {
+    setPick([option, ...pick]);
+    setOptions([]);
+    onClose();
+  };
+  const cardSet = (card) => {
+    clickCard(card);
     onClose();
   };
   // Don't display Modal if open state is not true
@@ -35,6 +53,11 @@ const CardShow = ({ data, open, onClose }) => {
                     height={614}
                     width={420}
                     src={option.card_images[0].image_url}
+                    onClick={() => {
+                      setPick
+                        ? playerChoice(option)
+                        : cardSet(option.card_images[0].image_url);
+                    }}
                   />
                 );
               })}

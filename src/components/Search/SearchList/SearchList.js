@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./SearchList.css";
 import SearchListDisplay from "./SearchListDisplay/SearchListDisplay";
-const SearchList = ({ data, clickCard, setPick, pick, setOptions, x }) => {
+const SearchList = ({ data, clickCard, setPick, pick, setOptions }) => {
   let border = "";
   // On click of div, add it to pick state and clear pick options
   const playerChoice = (option) => {

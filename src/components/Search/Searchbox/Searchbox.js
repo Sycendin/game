@@ -49,7 +49,6 @@ const Searchbox = ({
             Show
           </button>
           <SearchList
-            // x={x}
             data={data}
             clickCard={clickCard}
             setPick={setPick}

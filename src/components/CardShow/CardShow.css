@@ -63,6 +63,11 @@
   cursor: pointer;
   filter: brightness(110%);
 }
+.card-show-big-img{
+position:absolute;
+right: 50px;
+
+}
 @media  (max-width: 1200px) {
   .modal-card-div{
     width: 70%;

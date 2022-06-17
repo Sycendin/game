@@ -83,5 +83,10 @@ right: 50px;
     height: auto;
     margin-right: 10px;
   }
+
+  .card-show-big-img{
+    width: 40%;
+    height: auto;
+  }
  }
 

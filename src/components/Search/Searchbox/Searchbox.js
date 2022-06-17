@@ -57,15 +57,18 @@ const Searchbox = ({
           />
         </div>
       </div>
-      <CardShow
-        pick={pick}
-        setOptions={setOptions}
-        setPick={setPick}
-        clickCard={clickCard}
-        data={data}
-        open={cardShowOpen}
-        onClose={closeShowModal}
-      />
+      {/* Only render when open to save performance from mouse tracker */}
+      {cardShowOpen ? (
+        <CardShow
+          pick={pick}
+          setOptions={setOptions}
+          setPick={setPick}
+          clickCard={clickCard}
+          data={data}
+          open={cardShowOpen}
+          onClose={closeShowModal}
+        />
+      ) : null}
     </Fragment>
   );
 };

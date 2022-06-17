@@ -13,21 +13,34 @@ const CardShow = ({
 }) => {
   const [inCard, setInCard] = useState(false);
   const [bigCard, setBigCard] = useState("");
-  const [x, setX] = useState();
-  const [y, setY] = useState();
+  const [mouseX, setMouseX] = useState();
+  const [mouseY, setMouseY] = useState();
+  let screenSize = window.screen.width;
+  let space = 0;
+  if (screenSize <= 800) {
+    space = 50;
+  } else {
+    space = 100;
+  }
   useEffect(() => {
     const update = (e) => {
-      setX(e.x);
-      setY(e.y);
+      console.log(e);
+      if (e.x) {
+        setMouseX(e.x);
+        setMouseY(e.y);
+      } else {
+        setMouseX(e.touches[0].clientX);
+        setMouseY(e.touches[0].clientY);
+      }
     };
-    window.addEventListener("mousemove", update);
-    window.addEventListener("touchmove", update);
+    window.addEventListener("mousemove", update, 50);
+    window.addEventListener("touchmove", update, 50);
     return () => {
-      window.removeEventListener("mousemove", update);
-      window.removeEventListener("touchmove", update);
+      window.removeEventListener("mousemove", update, 50);
+      window.removeEventListener("touchmove", update, 50);
     };
-  }, [setX, setY]);
-  console.log(x, y);
+  }, [setMouseX, setMouseY]);
+  console.log(mouseX, mouseY);
   let pos = [];
   const closeModal = () => {
     onClose();
@@ -87,6 +100,8 @@ const CardShow = ({
                       src={option.card_images[0].image_url}
                       onMouseEnter={() => imgSet(i)}
                       onMouseLeave={() => imgSet(i)}
+                      onTouchMove={() => imgSet(i)}
+                      onTouchEnd={() => setInCard(false)}
                       onClick={() => {
                         setPick
                           ? playerChoice(option)
@@ -96,7 +111,10 @@ const CardShow = ({
                     {inCard ? (
                       <img
                         key={i + 10}
-                        style={{ top: y, left: x + 100 }}
+                        style={{
+                          top: mouseY - mouseY / 2,
+                          left: mouseX + space,
+                        }}
                         className="card-show-big-img"
                         alt="card"
                         height={614}

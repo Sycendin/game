@@ -91,3 +91,17 @@ export const filterSet = (filterContent, setFilterValue, setOptions) => {
       setOptions([{ name: "No results" }]);
     });
 };
+
+export const foundPath = (data, path) => {
+  let check = 0;
+  data.forEach((element) => {
+    if (element.archetype === path) {
+      check = 1;
+    }
+  });
+  if (check === 0) {
+    return true;
+  } else {
+    return false;
+  }
+};

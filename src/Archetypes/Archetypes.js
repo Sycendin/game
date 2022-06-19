@@ -6,20 +6,22 @@ const Archetypes = () => {
   return (
     <Fragment>
       <h1>Hi</h1>
-      {data.map((element, i) => {
-        return (
-          <Fragment key={i}>
-            <p>{element.letter}</p>
-            {element.archetype.map((element, i) => {
-              return (
-                <Fragment key={i}>
-                  <p>{element}</p>
-                </Fragment>
-              );
-            })}
-          </Fragment>
-        );
-      })}
+      <div className="archetype-whole-div">
+        {data.map((element, i) => {
+          return (
+            <div className="archetype-div" key={i}>
+              <p className="archetype-letter">{element.letter}</p>
+              {element.archetype.map((element, i) => {
+                return (
+                  <Fragment key={i}>
+                    <p className="archetype-name">{element}</p>
+                  </Fragment>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
     </Fragment>
   );
 };

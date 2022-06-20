@@ -1,0 +1,41 @@
+.archetype-whole-div{
+ width: 80%;
+ margin-left: auto;
+ margin-right: auto;
+}
+.archetype-letter{
+  display: flex;
+  width: 100%;
+  font-size: calc(16px + 0.6vw);
+  font-weight: bold;
+  margin-left: auto;
+}
+.archetype-div{
+  display: flex;
+  flex-direction: row;
+}
+.each-archetype-div{
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color: rgb(219, 207, 137);
+margin-right: 8px;
+border-radius: 10px;
+flex-wrap: wrap;
+}
+.archetype-mascot{
+
+  width: auto;
+  height: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.archetype-name{
+  font-size: calc(16px + 0.3vw);
+  margin-right: 8px;
+  margin-left: 8px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  
+}

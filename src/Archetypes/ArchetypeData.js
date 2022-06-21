@@ -56,6 +56,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/77102944.jpg",
       ],
       [
+        "Apoqliphort",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/27279764.jpg",
+      ],
+      [
         "Aquaactress",
         "https://storage.googleapis.com/ygoprodeck.com/pics/92053608.jpg",
       ],
@@ -829,8 +833,221 @@ export const data = [
     ],
   },
   {
+    letter: "O",
+    archetype: [
+      [
+        "Odd-Eyes",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/16178681.jpg",
+      ],
+      [
+        "Ogdoadic",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/61160289.jpg",
+      ],
+      [
+        "Ojama",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/42941100.jpg",
+      ],
+      [
+        "Odd-Eyes",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/16178681.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "P",
+    archetype: [
+      [
+        "P.U.N.K.",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/44708154.jpg",
+      ],
+      [
+        "Paleozoic",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/37649320.jpg",
+      ],
+      [
+        "Parshath",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/18036057.jpg",
+      ],
+      [
+        "Penguin",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/91397409.jpg",
+      ],
+      [
+        "Performage",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/68819554.jpg",
+      ],
+      [
+        "Performapal",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/37745740.jpg",
+      ],
+      [
+        "Phantasm Spiral",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/2819436.jpg",
+      ],
+      [
+        "Phantom Beast",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/7576264.jpg",
+      ],
+      [
+        "Photon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/89132148.jpg",
+      ],
+      [
+        "Plunder Patroll",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/16178681.jpg",
+      ],
+      [
+        "Prank-Kids",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/81997228.jpg",
+      ],
+      [
+        "Predaplant",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/66309175.jpg",
+      ],
+      [
+        "Prediction Princess",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/94997874.jpg",
+      ],
+      [
+        "PSY-Frame",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/38814750.jpg",
+      ],
+      [
+        "Psychic",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/95526884.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "Q",
+    archetype: [
+      [
+        "Qli",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/20426907.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "R",
+    archetype: [
+      [
+        "Raidraptor",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/96157835.jpg",
+      ],
+      [
+        "Red-Eyes",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/74677422.jpg",
+      ],
+      [
+        "Reptilianne",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/16886617.jpg",
+      ],
+      [
+        "Resonator",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/97021916.jpg",
+      ],
+      [
+        "Rikka",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/33491462.jpg",
+      ],
+      [
+        "Ritual Beast",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/86274272.jpg",
+      ],
+      [
+        "Roid",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/98927491.jpg",
+      ],
+      [
+        "Rokket",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/32472237.jpg",
+      ],
+      [
+        "Rose Dragon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/73580471.jpg",
+      ],
+    ],
+  },
+
+  {
     letter: "S",
     archetype: [
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "Salamangreat",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/60303245.jpg",
+      ],
+      [
+        "Scareclaw ",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/82361809.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
+      [
+        "S-Force",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+      ],
       [
         "S-Force",
         "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",

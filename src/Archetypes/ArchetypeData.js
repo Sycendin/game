@@ -3,6 +3,10 @@ export const data = [
     letter: "A",
     archetype: [
       [
+        "A.I.",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/59332125.jpg",
+      ],
+      [
         "Albaz",
         "https://storage.googleapis.com/ygoprodeck.com/pics/68468459.jpg",
       ],
@@ -21,6 +25,10 @@ export const data = [
       [
         "Alien",
         "https://storage.googleapis.com/ygoprodeck.com/pics/63253763.jpg",
+      ],
+      [
+        "Allure Queen",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/50140163.jpg",
       ],
       [
         "Ally of Justice",
@@ -101,10 +109,17 @@ export const data = [
     letter: "B",
     archetype: [
       [
+        "B.E.S",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/14148099.jpg",
+      ],
+      [
         "Batteryman",
         "https://storage.googleapis.com/ygoprodeck.com/pics/19441018.jpg",
       ],
-
+      [
+        "Batterguard",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/39389320.jpg",
+      ],
       [
         "Battlewasp",
         "https://storage.googleapis.com/ygoprodeck.com/pics/26443791.jpg",
@@ -113,6 +128,7 @@ export const data = [
         "Battlin' Boxer",
         "https://storage.googleapis.com/ygoprodeck.com/pics/76589815.jpg",
       ],
+
       [
         "Beetrooper",
         "https://storage.googleapis.com/ygoprodeck.com/pics/2834264.jpg",
@@ -130,8 +146,16 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/89631139.jpg",
       ],
       [
+        "Bonding",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/6022371.jpg",
+      ],
+      [
         "Bounzer",
         "https://storage.googleapis.com/ygoprodeck.com/pics/92661479.jpg",
+      ],
+      [
+        "Borrel",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/31833038.jpg",
       ],
       [
         "Brave Token",
@@ -144,6 +168,10 @@ export const data = [
       [
         "Burning Abyss",
         "https://storage.googleapis.com/ygoprodeck.com/pics/83531441.jpg",
+      ],
+      [
+        "Butterfly",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/75987257.jpg",
       ],
       [
         "Butterspy",
@@ -179,6 +207,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/29092121.jpg",
       ],
       [
+        "Clear Wing",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/82044279.jpg",
+      ],
+      [
         "Cloudian",
         "https://storage.googleapis.com/ygoprodeck.com/pics/57610714.jpg",
       ],
@@ -205,6 +237,10 @@ export const data = [
       [
         "Cubic",
         "https://storage.googleapis.com/ygoprodeck.com/pics/72664875.jpg",
+      ],
+      [
+        "CXyz",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/67926903.jpg",
       ],
       [
         "Cyber Dragon",
@@ -269,6 +305,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/78193831.jpg",
       ],
       [
+        "Dice",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/83241722.jpg",
+      ],
+      [
         "Digital Bug",
         "https://storage.googleapis.com/ygoprodeck.com/pics/85004150.jpg",
       ],
@@ -285,6 +325,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/82385847.jpg",
       ],
       [
+        "Djinn",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/77153811.jpg",
+      ],
+      [
         "Dododo",
         "https://storage.googleapis.com/ygoprodeck.com/pics/39432962.jpg",
       ],
@@ -293,8 +337,16 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/60303688.jpg",
       ],
       [
+        "Doll",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/72717433.jpg",
+      ],
+      [
         "Dracoslayer",
         "https://storage.googleapis.com/ygoprodeck.com/pics/22638495.jpg",
+      ],
+      [
+        "Dracoverlord",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/98287529.jpg",
       ],
       [
         "Dragon Ruler",
@@ -350,6 +402,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/21844576.jpg",
       ],
       [
+        "Elemental Lord",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/13959634.jpg",
+      ],
+      [
         "Elementsaber",
         "https://storage.googleapis.com/ygoprodeck.com/pics/45702014.jpg",
       ],
@@ -370,16 +426,36 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/13650422.jpg",
       ],
       [
+        "Evil★Twin",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/62098216.jpg",
+      ],
+      [
         "Evilswarm",
         "https://storage.googleapis.com/ygoprodeck.com/pics/91279700.jpg",
+      ],
+      [
+        "Evolsaur",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/80651316.jpg",
       ],
       [
         "Evoltile",
         "https://storage.googleapis.com/ygoprodeck.com/pics/81873903.jpg",
       ],
       [
+        "Evolzar",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/42752141.jpg",
+      ],
+      [
+        "Exodia",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/33396948.jpg",
+      ],
+      [
         "Exosister",
         "https://storage.googleapis.com/ygoprodeck.com/pics/42741437.jpg",
+      ],
+      [
+        "Eyes Restict",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/41578483.jpg",
       ],
     ],
   },
@@ -498,6 +574,10 @@ export const data = [
       [
         "Gishki",
         "https://storage.googleapis.com/ygoprodeck.com/pics/66729231.jpg",
+      ],
+      [
+        "Gizmek",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/63633694.jpg",
       ],
       [
         "Glacial Beast",
@@ -726,6 +806,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/47910940.jpg",
       ],
       [
+        "Mask",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/29549364.jpg",
+      ],
+      [
         "Masked HERO",
         "https://storage.googleapis.com/ygoprodeck.com/pics/58481572.jpg",
       ],
@@ -889,6 +973,11 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/7576264.jpg",
       ],
       [
+        "Phantom Knights",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/25538345.jpg",
+      ],
+
+      [
         "Photon",
         "https://storage.googleapis.com/ygoprodeck.com/pics/89132148.jpg",
       ],
@@ -981,76 +1070,120 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/60303245.jpg",
       ],
       [
-        "Scareclaw ",
+        "Scareclaw",
         "https://storage.googleapis.com/ygoprodeck.com/pics/82361809.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Scrap",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/50278554.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Shaddoll",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/20366274.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Shark",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/10532969.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Shinobird",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/66815913.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Simorgh",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/86489182.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Shiranui",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/10028504.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Silent Magician",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/41175645.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Silent Swordsman",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/15180041.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Six Samurai",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/74752631.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Skull Servant",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/36021814.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Sky Striker",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/8491308.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Solfachord",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/29650040.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Stigmatika",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/34995106.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Swordsoul",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/20001443.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Speedroid",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/81275020.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Spellbook",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/61592395.jpg",
       ],
       [
-        "S-Force",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/35334193.jpg",
+        "Springan",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/29601381.jpg",
+      ],
+      [
+        "Spyral",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/1322368.jpg",
+      ],
+      [
+        "Star Seraph",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/38331564.jpg",
+      ],
+      [
+        "Starry Knight",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/27036706.jpg",
+      ],
+      [
+        "Steelswarm",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/94092230.jpg",
+      ],
+      [
+        "Subterror",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/42713844.jpg",
+      ],
+      [
+        "Sunavalon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/39880350.jpg",
+      ],
+      [
+        "Superheavy Samurai",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/3117804.jpg",
+      ],
+      [
+        "Supreme King",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/92428405.jpg",
+      ],
+      [
+        "Sylvan",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/10406322.jpg",
+      ],
+      [
+        "Symphonic Warrior",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/68933343.jpg",
+      ],
+      [
+        "Synchron",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/37675907.jpg",
       ],
     ],
   },
@@ -1058,8 +1191,126 @@ export const data = [
     letter: "T",
     archetype: [
       [
+        "Tellarknight",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/64414267.jpg",
+      ],
+      [
+        "Tenyi",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/5402805.jpg",
+      ],
+      [
+        "T.G.",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/51447164.jpg",
+      ],
+      [
         "The Agent",
         "https://storage.googleapis.com/ygoprodeck.com/pics/90290572.jpg",
+      ],
+      [
+        "Time Thief",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/55285840.jpg",
+      ],
+      [
+        "The Weather",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/54178659.jpg",
+      ],
+      [
+        "Therions",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/75290703.jpg",
+      ],
+      [
+        "Thunder Dragon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/15291624.jpg",
+      ],
+      [
+        "Timelord",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/6616912.jpg",
+      ],
+      [
+        "Tindangle",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/75119040.jpg",
+      ],
+      [
+        "Toon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/15259704.jpg",
+      ],
+      [
+        "Traptrix",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/6511113.jpg",
+      ],
+      [
+        "Triamid",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/68406755.jpg",
+      ],
+      [
+        "Tri-Brigade",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/99726621.jpg",
+      ],
+      [
+        "Trickstar",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/91272072.jpg",
+      ],
+      [
+        "True Draco",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/35125879.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "U",
+    archetype: [
+      [
+        "U.A.",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/72491806.jpg",
+      ],
+      [
+        "Unchained",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/29479265.jpg",
+      ],
+      [
+        "Ursarctic",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/80086070.jpg",
+      ],
+      [
+        "Utopia",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/84013238.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "V",
+    archetype: [
+      [
+        "Vampire",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/38250531.jpg",
+      ],
+      [
+        "Vassal",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/22404675.jpg",
+      ],
+      [
+        "Vendread",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/91420202.jpg",
+      ],
+      [
+        "Venom",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/8062132.jpg",
+      ],
+      [
+        "Virtual World",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/92519087.jpg",
+      ],
+      [
+        "Vision HERO",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/45170821.jpg",
+      ],
+      [
+        "Volcanic",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/32543380.jpg",
+      ],
+      [
+        "Vylon",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/93157004.jpg",
       ],
     ],
   },
@@ -1069,6 +1320,73 @@ export const data = [
       [
         "War Rock",
         "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/10497636.jpg",
+      ],
+      [
+        "Watt",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/2772236.jpg",
+      ],
+      [
+        "Wind-up",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/77334267.jpg",
+      ],
+      [
+        "Windwitch",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/43722862.jpg",
+      ],
+      [
+        "Witchcrafter",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/9603252.jpg",
+      ],
+      [
+        "World Chalice",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/58400390.jpg",
+      ],
+      [
+        "World Legacy",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/57288708.jpg",
+      ],
+      [
+        "Worm",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/10026986.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "X",
+    archetype: [
+      [
+        "X-Saber",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/52352005.jpg",
+      ],
+    ],
+  },
+  {
+    letter: "Y",
+    archetype: [
+      [
+        "Yang Zing",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/83755611.jpg",
+      ],
+      [
+        "Yosenju",
+        "https://cdn.discordapp.com/attachments/747928182891610213/988674588756045834/daibak.webp",
+      ],
+    ],
+  },
+  {
+    letter: "Z",
+    archetype: [
+      [
+        "Zefra",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/32354768.jpg",
+      ],
+      [
+        "ZEXAL",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/32164201.jpg",
+      ],
+      [
+        "Zoodiac",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/48905153.jpg",
       ],
     ],
   },

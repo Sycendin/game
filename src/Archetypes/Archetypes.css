@@ -13,6 +13,7 @@
 .archetype-div{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .each-archetype-div{
 display: flex;
@@ -20,8 +21,8 @@ flex-direction: row;
 align-items: center;
 background-color: rgb(219, 207, 137);
 margin-right: 8px;
+margin-bottom: 8px;
 border-radius: 10px;
-flex-wrap: wrap;
 }
 .archetype-mascot{
 

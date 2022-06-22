@@ -6,7 +6,7 @@ import "./Archetypes.css";
 const Archetypes = () => {
   return (
     <Fragment>
-      <h1>Hi</h1>
+      <h1>All Archetypes</h1>
       <div className="archetype-whole-div">
         {data.map((element, i) => {
           return (
@@ -29,7 +29,12 @@ const Archetypes = () => {
                             width={624}
                             height={624}
                           ></img>
-                          <p className="archetype-name">{element[0]}</p>
+                          <div className="archetype-content">
+                            {/* {element[0].split(" ").map((e, i) => {
+                              return <p className="archetype-name">{e}</p>;
+                            })} */}
+                            <p className="archetype-name">{element[0]}</p>
+                          </div>
                         </div>
                       </Link>
                     </Fragment>

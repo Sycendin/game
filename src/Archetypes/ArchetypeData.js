@@ -113,7 +113,7 @@ export const data = [
     letter: "B",
     archetype: [
       [
-        "B.E.S",
+        "B.E.S.",
         "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/14148099.jpg",
       ],
       [
@@ -1555,7 +1555,7 @@ export const urls = [
   "Assault%20Mode",
   "Atlantean",
   "Attraction",
-  "B.E.S",
+  "B.E.S.",
   "Batteryman",
   "Battleguard",
   "Battlewasp",

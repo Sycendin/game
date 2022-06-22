@@ -1,0 +1,24 @@
+.archetype-fetch-div{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.archetype-fetch-text{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+  background-color: rgb(79, 137, 177);
+  border-radius: 10px;
+}
+.archetype-fetch-img{
+  width: 20%;
+  height: auto;
+  margin-right: 8px;
+}
+
+.archetype-fetch-img:hover{
+  filter: brightness(110%);
+  cursor: pointer;
+}

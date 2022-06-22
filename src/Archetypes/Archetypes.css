@@ -54,6 +54,10 @@
   text-decoration: none;
 }
 
+.each-archetype-div:hover{
+  filter: brightness(110%);
+  cursor: pointer;
+ }
 
 @media  (max-width: 1200px) {
   .archetype-whole-div{
@@ -116,10 +120,6 @@
     text-decoration: none;
     
   }
- }
-
- .each-archetype-div:hover{
-  filter: brightness(110%);
  }
 
 

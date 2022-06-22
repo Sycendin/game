@@ -851,7 +851,7 @@ export const data = [
       ],
       [
         "Majespecter",
-        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/31178212.jpg",
+        "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/5153769.jpg",
       ],
       [
         "Majestic",

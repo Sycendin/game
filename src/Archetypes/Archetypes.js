@@ -11,8 +11,9 @@ const Archetypes = () => {
         {data.map((element, i) => {
           return (
             <Fragment key={i}>
-              <p className="archetype-letter">{element.letter}</p>
-
+              <div className="archetype-letter-div">
+                <p className="archetype-letter">{element.letter}</p>
+              </div>
               <div className="archetype-div" key={i}>
                 {element.archetype.map((element, i) => {
                   return (

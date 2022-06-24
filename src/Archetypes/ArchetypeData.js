@@ -464,7 +464,7 @@ export const data = [
     ],
   },
   {
-    letter: "S",
+    letter: "F",
     archetype: [
       [
         "Fabled",

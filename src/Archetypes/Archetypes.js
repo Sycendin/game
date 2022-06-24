@@ -9,7 +9,9 @@ const Archetypes = () => {
   const [update, setUpdate] = useState("");
   const [page, setPage] = useState(0);
   let aValue = "";
+  let dataSlice = [0, 26];
   const change = (event) => {
+    setPage([0, 26]);
     setAFilter(true);
     setUpdate(event.target.value);
   };
@@ -20,7 +22,26 @@ const Archetypes = () => {
     });
     // Change pressed button's background color to indicate that is pressed
     event.target.style.backgroundColor = "rgb(97, 214, 97)";
-    setPage(event.target.value);
+    switch (event.target.innerText) {
+      case "All":
+        dataSlice = [0, 26];
+        break;
+      case "A-G":
+        dataSlice = [0, 7];
+        break;
+      case "H-N":
+        dataSlice = [7, 14];
+        break;
+      case "O-T":
+        dataSlice = [14, 20];
+        break;
+      case "U-Z":
+        dataSlice = [20, 26];
+        break;
+      default:
+        break;
+    }
+    setPage(dataSlice);
   };
   return (
     <Fragment>
@@ -35,27 +56,29 @@ const Archetypes = () => {
             onChange={debounce(change, 250)}
           />
         </div>
-        <div className="page-div">
-          <button className="page-button page" onClick={pageChange}>
-            All
-          </button>
-          <button className="page-button page" onClick={pageChange}>
-            1
-          </button>
-          <button className="page-button page" onClick={pageChange}>
-            2
-          </button>
-          <button className="page-button page" onClick={pageChange}>
-            3
-          </button>
-          <button className="page-button page" onClick={pageChange}>
-            4
-          </button>
-        </div>
+        {update === "" ? (
+          <div className="page-div">
+            <button className="page-button page" onClick={pageChange}>
+              All
+            </button>
+            <button className="page-button page" onClick={pageChange}>
+              A-G
+            </button>
+            <button className="page-button page" onClick={pageChange}>
+              H-N
+            </button>
+            <button className="page-button page" onClick={pageChange}>
+              O-T
+            </button>
+            <button className="page-button page" onClick={pageChange}>
+              U-Z
+            </button>
+          </div>
+        ) : null}
       </div>
       {aFilter === false || update === "" ? (
         <div className="archetype-whole-div">
-          {data.map((element, i) => {
+          {data.slice(page[0], page[1]).map((element, i) => {
             return (
               <Fragment key={i}>
                 <div className="archetype-letter-div">

@@ -46,8 +46,8 @@
   flex-direction: row;
   align-items: center;
   background-color: rgb(219, 207, 137);
-  margin-right: 8px;
-  margin-bottom: 8px;
+  padding-right: 4px;
+  padding-bottom: 4px;
   border-radius: 10px;
   height: 100px;
 

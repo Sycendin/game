@@ -1,17 +1,27 @@
 import React, { Fragment, useState } from "react";
 import { data } from "./ArchetypeData";
 import { Link } from "react-router-dom";
+import { debounce } from "../HelperFunctions/HelperFunctions";
 import "./Archetypes.css";
 
 const Archetypes = () => {
-  let aValue = "";
   const [aFilter, setAFilter] = useState(false);
   const [update, setUpdate] = useState("");
+  const [page, setPage] = useState(0);
+  let aValue = "";
   const change = (event) => {
     setAFilter(true);
     setUpdate(event.target.value);
   };
-
+  const pageChange = (event) => {
+    // Get all page buttons and set their color to default
+    document.querySelectorAll(".page").forEach(function (button) {
+      button.style.backgroundColor = "rgb(20, 163, 20)";
+    });
+    // Change pressed button's background color to indicate that is pressed
+    event.target.style.backgroundColor = "rgb(97, 214, 97)";
+    setPage(event.target.value);
+  };
   return (
     <Fragment>
       <h1>All Archetypes</h1>
@@ -22,8 +32,25 @@ const Archetypes = () => {
             type="text"
             className="search-box"
             placeholder="Search"
-            onChange={change}
+            onChange={debounce(change, 250)}
           />
+        </div>
+        <div className="page-div">
+          <button className="page-button page" onClick={pageChange}>
+            All
+          </button>
+          <button className="page-button page" onClick={pageChange}>
+            1
+          </button>
+          <button className="page-button page" onClick={pageChange}>
+            2
+          </button>
+          <button className="page-button page" onClick={pageChange}>
+            3
+          </button>
+          <button className="page-button page" onClick={pageChange}>
+            4
+          </button>
         </div>
       </div>
       {aFilter === false || update === "" ? (

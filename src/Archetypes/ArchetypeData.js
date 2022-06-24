@@ -44,7 +44,7 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/42790071.jpg",
       ],
       [
-        "Amazemment",
+        "Amazement",
         "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/94821366.jpg",
       ],
       [
@@ -1539,7 +1539,7 @@ export const urls = [
   "Alien",
   "Ally%20of%20Justice",
   "Altergeist",
-  "Amazemment",
+  "Amazement",
   "Amazoness",
   "Amorphage",
   "Ancient%20Gear",

@@ -3,16 +3,39 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1080px;
-margin: 0 auto;
+  margin: 0 auto;
 }
-.archetype-fetch-text{
+.archetype-fetch-span{
   width: 80%;
+  display: flex;
+  flex-direction: column;
+
   margin-left: auto;
   margin-right: auto;
+}
+.archetype-fetch-text{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
   font-size: calc(16px + 1vw);
   font-weight: bold;
   background-color: rgb(79, 137, 177);
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.archetype-fetch-text2{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+  background-color: rgb(79, 137, 177);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .archetype-fetch-img{
   width: 262px;

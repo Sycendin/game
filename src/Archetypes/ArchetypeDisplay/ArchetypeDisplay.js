@@ -1,16 +1,21 @@
 import React, { Fragment, useState, useEffect } from "react";
-import "./ArchetypeDisplay.css";
+// import { useLocation } from "react-router-dom";
 import NotFound from "../../components/NotFound/NotFound";
 import { urls } from "../ArchetypeData";
 import { foundPath } from "../../HelperFunctions/HelperFunctions";
 import Loading from "../../components/Random/Loading/Loading";
+import "./ArchetypeDisplay.css";
 const ArchetypeDisplay = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [archetypeFetch, setArchetypeFetch] = useState([]);
+  // const location = useLocation();
+  // const from = location.state;
+  // console.log(from);
   const currentUrl = window.location.href.split("/");
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
   let pathExists = foundPath(urls, currentUrlEnd);
+  const archetypeName = currentUrlEnd.replaceAll("%20", " ");
 
   useEffect(() => {
     let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${currentUrlEnd}`;
@@ -43,7 +48,10 @@ const ArchetypeDisplay = () => {
   } else {
     return (
       <Fragment>
-        <p className="archetype-fetch-text">Click for more info</p>
+        <div className="archetype-fetch-span">
+          <p className="archetype-fetch-text">{archetypeName}</p>
+          <p className="archetype-fetch-text2">Click for more info</p>
+        </div>
         <div className="archetype-fetch-div">
           {archetypeFetch.data.map((cardInfo, i) => {
             return (

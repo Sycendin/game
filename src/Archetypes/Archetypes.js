@@ -40,6 +40,7 @@ const Archetypes = () => {
                       <Fragment key={i}>
                         <Link
                           to={`/game/archetypes/${element[0]}`}
+                          // state={{ from: element[0] }}
                           style={{ textDecoration: "none" }}
                         >
                           <div className="each-archetype-div">

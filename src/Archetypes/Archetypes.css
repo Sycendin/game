@@ -4,6 +4,19 @@
   margin-right: auto;
   margin-bottom: 8px;
 }
+.page-div{
+  justify-content: center;
+}
+.page-button{
+  font-size: calc(16px + 0.6vw);
+  background-color: rgb(20, 163, 20);
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+}
+.page-button:hover{
+  cursor: pointer;
+}
 .archetype-whole-div{
  width: 80%;
  margin-left: auto;

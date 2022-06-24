@@ -17,8 +17,8 @@ margin: 0 auto;
 .archetype-fetch-img{
   width: 262px;
   height: auto;
-  margin-right: 8px;
-  margin-bottom: 8px;
+  /* top right bottom left */
+  padding: 4px 4px 4px 4px;
 }
 
 .archetype-fetch-img:hover{
@@ -31,18 +31,16 @@ margin: 0 auto;
     display: flex;
     /* flex-wrap: wrap; */
     width: 100%;
-    /* max-width: 632px; */
-  margin: 0 auto;
-  justify-content: center;
 
 }
 
   .archetype-fetch-img{
     display: flex;
     height: auto;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    width: 30%;
+    /* top right bottom left */
+    padding: 4px 4px 4px 4px;
+    /* width: 33%; */
+    width: calc(33% - 8px);  
   }
  }
 
@@ -52,15 +50,32 @@ margin: 0 auto;
     flex-wrap: wrap;
     width: 100%;
 
-  margin: 0 auto;
+}
+
+  .archetype-fetch-img{
+    display: flex;
+    height: auto;
+
+    /* top right bottom left */
+    padding: 4px 4px 4px 4px;
+    width: calc(50% - 8px); 
+  }
+ }
+
+ @media  (max-width: 400px) {
+  .archetype-fetch-div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
 
 }
 
   .archetype-fetch-img{
     display: flex;
     height: auto;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    width: 40%;
+
+    /* top right bottom left */
+    padding: 4px 4px 4px 4px;
+    width: calc(100% - 8px); 
   }
  }

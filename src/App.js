@@ -34,7 +34,7 @@ function App() {
             path="*"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <NotFound />
                 {width <= 600 ? (
                   <ModalButton
@@ -53,7 +53,7 @@ function App() {
             path="/game/"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <Home />
                 {width <= 600 ? (
                   <ModalButton
@@ -72,8 +72,18 @@ function App() {
             path="/game/random/"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <Random />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />
@@ -81,8 +91,18 @@ function App() {
             path="/game/search/"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <Search />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />
@@ -90,8 +110,18 @@ function App() {
             path="/game/game/"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <Game />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />
@@ -99,8 +129,18 @@ function App() {
             path="/game/archetypes/"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <Archetypes />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />
@@ -108,8 +148,18 @@ function App() {
             path="/game/archetypes/:archetypes"
             element={
               <Fragment>
-                <Navigation />
+                <Navigation width={width} />
                 <ArchetypeDisplay />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />

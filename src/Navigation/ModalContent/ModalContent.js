@@ -6,52 +6,36 @@ const ModalContent = () => {
     <Fragment>
       <div className="modal-div">
         <p
-          className="modal-news"
+          className="modal-game modal-content-text"
           onClick={() =>
             window.open("https://www.mlb.com/bluejays/news", "_blank")
           }
         >
-          News
+          Game
         </p>
         <p
           onClick={() =>
             window.open("https://www.mlb.com/bluejays/tickets", "_blank")
           }
-          className="modal-tickets"
+          className="modal-search modal-content-text"
         >
-          Tickets
+          Search
         </p>
         <p
           onClick={() =>
             window.open("https://www.mlb.com/bluejays/schedule", "_blank")
           }
-          className="modal-schedule"
+          className="modal-random-card modal-content-text"
         >
-          Schedule
+          Random Card
         </p>
         <p
           onClick={() =>
             window.open("https://www.mlb.com/bluejays/schedule", "_blank")
           }
-          className="modal-roster"
+          className="modal-all-archetypes modal-content-text"
         >
-          Roster
-        </p>
-        <p
-          onClick={() =>
-            window.open("https://www.mlb.com/bluejays/scores", "_blank")
-          }
-          className="modal-scores"
-        >
-          Scores
-        </p>
-        <p
-          onClick={() =>
-            window.open("https://www.mlb.com/bluejays/stats", "_blank")
-          }
-          className="modal-stats"
-        >
-          Stats
+          All Archetypes
         </p>
       </div>
       <br />

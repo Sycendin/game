@@ -13,6 +13,10 @@ z-index: 9;
   color: rgb(130, 153, 173);
   z-index: 9;
 }
+
+.nav-text:hover{
+  cursor: pointer;
+}
 /* @media  (max-width: 1100px) {
 
  }

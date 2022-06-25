@@ -19,15 +19,16 @@
   z-index: 11;
 }
 
-.modal-news{
- opacity: 0;
+.modal-game{
+  opacity: 0;
   animation: fadeText ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: 200ms;
 
+
 }
-.modal-tickets{
+.modal-search{
   opacity: 0;
   animation: fadeText ease 2s;
   animation-iteration-count: 1;
@@ -35,7 +36,7 @@
   animation-delay: 400ms;
 
 }
-.modal-schedule{
+.modal-random-card{
   opacity: 0;
   animation: fadeText ease 2s;
   animation-iteration-count: 1;
@@ -43,30 +44,18 @@
   animation-delay: 600ms;
 
 }
-.modal-roster{
+.modal-all-archetypes{
   opacity: 0;
   animation: fadeText ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: 800ms;
 }
-.modal-scores{
-  opacity: 0;
-  animation: fadeText ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1000ms;
 
-}
-.modal-stats{
-  opacity: 0;
-  animation: fadeText ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1200ms;
-}
 
-.modal-text:hover{
+
+
+.modal-content-text:hover{
   cursor: pointer;
 
 }

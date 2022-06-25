@@ -1,0 +1,83 @@
+.modal-image-div{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 11;
+}
+.modal-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  color: white;
+  font-size: 3vw;
+  border-bottom: 1px solid white;
+  z-index: 11;
+}
+
+.modal-news{
+ opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+
+}
+.modal-tickets{
+  opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
+
+}
+.modal-schedule{
+  opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
+
+}
+.modal-roster{
+  opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 800ms;
+}
+.modal-scores{
+  opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1000ms;
+
+}
+.modal-stats{
+  opacity: 0;
+  animation: fadeText ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1200ms;
+}
+
+.modal-text:hover{
+  cursor: pointer;
+
+}
+
+
+@keyframes fadeText {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+     
+  }
+}

@@ -1,0 +1,61 @@
+.modal_styles {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  z-index: 10;
+  animation: fadeInAnimation ease 0.25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.modal_styles-change {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  opacity: 1;
+  z-index: 0;
+  animation: fadeOut ease 2.25s;
+  animation-fill-mode: forwards;
+
+}
+.modal_style_initial {
+ z-index: 0;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+   
+  }
+  100% {
+      opacity: 1;
+
+     
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    z-index: 10;
+  }
+  99% {
+
+    z-index: 10;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}

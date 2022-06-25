@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+import "./Home.css";
 const Home = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -34,7 +34,11 @@ const Home = () => {
     // return <img src={items.data[0].card_images[0].image_url}></img>;
     return (
       <Fragment>
-        <img alt="card" src={cards.card_images[0].image_url}></img>
+        <img
+          className="home-img"
+          alt="card"
+          src={cards.card_images[0].image_url}
+        ></img>
       </Fragment>
     );
   }

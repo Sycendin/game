@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./components/NotFound/NotFound";
 import Home from "./components/Home/Home";
@@ -9,7 +9,15 @@ import Game from "./components/Game/Game";
 import Archetypes from "./Archetypes/Archetypes";
 import ArchetypeDisplay from "./Archetypes/ArchetypeDisplay/ArchetypeDisplay";
 import Navigation from "./Navigation/Navigation";
+import Modal from "./Navigation/Modal/Modal";
+import ModalButton from "./Navigation/ModalButton/ModalButton";
 function App() {
+  const [width, setWidth] = useState(0);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [initialModal2, setInitialModal2] = useState(true);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,6 +28,16 @@ function App() {
               <Fragment>
                 <Navigation />
                 <NotFound />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />
@@ -29,6 +47,16 @@ function App() {
               <Fragment>
                 <Navigation />
                 <Home />
+                {width <= 600 ? (
+                  <ModalButton
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                  />
+                ) : null}
+                {width <= 600 ? (
+                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                ) : null}
               </Fragment>
             }
           />

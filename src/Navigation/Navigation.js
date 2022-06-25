@@ -7,8 +7,8 @@ const Navigation = () => {
       <div className="nav-div">
         <p className="nav-text">Game</p>
         <p className="nav-text">Search</p>
-        <p className="nav-text">Random</p>
-        <p className="nav-text">Archetype</p>
+        <p className="nav-text">Random Card</p>
+        <p className="nav-text">All Archetypes</p>
       </div>
     </Fragment>
   );

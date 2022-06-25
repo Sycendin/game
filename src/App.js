@@ -11,12 +11,20 @@ import ArchetypeDisplay from "./Archetypes/ArchetypeDisplay/ArchetypeDisplay";
 import Navigation from "./Navigation/Navigation";
 import Modal from "./Navigation/Modal/Modal";
 import ModalButton from "./Navigation/ModalButton/ModalButton";
+import { debounce } from "./HelperFunctions/HelperFunctions";
 function App() {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(window.innerWidth);
   const [isOpen2, setIsOpen2] = useState(false);
   const [initialModal2, setInitialModal2] = useState(true);
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", debounce(handleResize, 100));
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
     <div className="App">

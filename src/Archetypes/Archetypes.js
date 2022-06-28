@@ -121,7 +121,7 @@ const Archetypes = () => {
               return element.archetype.map((element, i) => {
                 aValue = document.getElementById("archetype-input").value;
                 let copy = element[0].slice();
-                return copy.toLowerCase().includes(aValue) ? (
+                return copy.toLowerCase().includes(aValue.toLowerCase()) ? (
                   <Fragment key={i}>
                     <Link
                       to={`/game/archetypes/${element[0]}`}

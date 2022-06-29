@@ -64,7 +64,7 @@ const ArchetypeDisplay = () => {
                 src={cardInfo.card_images[0].image_url}
                 onClick={() =>
                   window.open(
-                    `https://db.ygoprodeck.com/card/?search=${cardInfo.name}}`,
+                    `https://db.ygoprodeck.com/card/?search=${cardInfo.name}`,
                     "_blank"
                   )
                 }

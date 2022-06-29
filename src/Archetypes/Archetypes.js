@@ -98,7 +98,6 @@ const Archetypes = () => {
                               style={{ backgroundImage: `url(${element[1]})` }}
                               alt="archetype-mascot"
                               className="archetype-mascot"
-                              // src={element[1]}
                               width={624}
                               height={624}
                             ></div>
@@ -129,14 +128,13 @@ const Archetypes = () => {
                       style={{ textDecoration: "none" }}
                     >
                       <div className="each-archetype-div">
-                        <img
-                          style={{}}
+                        <div
+                          style={{ backgroundImage: `url(${element[1]})` }}
                           alt="archetype-mascot"
                           className="archetype-mascot"
-                          // src={element[1]}
                           width={624}
                           height={624}
-                        ></img>
+                        ></div>
                         <div className="archetype-content">
                           <p className="archetype-name">{element[0]}</p>
                         </div>

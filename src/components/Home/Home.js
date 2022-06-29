@@ -39,6 +39,16 @@ const Home = () => {
           alt="card"
           src={cards.card_images[0].image_url}
         ></img>
+        <br />
+        <div className="square">
+          {/* <img
+            className="home-img2"
+            alt="card"
+            src={
+              "https://storage.googleapis.com/ygoprodeck.com/pics_small/94141712.jpg"
+            }
+          ></img> */}
+        </div>
       </Fragment>
     );
   }

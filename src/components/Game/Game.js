@@ -18,10 +18,8 @@ const Game = () => {
   const [pick, setPick] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [cards, setCards] = useState([]);
   const [options, setOptions] = useState([]);
   const [card, setCard] = useState(0);
-  const [archetypeSearch, setArchetypeSearch] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
   const [modalExit, setModalExit] = useState(0);
@@ -47,18 +45,12 @@ const Game = () => {
       }
       if (event.target.value !== "") {
         // Change URL that will be sent to API depending on whether the archetype button is pressed
-        if (archetypeSearch === true) {
-          searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${event.target.value.replace(
+
+        searchUrl =
+          `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
             " ",
             "%20"
-          )}`;
-        } else {
-          searchUrl =
-            `https://db.ygoprodeck.com/api/v7/cardinfo.php?format=tcg&type=fusion%20monster&fname=${event.target.value.replace(
-              " ",
-              "%20"
-            )}` + filterUrl;
-        }
+          )}` + filterUrl;
       }
     }
 
@@ -94,7 +86,7 @@ const Game = () => {
       .then(
         (result) => {
           setIsLoaded(true);
-          setCards(result);
+          // setCards(result);
           setCard(result.data[Math.floor(Math.random() * result.data.length)]);
         },
 

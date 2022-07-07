@@ -8,10 +8,6 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/59332125.jpg",
       ],
       [
-        "Albaz",
-        "https://storage.googleapis.com/ygoprodeck.com/pics/68468459.jpg",
-      ],
-      [
         "Abyss Actor",
         "https://cdn.discordapp.com/attachments/747928182891610213/988314296553467914/abyssactor.webp",
       ],
@@ -157,6 +153,10 @@ export const data = [
       [
         "Borrel",
         "https://storage.googleapis.com/ygoprodeck.com/pics/31833038.jpg",
+      ],
+      [
+        "Branded",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/68468459.jpg",
       ],
       [
         "Brave Token",
@@ -1561,6 +1561,8 @@ export const urls = [
   "Bonding",
   "Bounzer",
   "Borrel",
+  "Branded",
+  "Brave%20Token",
   "Bujin",
   "Burning%20Abyss",
   "Buster%20Blader",

@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+  z-index: 10;
 }
 .archetype-fetch-span{
   width: 80%;
@@ -42,6 +43,7 @@
   height: auto;
   /* top right bottom left */
   padding: 4px 4px 4px 4px;
+  z-index: 10;
 }
 
 .archetype-fetch-img:hover{

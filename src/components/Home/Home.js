@@ -1,10 +1,16 @@
 import React, { Fragment, useState, useEffect } from "react";
+import Disqus from "disqus-react";
 import "./Home.css";
 const Home = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cards, setCards] = useState([]);
-
+  const disqusShortname = "yugiohgame";
+  const disqusConfig = {
+    url: "http://localhost:3000",
+    identifier: "homepage",
+    title: "Home page",
+  };
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -40,15 +46,11 @@ const Home = () => {
           src={cards.card_images[0].image_url}
         ></img>
         <br />
-        <div className="square">
-          {/* <img
-            className="home-img2"
-            alt="card"
-            src={
-              "https://storage.googleapis.com/ygoprodeck.com/pics_small/94141712.jpg"
-            }
-          ></img> */}
-        </div>
+        <div className="square"></div>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </Fragment>
     );
   }

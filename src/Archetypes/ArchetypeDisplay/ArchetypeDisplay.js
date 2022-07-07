@@ -4,6 +4,7 @@ import NotFound from "../../components/NotFound/NotFound";
 import { urls } from "../ArchetypeData";
 import { foundPath } from "../../HelperFunctions/HelperFunctions";
 import Loading from "../../components/Random/Loading/Loading";
+import Disqus from "disqus-react";
 import "./ArchetypeDisplay.css";
 const ArchetypeDisplay = () => {
   const [error, setError] = useState(null);
@@ -16,7 +17,13 @@ const ArchetypeDisplay = () => {
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
   let pathExists = foundPath(urls, currentUrlEnd);
   const archetypeName = currentUrlEnd.replaceAll("%20", " ");
-
+  // Configure the disqus to current page
+  const disqusShortname = "yugiohgame";
+  const disqusConfig = {
+    url: window.location.href,
+    identifier: archetypeName,
+    title: `${archetypeName} Page`,
+  };
   useEffect(() => {
     let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${currentUrlEnd}`;
     fetch(searchUrl)
@@ -72,6 +79,11 @@ const ArchetypeDisplay = () => {
             );
           })}
         </div>
+        {/* Add disqus to page */}
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </Fragment>
     );
   }

@@ -1,8 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import "./ModalButton.css";
 
-const ModalButton = ({ toggle, current, setInitialModal }) => {
-  const [isActive, setActive] = useState("false");
+const ModalButton = ({
+  toggle,
+  current,
+  setInitialModal,
+  isActive,
+  setActive,
+}) => {
   const handleToggle = () => {
     setInitialModal(false);
     setActive(!isActive);
@@ -10,6 +15,9 @@ const ModalButton = ({ toggle, current, setInitialModal }) => {
       toggle(true);
     } else {
       toggle(false);
+      setTimeout(function () {
+        setInitialModal(true);
+      }, 250);
     }
   };
   return (

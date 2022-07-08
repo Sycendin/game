@@ -11,16 +11,16 @@ import ArchetypeDisplay from "./Archetypes/ArchetypeDisplay/ArchetypeDisplay";
 import Navigation from "./Navigation/Navigation";
 import Modal from "./Navigation/Modal/Modal";
 import ModalButton from "./Navigation/ModalButton/ModalButton";
-import { debounce } from "./HelperFunctions/HelperFunctions";
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isOpen2, setIsOpen2] = useState(false);
   const [initialModal2, setInitialModal2] = useState(true);
+  const [isActive, setActive] = useState(true);
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
-    window.addEventListener("resize", debounce(handleResize, 100));
+    window.addEventListener("resize", handleResize, 100);
     // Call handler right away so state gets updated with initial window size
     handleResize();
     // Remove event listener on cleanup
@@ -41,10 +41,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -60,10 +69,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -79,10 +97,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -98,10 +125,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -117,10 +153,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -136,10 +181,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }
@@ -155,10 +209,19 @@ function App() {
                     toggle={setIsOpen2}
                     setInitialModal={setInitialModal2}
                     current={isOpen2}
+                    isActive={isActive}
+                    setActive={setActive}
                   />
                 ) : null}
                 {width <= 600 ? (
-                  <Modal open={isOpen2} initialModal={initialModal2}></Modal>
+                  <Modal
+                    open={isOpen2}
+                    initialModal={initialModal2}
+                    toggle={setIsOpen2}
+                    setInitialModal={setInitialModal2}
+                    current={isOpen2}
+                    setActive={setActive}
+                  ></Modal>
                 ) : null}
               </Fragment>
             }

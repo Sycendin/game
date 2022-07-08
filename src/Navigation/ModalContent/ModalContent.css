@@ -53,7 +53,10 @@
 }
 
 
-
+.modal-content-text{
+  color: white;
+  font-size: calc(16px + 1vh);
+}
 
 .modal-content-text:hover{
   cursor: pointer;

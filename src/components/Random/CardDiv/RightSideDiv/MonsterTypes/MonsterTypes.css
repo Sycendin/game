@@ -7,3 +7,19 @@
 .type-text{
   font-size: calc(16px + 0.5vw);
 }
+
+
+@media (max-width: 600px) {
+  .type-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0%;
+    
+  }
+  .type-text{
+    font-size: calc(16px);
+    margin-top: 0%
+
+  }
+ }

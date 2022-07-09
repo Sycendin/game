@@ -7,53 +7,28 @@
   margin-left: auto;
   margin-right: auto;
 
-  width: 100%;
-  height: auto;
-
-  margin-top: 5%;
-
 
 }
 .random-button{
   background-color: rgb(67, 190, 67);
   color: rgb(255, 255, 255);
-  font-size: calc(16px + 1vw);
+  font-size: calc(16px + 0.5vw);
   border-radius: 10px;
+ margin-bottom: 8px;
   transition: .2s ease-in-out 0s;
+  cursor: pointer;
+
 }
 
 .random-button:hover{
-  cursor: pointer;
   filter: brightness(110%);
   transform: scale(1.1);
 
 }
-
+/* 
 @media (max-width: 2500px) {
   .random-button-div{
     margin-top: 10%;
   }
- }
+ } */
 
-@media (max-width: 2000px) {
-  .random-button-div{
-    margin-top: 20%;
-  }
- }
-
- @media (max-width: 1500px){
-  .random-button-div{
-    margin-top: 30%;
-  }
- } 
- @media (max-width: 1000px) {
-  .random-button-div{
-    margin-top: 40%;
-  }
- }
- 
- @media (max-width: 800px ) {
-  .random-button-div{
-    margin-top: 50%;
-  }
- }

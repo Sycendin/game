@@ -18,3 +18,32 @@
   font-size: calc(16px + 0.5vw);
 
 }
+
+
+
+@media (max-width: 600px) {
+  .rightside-span{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    
+  }
+  .card-attribute{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0%;
+    font-size: calc(16px);
+    margin-top: 0%
+
+  }
+
+  .card-level{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0%;
+    font-size: calc(16px);
+    margin-top: 0%
+  }
+ }

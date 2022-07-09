@@ -3,3 +3,12 @@
   font-size: calc(16px + 1vw);
   font-weight: bold;
 }
+
+
+@media (max-width: 1140px) {
+  .card-name{
+    display: flex;
+    justify-content: center;
+
+  }
+ }

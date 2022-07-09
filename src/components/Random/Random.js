@@ -42,12 +42,14 @@ const Random = () => {
   } else {
     return (
       <Fragment>
-        <RandomButton
-          // offset={targetRef.current.childNodes[0].offsetTop}
-          newCard={newCard}
-          setNewCard={setNewCard}
-        />
-        <CardDiv cardData={cards} />
+        <div>
+          <RandomButton
+            // offset={targetRef.current.childNodes[0].offsetTop}
+            newCard={newCard}
+            setNewCard={setNewCard}
+          />
+          <CardDiv cardData={cards} />
+        </div>
       </Fragment>
     );
   }

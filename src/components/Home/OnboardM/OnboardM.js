@@ -17,13 +17,20 @@ const OnboardDataM = () => {
   return (
     <Fragment>
       <div className="onboard-title-div">
-        <p className="onboard-title">Other Projects</p>
+        <p className="onboard-div-title">Pages</p>
       </div>
 
       <div className="mobile-onboard">
         <div className="mobile-onboard-info">
           <p className="mobile-onboard-title">{data[select].title}</p>
           <p className="mobile-onboard-text">{data[select].text}</p>
+          <img
+            alt={data[select].title}
+            width={1280}
+            height={720}
+            className="mobile-onboard-img"
+            src={data[select].image}
+          ></img>
           {/* <div className="mobile-onboard-button-div">
         <button
           disabled
@@ -53,7 +60,11 @@ const OnboardDataM = () => {
         <div className="select-button-div">
           {data.map((element, i) => {
             return (
-              <button className="select-button select" onClick={changeSelect}>
+              <button
+                key={i}
+                className="select-button select"
+                onClick={changeSelect}
+              >
                 {i + 1}
               </button>
             );

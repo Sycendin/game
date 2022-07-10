@@ -11,7 +11,7 @@ const OnboardDataM = () => {
       // Set all buttons to default color
       button.style.background = "rgb(67, 190, 67)";
     });
-    event.target.style.background = "rgb(67, 200, 67)";
+    event.target.style.background = "rgb(67, 240, 67)";
     setSelect(button - 1);
   };
   return (
@@ -51,15 +51,13 @@ const OnboardDataM = () => {
       ></img>
     </div> */}
         <div className="select-button-div">
-          <button className="select-button select" onClick={changeSelect}>
-            1
-          </button>
-          <button className="select-button select" onClick={changeSelect}>
-            2
-          </button>
-          <button className="select-button select" onClick={changeSelect}>
-            3
-          </button>
+          {data.map((element, i) => {
+            return (
+              <button className="select-button select" onClick={changeSelect}>
+                {i + 1}
+              </button>
+            );
+          })}
         </div>
       </div>
     </Fragment>

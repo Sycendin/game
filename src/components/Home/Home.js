@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Onboard from "./Onboard/Onboard";
 import OnboardM from "./OnboardM/OnboardM";
 import Disqus from "disqus-react";
 import "./Home.css";
@@ -13,7 +14,7 @@ const Home = ({ width }) => {
 
   return (
     <Fragment>
-      {width <= 600 ? <OnboardM /> : null}
+      {width <= 600 ? <OnboardM /> : <Onboard />}
 
       <Disqus.DiscussionEmbed
         shortname={disqusShortname}

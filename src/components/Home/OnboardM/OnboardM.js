@@ -23,7 +23,12 @@ const OnboardDataM = () => {
       <div className="mobile-onboard">
         <div className="mobile-onboard-info">
           <p className="mobile-onboard-title">{data[select].title}</p>
-          <p className="mobile-onboard-text">{data[select].text}</p>
+
+          <div className="mobile-onboard-text-div">
+            {data[select].text.split("#break").map((line, i) => {
+              return <p className="mobile-onboard-text">{line}</p>;
+            })}
+          </div>
           <img
             alt={data[select].title}
             width={1280}
@@ -31,32 +36,7 @@ const OnboardDataM = () => {
             className="mobile-onboard-img"
             src={data[select].image}
           ></img>
-          {/* <div className="mobile-onboard-button-div">
-        <button
-          disabled
-          // className="mobile-projects-button-grey"'
-          className="mobile-projects-button"
-          onClick={() => window.open(`${data[select].links[0]}`, "_blank")}
-        >
-          See Live
-        </button>
-        <button
-          className="mobile-projects-button"
-          onClick={() => window.open(`${data[select].links[1]}`, "_blank")}
-        >
-          Source Code
-        </button>
-      </div> */}
         </div>
-        {/* <div className="mobile-onboard-img-div">
-      <img
-        alt="secret message"
-        width={512}
-        height={512}
-        className="mobile-onboard-img"
-        src={data[select].image}
-      ></img>
-    </div> */}
         <div className="select-button-div">
           {data.map((element, i) => {
             return (

@@ -19,7 +19,7 @@
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  width: 80%;
+  width: 60%;
 }
 .onboard-info{
   display: flex;
@@ -37,9 +37,14 @@
   font-size: calc(16px + 1vw);
   font-weight: bold;
 }
+.onboard-text-div{
+  width: 50%;
+}
 .onboard-text{
   font-size: calc(16px + 0.1vw);
   text-align: left;
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
 
 .onboard-img{

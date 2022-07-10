@@ -3,9 +3,9 @@
   width: 100%;
   margin-bottom: 8px;
   color: white;
-  background: rgb(0,146,172);
+  background: rgb(10, 26, 70);
 }
-.onboard-title-div{
+.onboard-div-title{
   font-size: calc(16px + 1vw);
   font-weight: bold;
 }
@@ -45,13 +45,18 @@
   text-align: left;
 }
 
-
+.mobile-onboard-img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 .select-button-div{
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 8px;
-  width: 40%;
+  width: 50%;
+  flex-wrap: wrap;
 }
 
 .select-button{
@@ -62,6 +67,7 @@
   border: 2px solid rgb(0, 0, 0);
   margin-left: 4px;
   margin-right: 4px;
+  margin-bottom: 8px;
   cursor: pointer;
 }
 

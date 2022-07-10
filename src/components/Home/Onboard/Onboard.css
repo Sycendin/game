@@ -2,9 +2,9 @@
   width: 100%;
   margin-bottom: 8px;
   color: white;
-  background: rgb(0,146,172);
+  background: rgb(10, 26, 70);
 }
-.onboard-title-div{
+.onboard-div-title{
   font-size: calc(16px + 1vw);
   font-weight: bold;
 }
@@ -40,4 +40,11 @@
 .onboard-text{
   font-size: calc(16px + 0.1vw);
   text-align: left;
+}
+
+.onboard-img{
+  width: 50%;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

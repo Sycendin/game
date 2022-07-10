@@ -1,0 +1,70 @@
+
+.onboard-title-div{
+  width: 100%;
+  margin-bottom: 8px;
+  color: white;
+  background: rgb(0,146,172);
+}
+.onboard-title-div{
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+}
+
+
+.mobile-onboard{
+  width: calc(50% - 16px);
+  margin-bottom: 8px;
+  background-color: rgb(216, 232, 238);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  width: 80%;
+}
+.mobile-onboard-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 8px;
+}
+.mobile-onboard-title{
+  display: flex;
+  justify-content: center;
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+}
+.mobile-onboard-text{
+  font-size: calc(16px + 0.1vw);
+  text-align: left;
+}
+
+
+.select-button-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 8px;
+  width: 40%;
+}
+
+.select-button{
+  font-size: calc(16px + 1vw);
+  color: white;
+  background-color:rgb(67, 190, 67);
+  border-radius: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  margin-left: 4px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.select-button:hover{
+  filter: brightness(110%);
+}

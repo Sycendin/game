@@ -63,7 +63,7 @@ function App() {
             element={
               <Fragment>
                 <Navigation width={width} />
-                <Home />
+                <Home width={width} />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}

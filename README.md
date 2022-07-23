@@ -23,6 +23,9 @@ a random card to display.
 
 **Client:** React using hooks, (JS/HTML/CSS)
 
+## APIs Used
+ [Yu-Gi-Oh! API](https://db.ygoprodeck.com/api-guide/)
+
 ## Addtional Packages
 ```
 disqus-react: "^1.1.3"

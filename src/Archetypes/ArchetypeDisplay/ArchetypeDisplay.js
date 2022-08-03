@@ -10,6 +10,7 @@ const ArchetypeDisplay = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [archetypeFetch, setArchetypeFetch] = useState([]);
+  const [doesexist, setDoesExist] = useState(null);
   // const location = useLocation();
   // const from = location.state;
   // console.log(from);
@@ -25,24 +26,41 @@ const ArchetypeDisplay = () => {
     title: `${archetypeName} Page`,
   };
   useEffect(() => {
-    let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${currentUrlEnd}`;
-    fetch(searchUrl)
-      .then((res) => res.json())
-      .then(
-        (result) => {
+    // check if url exists in server
+    fetch("http://localhost:3002/urlcheck", {
+      method: "post",
+      headers: { "content-Type": "application/json" },
+      body: JSON.stringify({
+        url: currentUrlEnd,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data === "Does not exist") {
+          console.log(data);
+          setDoesExist(false);
           setIsLoaded(true);
-          setArchetypeFetch(result);
-        },
-        // Catch errors
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
+        } else {
+          setDoesExist(true);
+          // If it does then make API request
+          let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${currentUrlEnd}`;
+          fetch(searchUrl)
+            .then((res) => res.json())
+            .then(
+              (result) => {
+                setIsLoaded(true);
+                setArchetypeFetch(result);
+              },
+              // Catch errors
+              (error) => {
+                setIsLoaded(true);
+                setError(error);
+              }
+            );
         }
-      );
+      });
   }, [currentUrlEnd]);
-  if (pathExists === false) {
-    return <NotFound />;
-  }
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -52,7 +70,9 @@ const ArchetypeDisplay = () => {
         <Loading />
       </div>
     );
-  } else {
+  } else if (doesexist === false) {
+    return <NotFound />;
+  } else if (doesexist === true) {
     return (
       <Fragment>
         <div className="archetype-fetch-span">

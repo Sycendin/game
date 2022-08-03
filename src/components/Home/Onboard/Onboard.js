@@ -19,7 +19,6 @@ const Onboard = () => {
                 src={data[i].image}
               ></img>
               <p className="onboard-title">{data[i].title}</p>
-              {console.log(data[i].text.split("#break"))}
               <div className="onboard-text-div">
                 {data[i].text.split("#break").map((line, i) => {
                   return <p className="onboard-text">{line}</p>;

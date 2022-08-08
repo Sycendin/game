@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 // import { useLocation } from "react-router-dom";
 import NotFound from "../../components/NotFound/NotFound";
-import { urls } from "../ArchetypeData";
-import { foundPath } from "../../HelperFunctions/HelperFunctions";
+
 import Loading from "../../components/Random/Loading/Loading";
 import Disqus from "disqus-react";
 import "./ArchetypeDisplay.css";
@@ -16,7 +15,6 @@ const ArchetypeDisplay = () => {
   // console.log(from);
   const currentUrl = window.location.href.split("/");
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
-  let pathExists = foundPath(urls, currentUrlEnd);
   const archetypeName = currentUrlEnd.replaceAll("%20", " ");
   // Configure the disqus to current page
   const disqusShortname = "yugiohgame";
@@ -27,7 +25,7 @@ const ArchetypeDisplay = () => {
   };
   useEffect(() => {
     // check if url exists in server
-    fetch("http://localhost:3002/urlcheck", {
+    fetch("https://yu-game.herokuapp.com/urlcheck", {
       method: "post",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify({
@@ -37,7 +35,6 @@ const ArchetypeDisplay = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data === "Does not exist") {
-          console.log(data);
           setDoesExist(false);
           setIsLoaded(true);
         } else {

@@ -1,7 +1,63 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { data } from "../OnbordData/OnboardData";
+import ReactMarkdown from "react-markdown";
 import "./Onboard.css";
 const Onboard = () => {
+  const [onboard1, setOnboard1] = useState("");
+  const [onboard2, setOnboard2] = useState("");
+  const [onboard3, setOnboard3] = useState("");
+  const [onboard4, setOnboard4] = useState("");
+  const [onboard5, setOnboard5] = useState("");
+  // Get link for markdown file
+  const getData = async (onboard) => {
+    const rawResponse = await fetch("https://yu-game.herokuapp.com/markdown", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mdname: onboard,
+      }),
+    });
+    const content = await rawResponse.json();
+    return content[0].link;
+  };
+
+  // Check to see which markdown file data needs to be
+  // displayed
+  const whichMarkdown = (i) => {
+    switch (i) {
+      case 0:
+        return onboard1;
+      case 1:
+        return onboard2;
+      case 2:
+        return onboard3;
+      case 3:
+        return onboard4;
+      case 4:
+        return onboard5;
+      default:
+        break;
+    }
+  };
+  useEffect(() => {
+    // Read data from markdown file after getting link
+    const getOnboard = async (setOnboardFunc, onboardName) => {
+      const fetchData = await getData(onboardName);
+      const getdata = await fetch(fetchData);
+      setOnboardFunc(await getdata.text());
+    };
+
+    // Make requests for markdown data
+    getOnboard(setOnboard1, "onboard1");
+    getOnboard(setOnboard2, "onboard2");
+    getOnboard(setOnboard3, "onboard3");
+    getOnboard(setOnboard4, "onboard4");
+    getOnboard(setOnboard5, "onboard5");
+  }, []);
+
   return (
     <Fragment>
       <div className="onboard-title-div">
@@ -18,12 +74,10 @@ const Onboard = () => {
                 className="onboard-img"
                 src={data[i].image}
               ></img>
-              <p className="onboard-title">{data[i].title}</p>
-              <div className="onboard-text-div">
-                {data[i].text.split("#break").map((line, i) => {
-                  return <p className="onboard-text">{line}</p>;
-                })}
-              </div>
+              <ReactMarkdown
+                className="mark-test"
+                children={whichMarkdown(i)}
+              />
             </div>
           </div>
         );

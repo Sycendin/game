@@ -53,3 +53,14 @@
   border-radius: 10px;
   margin-top: 8px;
 }
+
+.mark-test{
+  width: 50%;
+}
+
+.mark-test > p{
+  font-size: calc(16px + 0.1vw);
+  text-align: left;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}

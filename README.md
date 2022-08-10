@@ -33,6 +33,7 @@ react-confetti: "^6.1.0"
 react-dom: "^18.1.0",
 react-router-dom: "^6.3.0",
 react-toastify: "^9.0.3",
+react-markdown": "^8.0.3"
 ```
 ## Installation
 

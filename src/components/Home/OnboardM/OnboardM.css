@@ -34,20 +34,11 @@
   width: 80%;
   margin-bottom: 8px;
 }
-.mobile-onboard-title{
-  display: flex;
-  justify-content: center;
-  font-size: calc(16px + 1vw);
-  font-weight: bold;
-}
-.mobile-onboard-text{
-  font-size: calc(16px + 0.1vw);
-  text-align: left;
-}
 
 .mobile-onboard-img{
   width: 100%;
   height: auto;
+  margin-top: 10px;
   border-radius: 10px;
 }
 .select-button-div{
@@ -73,4 +64,17 @@
 
 .select-button:hover{
   filter: brightness(110%);
+}
+
+
+@media  (max-width: 1200px) {
+.mark-test{
+  width: 80%;
+}
+.mark-test > p{
+  font-size: calc(16px + 0.1vw);
+  text-align: left;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
 }

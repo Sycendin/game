@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { data } from "../OnbordData/OnboardData";
+import { getData } from "./OnboardHelper";
 import ReactMarkdown from "react-markdown";
 import "./Onboard.css";
 const Onboard = () => {
@@ -8,21 +9,6 @@ const Onboard = () => {
   const [onboard3, setOnboard3] = useState("");
   const [onboard4, setOnboard4] = useState("");
   const [onboard5, setOnboard5] = useState("");
-  // Get link for markdown file
-  const getData = async (onboard) => {
-    const rawResponse = await fetch("https://yu-game.herokuapp.com/markdown", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        mdname: onboard,
-      }),
-    });
-    const content = await rawResponse.json();
-    return content[0].link;
-  };
 
   // Check to see which markdown file data needs to be
   // displayed
@@ -74,6 +60,7 @@ const Onboard = () => {
                 className="onboard-img"
                 src={data[i].image}
               ></img>
+              {/* Markdown file data */}
               <ReactMarkdown
                 className="mark-test"
                 children={whichMarkdown(i)}

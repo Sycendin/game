@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import ServerLoading from "../../Random/Loading/ServerLoading/ServerLoading";
 import { getData } from "../Onboard/OnboardHelper";
 import { data } from "../OnbordData/OnboardData";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -34,8 +35,12 @@ const OnboardDataM = () => {
 
       <div className="mobile-onboard">
         <div className="mobile-onboard-info">
-          <ReactMarkdown className="mark-test" children={mOnboard} />
-
+          {mOnboard === "" ? (
+            <ServerLoading />
+          ) : (
+            /* Markdown file data */
+            <ReactMarkdown className="mark-test" children={mOnboard} />
+          )}
           <img
             alt={data[select].title}
             width={1280}

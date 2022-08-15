@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import ServerLoading from "../../Random/Loading/ServerLoading/ServerLoading";
 import { data } from "../OnbordData/OnboardData";
-import { getData } from "./OnboardHelper";
 import ReactMarkdown from "react-markdown";
 import "./Onboard.css";
 const Onboard = () => {
@@ -29,20 +28,26 @@ const Onboard = () => {
         break;
     }
   };
+
   useEffect(() => {
     // Read data from markdown file after getting link
-    const getOnboard = async (setOnboardFunc, onboardName) => {
-      const fetchData = await getData(onboardName);
-      const getdata = await fetch(fetchData);
-      setOnboardFunc(await getdata.text());
+    const getMarkdown = (name, set) => {
+      fetch(`https://yu-game.herokuapp.com/markdown/${name}`, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((res) => set(res));
     };
 
-    // Make requests for markdown data
-    getOnboard(setOnboard1, "onboard1");
-    getOnboard(setOnboard2, "onboard2");
-    getOnboard(setOnboard3, "onboard3");
-    getOnboard(setOnboard4, "onboard4");
-    getOnboard(setOnboard5, "onboard5");
+    getMarkdown("onboard1", setOnboard1);
+    getMarkdown("onboard2", setOnboard2);
+    getMarkdown("onboard3", setOnboard3);
+    getMarkdown("onboard4", setOnboard4);
+    getMarkdown("onboard5", setOnboard5);
   }, []);
 
   return (

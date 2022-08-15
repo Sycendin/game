@@ -25,12 +25,12 @@ const ArchetypeDisplay = () => {
   };
   useEffect(() => {
     // check if url exists in server
-    fetch("https://yu-game.herokuapp.com/urlcheck", {
-      method: "post",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify({
-        url: currentUrlEnd,
-      }),
+    fetch(`https://yu-game.herokuapp.com/urlcheck/${currentUrlEnd}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => response.json())
       .then((data) => {

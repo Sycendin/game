@@ -89,7 +89,11 @@ const Archetypes = () => {
                     return (
                       <Fragment key={i}>
                         <Link
-                          to={`/game/archetypes/${element[0]}`}
+                          to={
+                            element[0] === "Evil★Twin"
+                              ? `/game/archetypes/Evil%20Twin`
+                              : `/game/archetypes/${element[0]}`
+                          }
                           // state={{ from: element[0] }}
                           style={{ textDecoration: "none" }}
                         >
@@ -124,7 +128,11 @@ const Archetypes = () => {
                 return copy.toLowerCase().includes(aValue.toLowerCase()) ? (
                   <Fragment key={i}>
                     <Link
-                      to={`/game/archetypes/${element[0]}`}
+                      to={
+                        element[0] === "Evil★Twin"
+                          ? `/game/archetypes/Evil%20Twin`
+                          : `/game/archetypes/${element[0]}`
+                      }
                       style={{ textDecoration: "none" }}
                     >
                       <div className="each-archetype-div">

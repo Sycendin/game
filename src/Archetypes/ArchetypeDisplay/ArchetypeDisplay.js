@@ -10,6 +10,8 @@ const ArchetypeDisplay = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [archetypeFetch, setArchetypeFetch] = useState([]);
   const [doesexist, setDoesExist] = useState(null);
+  const [extraArchetype, setExtraArchetype] = useState([]);
+
   // const location = useLocation();
   // const from = location.state;
   // console.log(from);
@@ -24,6 +26,7 @@ const ArchetypeDisplay = () => {
     title: `${archetypeName} Page`,
   };
   useEffect(() => {
+    let other = ["Evil★Twin", "Live☆Twin", "Live Twin"];
     // check if url exists in server
     fetch(`https://yu-game.herokuapp.com/urlcheck/${currentUrlEnd}`, {
       method: "GET",
@@ -53,9 +56,30 @@ const ArchetypeDisplay = () => {
                 setIsLoaded(true);
                 setError(error);
               }
-            );
+            )
+            .then(() => {
+              if (currentUrlEnd === "Evil%20Twin") {
+                other.forEach((element, i) => {
+                  fetch(
+                    `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${other[i]}`
+                  )
+                    .then((res) => res.json())
+                    .then((result) => {
+                      let newstate = [];
+                      if (currentUrlEnd === "Eslint") {
+                        console.log(newstate);
+                      }
+                      newstate = [...extraArchetype];
+                      setExtraArchetype((newstate) => [
+                        ...newstate.concat(result.data),
+                      ]);
+                    });
+                });
+              }
+            });
         }
       });
+    //eslint-disable-next-line
   }, [currentUrlEnd]);
 
   if (error) {
@@ -95,6 +119,27 @@ const ArchetypeDisplay = () => {
               ></img>
             );
           })}
+          {/* Extra render for other Evil Twin cards */}
+          {extraArchetype.length >= 3
+            ? extraArchetype.map((cardInfo, i) => {
+                return (
+                  <img
+                    key={i}
+                    className="archetype-fetch-img"
+                    alt="main-card"
+                    height={614}
+                    width={420}
+                    src={cardInfo.card_images[0].image_url}
+                    onClick={() =>
+                      window.open(
+                        `https://db.ygoprodeck.com/card/?search=${cardInfo.name}`,
+                        "_blank"
+                      )
+                    }
+                  ></img>
+                );
+              })
+            : null}
         </div>
         {/* Add disqus to page */}
         <Disqus.DiscussionEmbed

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import ServerLoading from "../../Random/Loading/ServerLoading/ServerLoading";
-import { getData } from "../Onboard/OnboardHelper";
+// import { getData } from "../Onboard/OnboardHelper";
 import { data } from "../OnbordData/OnboardData";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import "./OnboardM.css";
@@ -9,10 +9,16 @@ const OnboardDataM = () => {
   const [select, setSelect] = useState(0);
   const [mOnboard, setMOnboard] = useState("");
   // Read data from markdown file after getting link
-  const getOnboard = async (setOnboardFunc, onboardName) => {
-    const fetchData = await getData(onboardName);
-    const getdata = await fetch(fetchData);
-    setOnboardFunc(await getdata.text());
+  const getMarkdown = (name, set) => {
+    fetch(`https://yu-game.herokuapp.com/markdown/${name}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((res) => set(res));
   };
   const changeSelect = (event) => {
     let button = parseInt(event.target.innerText);
@@ -22,10 +28,10 @@ const OnboardDataM = () => {
     });
     event.target.style.background = "rgb(67, 240, 67)";
     setSelect(button - 1);
-    getOnboard(setMOnboard, `onboard${select + 1}`);
+    getMarkdown(`onboard${select + 1}`, setMOnboard);
   };
   // Make requests for markdown data
-  getOnboard(setMOnboard, `onboard${select + 1}`);
+  getMarkdown(`onboard${select + 1}`, setMOnboard);
 
   return (
     <Fragment>

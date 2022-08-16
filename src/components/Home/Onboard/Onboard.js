@@ -31,7 +31,9 @@ const Onboard = () => {
 
   useEffect(() => {
     // Read data from markdown file after getting links
+
     const getMarkdown = (name, set) => {
+      console.log(`https://yu-game.herokuapp.com/markdown/${name}`);
       fetch(`https://yu-game.herokuapp.com/markdown/${name}`, {
         method: "GET",
         headers: {

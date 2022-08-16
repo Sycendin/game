@@ -1626,7 +1626,7 @@ export const urls = [
   "Endymion",
   "Evil%20Eye",
   "Evil%20Hero",
-  "Evil★Twin",
+  "Evil%20Twin",
   "Evilswarm",
   "Digital%20Bug",
   "Evilswarm",

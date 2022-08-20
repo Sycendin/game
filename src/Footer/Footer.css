@@ -1,0 +1,74 @@
+.footer-div{
+  display: flex;
+  justify-content: column;
+  width: 100%;
+  background-color: #333333;
+  padding-top: 64px;
+  min-height: 20vh;
+}
+.footer-contents{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-arrow-img{
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 64px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.favicon-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+.favicon-img-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-img{
+  width: 50px;
+  height: auto;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-bottom: 32px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-text{
+  color: white;
+}
+
+.footer-img:hover{
+  transition: all 0.2s ease-in-out;
+  transform: translate(0,-5px);
+}
+
+.top-arrow-img:hover{
+  transition: all 0.2s ease-in-out;
+  transform: translate(0,-5px);
+}
+
+
+@media  (max-width: 600px) {
+  .footer-contents{
+    width: 80%;
+  }
+  
+  }

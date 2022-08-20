@@ -11,6 +11,7 @@ import ArchetypeDisplay from "./Archetypes/ArchetypeDisplay/ArchetypeDisplay";
 import Navigation from "./Navigation/Navigation";
 import Modal from "./Navigation/Modal/Modal";
 import ModalButton from "./Navigation/ModalButton/ModalButton";
+import Footer from "./Footer/Footer";
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -36,6 +37,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <NotFound />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -64,6 +66,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <Home width={width} />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -92,6 +95,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <Random />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -120,6 +124,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <Search />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -148,6 +153,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <Game />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -176,6 +182,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <Archetypes />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}
@@ -204,6 +211,7 @@ function App() {
               <Fragment>
                 <Navigation width={width} />
                 <ArchetypeDisplay />
+                <Footer />
                 {width <= 600 ? (
                   <ModalButton
                     toggle={setIsOpen2}

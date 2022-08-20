@@ -88,33 +88,35 @@ const Search = () => {
 
   return (
     <Fragment>
-      <h1>Search a card</h1>
-      <FilterButtons
-        setFilterOpen={setFilterOpen}
-        filterSet={filterSet}
-        setFilterValue={setFilterValue}
-        setOptions={setOptions}
-      />
-      <button
-        className={searchButtonClass}
-        onClick={() => changeArchetypeSearch()}
-      >
-        Search by Archetype
-      </button>
-      <Searchbox
-        data={options}
-        // Call debounce function with inputchange so that it doesn't run more than 4 times a second
-        onInputChange={debounce(onInputChange, 250)}
-        clickCard={clickCard}
-      />
-      <SearchImage cardImage={cardImage} />
-      <Filter
-        filterOpen={filterOpen}
-        onClose={() => setFilterOpen(false)}
-        filterSet={filterSet}
-        setFilterValue={setFilterValue}
-        setOptions={setOptions}
-      ></Filter>
+      <div className="min-height">
+        <h1>Search a card</h1>
+        <FilterButtons
+          setFilterOpen={setFilterOpen}
+          filterSet={filterSet}
+          setFilterValue={setFilterValue}
+          setOptions={setOptions}
+        />
+        <button
+          className={searchButtonClass}
+          onClick={() => changeArchetypeSearch()}
+        >
+          Search by Archetype
+        </button>
+        <Searchbox
+          data={options}
+          // Call debounce function with inputchange so that it doesn't run more than 4 times a second
+          onInputChange={debounce(onInputChange, 250)}
+          clickCard={clickCard}
+        />
+        <SearchImage cardImage={cardImage} />
+        <Filter
+          filterOpen={filterOpen}
+          onClose={() => setFilterOpen(false)}
+          filterSet={filterSet}
+          setFilterValue={setFilterValue}
+          setOptions={setOptions}
+        ></Filter>
+      </div>
       <ToastContainer newestOnTop={true} />
     </Fragment>
   );

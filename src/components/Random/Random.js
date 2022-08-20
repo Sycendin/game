@@ -42,7 +42,7 @@ const Random = () => {
   } else {
     return (
       <Fragment>
-        <div>
+        <div className="min-height">
           <RandomButton
             // offset={targetRef.current.childNodes[0].offsetTop}
             newCard={newCard}

@@ -2,3 +2,6 @@
   text-align: center; 
 }
 
+.min-height{
+  min-height: 100vh;
+}

@@ -119,44 +119,48 @@ const Game = () => {
     }
     return (
       <Fragment>
-        <FilterButtons
-          setFilterOpen={setFilterOpen}
-          filterSet={filterSet}
-          setFilterValue={setFilterValue}
-          setOptions={setOptions}
-        />
-        <Legend />
-        <Searchbox
-          setPick={setPick}
-          pick={pick}
-          data={options}
-          // Call debounce function with inputchange so that it doesn't run more than 4 times a second
-          onInputChange={debounce(onInputChange, 250)}
-          setOptions={setOptions}
-        />{" "}
-        {/* Display the user selections only if they have picked at least one card */}
-        {pick.length !== 0 ? <SelectedDiv list={pick} mainCard={card} /> : null}
-        <button
-          id={"reset"}
-          className="button-reset"
-          onClick={() => resetGame()}
-        >
-          Reset
-        </button>
-        <Modal
-          exitFunc={setModalExit}
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-          card={card}
-          numGuesses={pick.length}
-        ></Modal>
-        <Filter
-          filterOpen={filterOpen}
-          onClose={() => setFilterOpen(false)}
-          filterSet={filterSet}
-          setFilterValue={setFilterValue}
-          setOptions={setOptions}
-        ></Filter>
+        <div className="min-height">
+          <FilterButtons
+            setFilterOpen={setFilterOpen}
+            filterSet={filterSet}
+            setFilterValue={setFilterValue}
+            setOptions={setOptions}
+          />
+          <Legend />
+          <Searchbox
+            setPick={setPick}
+            pick={pick}
+            data={options}
+            // Call debounce function with inputchange so that it doesn't run more than 4 times a second
+            onInputChange={debounce(onInputChange, 250)}
+            setOptions={setOptions}
+          />{" "}
+          {/* Display the user selections only if they have picked at least one card */}
+          {pick.length !== 0 ? (
+            <SelectedDiv list={pick} mainCard={card} />
+          ) : null}
+          <button
+            id={"reset"}
+            className="button-reset"
+            onClick={() => resetGame()}
+          >
+            Reset
+          </button>
+          <Modal
+            exitFunc={setModalExit}
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+            card={card}
+            numGuesses={pick.length}
+          ></Modal>
+          <Filter
+            filterOpen={filterOpen}
+            onClose={() => setFilterOpen(false)}
+            filterSet={filterSet}
+            setFilterValue={setFilterValue}
+            setOptions={setOptions}
+          ></Filter>
+        </div>
         <ToastContainer newestOnTop={true} />
       </Fragment>
     );

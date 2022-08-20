@@ -76,6 +76,7 @@ const Archetypes = () => {
           </div>
         ) : null}
       </div>
+
       {aFilter === false || update === "" ? (
         <div className="archetype-whole-div">
           {data.slice(page[0], page[1]).map((element, i) => {

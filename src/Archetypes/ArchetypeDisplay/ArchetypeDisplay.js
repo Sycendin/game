@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 // import { useLocation } from "react-router-dom";
 import NotFound from "../../components/NotFound/NotFound";
-
+import ExtraArchetypes from "./ExtraArchetypes/ExtraArchetypes";
 import Loading from "../../components/Random/Loading/Loading";
 import Disqus from "disqus-react";
 import "./ArchetypeDisplay.css";
@@ -123,20 +123,13 @@ const ArchetypeDisplay = () => {
           {extraArchetype.length >= 3
             ? extraArchetype.map((cardInfo, i) => {
                 return (
-                  <img
-                    key={i}
-                    className="archetype-fetch-img"
-                    alt="main-card"
-                    height={614}
-                    width={420}
-                    src={cardInfo.card_images[0].image_url}
-                    onClick={() =>
-                      window.open(
-                        `https://db.ygoprodeck.com/card/?search=${cardInfo.name}`,
-                        "_blank"
-                      )
-                    }
-                  ></img>
+                  <Fragment key={i}>
+                    <ExtraArchetypes
+                      srcImage={cardInfo.card_images[0].image_url}
+                      cardName={cardInfo.card_images[0].image_url}
+                      i={i}
+                    />
+                  </Fragment>
                 );
               })
             : null}

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-const ExtraArchetypes = ({ srcImage, cardName, i }) => {
+const ArchetypeCard = ({ srcImage, cardName, i }) => {
   return (
     <Fragment>
       <img
@@ -21,4 +21,4 @@ const ExtraArchetypes = ({ srcImage, cardName, i }) => {
   );
 };
 
-export default ExtraArchetypes;
+export default ArchetypeCard;

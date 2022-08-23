@@ -3,6 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import NotFound from "../../components/NotFound/NotFound";
 import ArchetypeCard from "./ExtraArchetypes/ArchetypeCard";
 import Loading from "../../components/Random/Loading/Loading";
+import { check } from "./CombinedArchetypes/CombinedArchetypes";
 import Disqus from "disqus-react";
 import "./ArchetypeDisplay.css";
 const ArchetypeDisplay = () => {
@@ -58,8 +59,9 @@ const ArchetypeDisplay = () => {
               }
             )
             .then(() => {
-              if (currentUrlEnd === "Evil%20Twin") {
-                other.forEach((element, i) => {
+              let extra = check(currentUrlEnd);
+              if (extra.length >= 1) {
+                extra.forEach((element, i) => {
                   fetch(
                     `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${other[i]}`
                   )

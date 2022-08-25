@@ -27,7 +27,6 @@ const ArchetypeDisplay = () => {
     title: `${archetypeName} Page`,
   };
   useEffect(() => {
-    let other = ["Evil★Twin", "Live☆Twin", "Live Twin"];
     // check if url exists in server
     fetch(`https://yu-game.herokuapp.com/urlcheck/${currentUrlEnd}`, {
       method: "GET",
@@ -58,26 +57,9 @@ const ArchetypeDisplay = () => {
                 setError(error);
               }
             )
+            // Check for other parts of the archetype
             .then(() => {
-              let extra = check(currentUrlEnd);
-              if (extra.length >= 1) {
-                extra.forEach((element, i) => {
-                  fetch(
-                    `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${other[i]}`
-                  )
-                    .then((res) => res.json())
-                    .then((result) => {
-                      let newstate = [];
-                      if (currentUrlEnd === "Eslint") {
-                        console.log(newstate);
-                      }
-                      newstate = [...extraArchetype];
-                      setExtraArchetype((newstate) => [
-                        ...newstate.concat(result.data),
-                      ]);
-                    });
-                });
-              }
+              check(currentUrlEnd, extraArchetype, setExtraArchetype);
             });
         }
       });

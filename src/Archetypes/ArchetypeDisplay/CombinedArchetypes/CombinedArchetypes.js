@@ -1,18 +1,33 @@
-let combined = [
-  { name: "Evil%20Twin", values: ["Evil★Twin", "Live☆Twin", "Live Twin"] },
-];
-export const check = (archetypeName) => {
-  let check = [];
+export const check = (archetypeName, extraArchetype, setExtraArchetype) => {
+  let newstate = [];
+  fetch(`https://yu-game.herokuapp.com/combined/${archetypeName}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    })
+    .then((extra) => {
+      if (extra.length >= 1) {
+        extra.forEach((element, i) => {
+          fetch(
+            `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${element}`
+          )
+            .then((res) => res.json())
+            .then((result) => {
+              newstate.splice(0, newstate.length);
+              newstate = [...extraArchetype];
+              setExtraArchetype((newstate) => [
+                ...newstate.concat(result.data),
+              ]);
+            });
+        });
+      }
+    });
 
-  let result = combined.find((item) => item.name === archetypeName);
-
-  // combined.forEach((element, i) => {
-  //   console.log(element);
-  //   if (archetypeName in element) {
-  //     check = combined[i].archetypeName;
-  //     console.log(check);
-  //   }
-  // });
-
-  return result.values;
+  // return result.values;
 };

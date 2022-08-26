@@ -1071,6 +1071,10 @@ export const data = [
         "https://storage.googleapis.com/ygoprodeck.com/pics/67647362.jpg",
       ],
       [
+        "Possessed",
+        "https://storage.googleapis.com/ygoprodeck.com/pics/74426895.jpg",
+      ],
+      [
         "Prank-Kids",
         "https://storage.googleapis.com/ygoprodeck.com/pics/81997228.jpg",
       ],

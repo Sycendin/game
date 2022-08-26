@@ -1,9 +1,8 @@
 import React, { Fragment, useState, useEffect } from "react";
-// import { useLocation } from "react-router-dom";
-import NotFound from "../../components/NotFound/NotFound";
-import ArchetypeCard from "./ExtraArchetypes/ArchetypeCard";
+import ArchetypeCard from "./ArchetypeCard/ArchetypeCard";
 import Loading from "../../components/Random/Loading/Loading";
-import { check } from "./CombinedArchetypes/CombinedArchetypes";
+import NotFound from "../../components/NotFound/NotFound";
+import { combinedCheck } from "./CombinedArchetypes/CombinedArchetypes";
 import Disqus from "disqus-react";
 import "./ArchetypeDisplay.css";
 const ArchetypeDisplay = () => {
@@ -13,11 +12,9 @@ const ArchetypeDisplay = () => {
   const [doesexist, setDoesExist] = useState(null);
   const [extraArchetype, setExtraArchetype] = useState([]);
 
-  // const location = useLocation();
-  // const from = location.state;
-  // console.log(from);
   const currentUrl = window.location.href.split("/");
   const currentUrlEnd = currentUrl[currentUrl.length - 1];
+  // Replace spaces in archetype name
   const archetypeName = currentUrlEnd.replaceAll("%20", " ");
   // Configure the disqus to current page
   const disqusShortname = "yugiohgame";
@@ -27,7 +24,7 @@ const ArchetypeDisplay = () => {
     title: `${archetypeName} Page`,
   };
   useEffect(() => {
-    // check if url exists in server
+    // check if url exists in heroku server
     fetch(`https://yu-game.herokuapp.com/urlcheck/${currentUrlEnd}`, {
       method: "GET",
       headers: {
@@ -59,7 +56,7 @@ const ArchetypeDisplay = () => {
             )
             // Check for other parts of the archetype
             .then(() => {
-              check(currentUrlEnd, extraArchetype, setExtraArchetype);
+              combinedCheck(currentUrlEnd, extraArchetype, setExtraArchetype);
             });
         }
       });
@@ -85,6 +82,7 @@ const ArchetypeDisplay = () => {
           <p className="archetype-fetch-text2">Click for more info</p>
         </div>
         <div className="archetype-fetch-div">
+          {/* Render archetype cards */}
           {archetypeFetch.data.map((cardInfo, i) => {
             return (
               <Fragment key={i}>
@@ -96,7 +94,7 @@ const ArchetypeDisplay = () => {
               </Fragment>
             );
           })}
-          {/* Extra render for other Evil Twin cards */}
+          {/* Extra render for extre archetype cards */}
           {extraArchetype.length >= 1
             ? extraArchetype.map((cardInfo, i) => {
                 return (

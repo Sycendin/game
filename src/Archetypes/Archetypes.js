@@ -93,6 +93,8 @@ const Archetypes = () => {
                           to={
                             element[0] === "Evil★Twin"
                               ? `/game/archetypes/Evil%20Twin`
+                              : element[0] === "P.U.N.K"
+                              ? `/game/archetypes/P-U-N.K`
                               : `/game/archetypes/${element[0]}`
                           }
                           // state={{ from: element[0] }}

@@ -34,13 +34,13 @@ const ArchetypeDisplay = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data === "Does not exist") {
+        if (data[0] === "Does not exist") {
           setDoesExist(false);
           setIsLoaded(true);
         } else {
           setDoesExist(true);
           // If it does then make API request
-          let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${currentUrlEnd}`;
+          let searchUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${data[1]}`;
           fetch(searchUrl)
             .then((res) => res.json())
             .then(

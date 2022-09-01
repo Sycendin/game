@@ -34,9 +34,11 @@ const Random = () => {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return (
-      <div className="loading-div">
-        <p className="loading-text">Loading... </p>
-        <Loading />
+      <div className="min-height">
+        <div className="loading-div">
+          <p className="loading-text">Loading... </p>
+          <Loading />
+        </div>
       </div>
     );
   } else {

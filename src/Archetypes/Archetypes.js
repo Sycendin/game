@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-// import { data } from "./ArchetypeData";
 import ServerLoading from "../components/Random/Loading/ServerLoading/ServerLoading";
 import { Link } from "react-router-dom";
 import { debounce } from "../HelperFunctions/HelperFunctions";
@@ -46,6 +45,7 @@ const Archetypes = () => {
     setPage(dataSlice);
   };
   useEffect(() => {
+    // Get data for all archetypes
     const getArchetypes = async () => {
       const content = await fetch(
         `https://yu-game.herokuapp.com/archetypes/all`,
@@ -58,10 +58,13 @@ const Archetypes = () => {
         }
       );
       const data = await content.json();
+      // Set data as state
       setArchetypData(data);
     };
+    // Run fetch after everything renders
     getArchetypes();
   }, []);
+  // If archetypeData has been fetched with data then render the archetypes
   if (archetypeData.length > 1) {
     return (
       <Fragment>
@@ -97,7 +100,7 @@ const Archetypes = () => {
               </div>
             ) : null}
           </div>
-
+          {/* If there is no filter then render all archetypes */}
           {aFilter === false || update === "" ? (
             <div className="archetype-whole-div">
               {archetypeData.slice(page[0], page[1]).map((element, i) => {
@@ -176,6 +179,7 @@ const Archetypes = () => {
     );
   } else {
     return (
+      // otherwise return server loading screen wrapped in min height of 100vh
       <div className="min-height">
         <ServerLoading />;
       </div>

@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import ArchetypeFilterSearch from "./ArchetypeFilter/ArchetypeFilterSearch/ArchetypeFilterSearch";
 import ServerLoading from "../components/Random/Loading/ServerLoading/ServerLoading";
 import { Link } from "react-router-dom";
 import { debounce } from "../HelperFunctions/HelperFunctions";
@@ -69,7 +70,12 @@ const Archetypes = () => {
     return (
       <Fragment>
         <div className="min-height">
-          <h1>All Archetypes</h1>
+          <ArchetypeFilterSearch
+            onchange={debounce(change, 250)}
+            pageChange={pageChange}
+          />
+
+          {/* <h1>All Archetypes</h1>
           <div className="archetype-search-div">
             <div className="searchbar">
               <input
@@ -99,7 +105,7 @@ const Archetypes = () => {
                 </button>
               </div>
             ) : null}
-          </div>
+          </div> */}
           {/* If there is no filter then render all archetypes */}
           {aFilter === false || update === "" ? (
             <div className="archetype-whole-div">
@@ -181,7 +187,7 @@ const Archetypes = () => {
     return (
       // otherwise return server loading screen wrapped in min height of 100vh
       <div className="min-height">
-        <ServerLoading />;
+        <ServerLoading />
       </div>
     );
   }

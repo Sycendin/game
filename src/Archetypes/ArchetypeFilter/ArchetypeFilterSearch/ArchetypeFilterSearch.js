@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import ArchetypeFilterButtons from "../ArchetypeFilterButtons/ArchetypeFilterButtons";
 const ArchetypeFilterSearch = ({ onchange, pageChange }) => {
   return (
     <Fragment>
@@ -12,8 +13,8 @@ const ArchetypeFilterSearch = ({ onchange, pageChange }) => {
             placeholder="Search"
             onChange={onchange}
           />
-          <ArchetypeFilterButtons pageChange={pageChange} />
         </div>
+        <ArchetypeFilterButtons pageChange={pageChange} />
       </div>
     </Fragment>
   );

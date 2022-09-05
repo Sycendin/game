@@ -70,43 +70,11 @@ const Archetypes = () => {
     return (
       <Fragment>
         <div className="min-height">
+          {/* Archetype filter */}
           <ArchetypeFilterSearch
             onchange={debounce(change, 250)}
             pageChange={pageChange}
           />
-
-          {/* <h1>All Archetypes</h1>
-          <div className="archetype-search-div">
-            <div className="searchbar">
-              <input
-                id="archetype-input"
-                type="text"
-                className="search-box"
-                placeholder="Search"
-                onChange={debounce(change, 250)}
-              />
-            </div>
-            {update === "" ? (
-              <div className="page-div">
-                <button className="page-button page" onClick={pageChange}>
-                  All
-                </button>
-                <button className="page-button page" onClick={pageChange}>
-                  A-G
-                </button>
-                <button className="page-button page" onClick={pageChange}>
-                  H-N
-                </button>
-                <button className="page-button page" onClick={pageChange}>
-                  O-T
-                </button>
-                <button className="page-button page" onClick={pageChange}>
-                  U-Z
-                </button>
-              </div>
-            ) : null}
-          </div> */}
-          {/* If there is no filter then render all archetypes */}
           {aFilter === false || update === "" ? (
             <div className="archetype-whole-div">
               {archetypeData.slice(page[0], page[1]).map((element, i) => {

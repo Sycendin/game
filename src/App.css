@@ -5,3 +5,20 @@
 .min-height{
   min-height: 100vh;
 }
+
+.button-filter{
+  font-size: calc(16px + 0.6vw);
+  background-color: rgb(20, 163, 20);
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.button{
+  font-size: calc(16px + 0.1vw);
+  border-radius: 10px;
+  background-color: rgb(20, 163, 20);
+  margin-left: 10px;
+  color: white;
+}

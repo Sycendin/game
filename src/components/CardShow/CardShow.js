@@ -24,7 +24,6 @@ const CardShow = ({
   }
   useEffect(() => {
     const update = (e) => {
-      console.log(e);
       if (e.x) {
         setMouseX(e.x);
         setMouseY(e.y);
@@ -40,13 +39,12 @@ const CardShow = ({
       window.removeEventListener("touchmove", update, 50);
     };
   }, [setMouseX, setMouseY]);
-  console.log(mouseX, mouseY);
   let pos = [];
   const closeModal = () => {
     onClose();
     setInCard(false);
   };
-  //
+  // Set bigger version of card to be displayed when hovered over
   const imgSet = (position) => {
     setBigCard(pos[position]);
     if (inCard === true) {
@@ -94,7 +92,7 @@ const CardShow = ({
                     <img
                       key={i}
                       className="card-show-img"
-                      alt="card"
+                      alt="cardart"
                       height={614}
                       width={420}
                       src={option.card_images[0].image_url}
@@ -108,15 +106,16 @@ const CardShow = ({
                           : cardSet(option.card_images[0].image_url);
                       }}
                     />
+                    {/* If card is hovered over then render the bigger card art next to mouse */}
                     {inCard ? (
                       <img
-                        key={i + 10}
+                        key={i + 1}
                         style={{
                           top: mouseY - mouseY / 2,
                           left: mouseX + space,
                         }}
                         className="card-show-big-img"
-                        alt="card"
+                        alt="big-cardart"
                         height={614}
                         width={420}
                         src={bigCard}

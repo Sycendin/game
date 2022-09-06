@@ -27,7 +27,6 @@ const Search = () => {
     Object.entries(filterValue).forEach(([key, val]) => {
       filterUrl = filterUrl + `&${key}=${val}`;
     });
-    console.log(filterUrl);
     // console.log(filterUrl);
     if ((event.target.value === "") & (filterUrl !== "")) {
       searchUrl =
@@ -83,13 +82,14 @@ const Search = () => {
     if (image) {
       setCardImage(image);
     }
+    // Reset entered text after clicking an image
     setOptions([]);
   };
 
   return (
     <Fragment>
       <div className="min-height">
-        <h1>Search a card</h1>
+        <h1>Search for a card</h1>
         <FilterButtons
           setFilterOpen={setFilterOpen}
           filterSet={filterSet}
@@ -106,6 +106,7 @@ const Search = () => {
           data={options}
           // Call debounce function with inputchange so that it doesn't run more than 4 times a second
           onInputChange={debounce(onInputChange, 250)}
+          setOptions={setOptions}
           clickCard={clickCard}
         />
         <SearchImage cardImage={cardImage} />

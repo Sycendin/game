@@ -1,0 +1,30 @@
+.loadscreen{
+  display: flex;
+  flex-direction: column;
+  max-width: 1140px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.innerload{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:bisque;
+  border-radius: 10px;
+}
+
+.a-load{
+  display: flex;
+  width: calc(20% - 8px);
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  height: 80px;
+  border-radius: 10px;
+}

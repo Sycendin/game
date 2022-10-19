@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import ArchetypeFilterSearch from "./ArchetypeFilter/ArchetypeFilterSearch/ArchetypeFilterSearch";
 import ServerLoading from "../components/Random/Loading/ServerLoading/ServerLoading";
+import { ArchetypeLoadscreen } from "../components/Random/Loading/Loadscreen/ArchetypeLoadscreen/ArchetypeLoadscreen";
 import { Link } from "react-router-dom";
 import { debounce } from "../HelperFunctions/HelperFunctions";
 import "./Archetypes.css";
@@ -66,6 +67,9 @@ const Archetypes = () => {
     getArchetypes();
   }, []);
   // If archetypeData has been fetched with data then render the archetypes
+  if (archetypeData.length > 1) {
+    return <ArchetypeLoadscreen />;
+  }
   if (archetypeData.length > 1) {
     return (
       <Fragment>
@@ -154,9 +158,10 @@ const Archetypes = () => {
   } else {
     return (
       // otherwise return server loading screen wrapped in min height of 100vh
-      <div className="min-height">
-        <ServerLoading />
-      </div>
+      <ArchetypeLoadscreen />
+      // <div className="min-height">
+      //   <ServerLoading />
+      // </div>
     );
   }
 };

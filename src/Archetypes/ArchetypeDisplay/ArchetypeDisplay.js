@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import ArchetypeCard from "./ArchetypeCard/ArchetypeCard";
 import Loading from "../../components/Random/Loading/Loading";
+import { ArchetypeLoadscreen } from "../../components/Random/Loading/Loadscreen/ArchetypeLoadscreen/ArchetypeLoadscreen";
 import NotFound from "../../components/NotFound/NotFound";
 import { combinedCheck } from "./CombinedArchetypes/CombinedArchetypes";
 import Disqus from "disqus-react";
@@ -67,10 +68,11 @@ const ArchetypeDisplay = () => {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return (
-      <div className="loading-div">
-        <p className="loading-text">Loading... </p>
-        <Loading />
-      </div>
+      // <div className="loading-div">
+      //   <p className="loading-text">Loading... </p>
+      //   <Loading />
+      // </div>
+      <ArchetypeLoadscreen />
     );
   } else if (doesexist === false) {
     return <NotFound />;

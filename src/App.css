@@ -22,3 +22,27 @@
   margin-left: 10px;
   color: white;
 }
+
+/* Loading screen CSS */
+.fmargin{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+.fbg{
+	background: linear-gradient(-90deg, rgb(212, 212, 212), rgb(153, 153, 153), rgb(212, 212, 212)) ;
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+}
+
+.left-box{
+	border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.fbgd{
+	background: linear-gradient(-90deg, rgb(182, 182, 182), rgb(103, 103, 103), rgb(182, 182, 182)) ;
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+}

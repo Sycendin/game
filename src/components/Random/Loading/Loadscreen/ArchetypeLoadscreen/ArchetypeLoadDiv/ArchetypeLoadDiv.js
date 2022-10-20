@@ -5,11 +5,9 @@ export const ArchetypeLoadDiv = () => {
   return (
     <Fragment>
       <div className="innerload">
-        <div className="a-load fbg"></div>
-        <div className="a-load fbg"></div>
-        <div className="a-load fbg"></div>
-        <div className="a-load fbg"></div>
-        <div className="a-load fbg"></div>
+        {[1, 2, 3, 4].map(() => {
+          return <div className="a-load fbg"></div>;
+        })}
       </div>
     </Fragment>
   );

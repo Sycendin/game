@@ -44,5 +44,39 @@
 .fbgd{
 	background: linear-gradient(-90deg, rgb(182, 182, 182), rgb(103, 103, 103), rgb(182, 182, 182)) ;
 	background-size: 400% 400%;
+  border-radius: 10px;
 	animation: gradient 3s ease infinite;
+}
+
+/* Mobile Project Buttons */
+.mobile-projects-button-grey{
+  display: flex;
+  font-size: calc(16px + 0.5vw);
+  color: rgb(77, 77, 77);
+  width: auto;
+  margin-top: 8px;
+  margin-right: 8px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: linear-gradient(to right, #1babff 0%, #41c4ce 50%, rgb(165, 165, 165)  50%, rgb(165, 165, 165) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s;
+  border-radius: 10px;
+}
+.mobile-projects-button-grey:hover{
+  background-position:100% 0;
+  color: rgb(77, 77, 77);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

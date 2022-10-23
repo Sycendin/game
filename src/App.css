@@ -47,7 +47,12 @@
   border-radius: 10px;
 	animation: gradient 3s ease infinite;
 }
-
+.fbgdd{
+	background: linear-gradient(-90deg, rgb(182, 182, 182), rgb(77, 77, 77), rgb(182, 182, 182)) ;
+	background-size: 400% 400%;
+  border-radius: 10px;
+	animation: gradient 3s ease infinite;
+}
 /* Mobile Project Buttons */
 .mobile-projects-button-grey{
   display: flex;

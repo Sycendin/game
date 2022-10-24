@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-// import "./HomeLoadScreenImage.css";
+import "./HomeLoadScreenImage.css";
 export const HomeLoadScreenImage = () => {
   return (
     <Fragment>
       {" "}
-      <div className="homediv fbgd"></div>
+      <div className="imgdiv fbgd"></div>
     </Fragment>
   );
 };

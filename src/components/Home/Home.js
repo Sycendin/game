@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Onboard from "./Onboard/Onboard";
 import OnboardM from "./OnboardM/OnboardM";
-
+import { HomeLoadScreen } from "../Random/Loading/Loadscreen/HomeLoadScreen/Desktop/HomeLoadScreen";
 import Disqus from "disqus-react";
 import "./Home.css";
 

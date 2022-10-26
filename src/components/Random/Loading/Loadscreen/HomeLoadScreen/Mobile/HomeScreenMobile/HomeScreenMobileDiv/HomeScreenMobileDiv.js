@@ -7,9 +7,11 @@ import "./HomeScreenMobileDiv.css";
 export const HomeScreenMobileDiv = () => {
   return (
     <Fragment>
-      <HomeLoadScreenImage />
-      <HomeScreenMobileText />
-      <HomeScreenMobileButtons />
+      <div className="homedivm fbgd">
+        <HomeLoadScreenImage />
+        <HomeScreenMobileText />
+        <HomeScreenMobileButtons />
+      </div>
     </Fragment>
   );
 };

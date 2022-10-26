@@ -1,0 +1,9 @@
+.buttonsmdiv{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+}
+.buttonsm{
+ width: 20px;
+ height: 20px;
+}

@@ -2,8 +2,11 @@
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
+ margin-left: auto;
+ margin-right: auto;
 }
 .buttonsm{
- width: 20px;
- height: 20px;
+ width: 40px;
+ height: 40px;
+ margin-right: 4px;
 }

@@ -4,7 +4,7 @@ export const HomeLoadScreenText = () => {
   return (
     <Fragment>
       {" "}
-      <div className="textdiv fbgd"></div>
+      <div className="textdiv fbgdd"></div>
     </Fragment>
   );
 };

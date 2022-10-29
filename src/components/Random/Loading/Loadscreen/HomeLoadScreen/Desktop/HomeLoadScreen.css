@@ -13,8 +13,14 @@
     width: 90%;
   }
   .homediv{
-    width: 50%;
+    width: 80%;
   }
+  .imgdiv{
+    width: 40%;
+ }
+ .textdiv{
+   width: 60%;
+ }
 
 
 }
@@ -25,7 +31,7 @@
     width: 100%;
   }
   .homediv{
-    width: 60%;
+    width: 40%;
   }
   .imgdiv{
      width: 60%;

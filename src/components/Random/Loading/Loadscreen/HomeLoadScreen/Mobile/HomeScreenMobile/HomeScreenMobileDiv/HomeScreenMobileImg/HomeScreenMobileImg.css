@@ -1,7 +1,8 @@
-.imgload{
+.imgloadm{
 display: flex;
 width: 50%;
-height: auto;
+height: 200px;
 margin-left: auto;
 margin-right: auto;
+margin-bottom: 4px;
 }

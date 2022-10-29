@@ -5,7 +5,13 @@ export const HomeLoadScreen = () => {
   return (
     <Fragment>
       <div className="loadscreen min-height fbg">
-        <HomeLoadScreenDiv />
+        {[...Array(3).keys()].map((element) => {
+          return (
+            <Fragment key={element}>
+              <HomeLoadScreenDiv />
+            </Fragment>
+          );
+        })}
       </div>
     </Fragment>
   );

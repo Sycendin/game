@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import ServerLoading from "../../Random/Loading/ServerLoading/ServerLoading";
+import { HomeLoadScreen } from "../../Random/Loading/Loadscreen/HomeLoadScreen/Desktop/HomeLoadScreen";
 import { data } from "../OnbordData/OnboardData";
 import ReactMarkdown from "react-markdown";
 import "./Onboard.css";
@@ -49,37 +49,37 @@ const Onboard = () => {
     getMarkdown("onboard4", setOnboard4);
     getMarkdown("onboard5", setOnboard5);
   }, []);
-
-  return (
-    <Fragment>
-      <div className="onboard-title-div">
-        <p className="onboard-div-title">Pages</p>
-      </div>
-      {data.map((element, i) => {
-        return (
-          <div key={i} className="onboard">
-            <div className="onboard-info">
-              <img
-                alt={element.title}
-                width={1280}
-                height={720}
-                className="onboard-img"
-                src={data[i].image}
-              ></img>
-              {onboard1 === "" ? (
-                <ServerLoading />
-              ) : (
-                /* Markdown file data */
+  if (onboard5.length === 0) {
+    return <HomeLoadScreen />;
+  }
+  if (onboard1.length > 0) {
+    return (
+      <Fragment>
+        <div className="onboard-title-div">
+          <p className="onboard-div-title">Pages</p>
+        </div>
+        {data.map((element, i) => {
+          return (
+            <div key={i} className="onboard">
+              <div className="onboard-info">
+                <img
+                  alt={element.title}
+                  width={1280}
+                  height={720}
+                  className="onboard-img"
+                  src={data[i].image}
+                ></img>
+                {/* Markdown file data */}
                 <ReactMarkdown
                   className="mark-test"
                   children={whichMarkdown(i)}
                 />
-              )}
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </Fragment>
-  );
+          );
+        })}
+      </Fragment>
+    );
+  }
 };
 export default Onboard;

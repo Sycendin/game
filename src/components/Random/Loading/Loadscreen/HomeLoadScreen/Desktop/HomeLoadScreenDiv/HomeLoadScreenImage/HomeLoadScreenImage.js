@@ -3,7 +3,7 @@ import "./HomeLoadScreenImage.css";
 export const HomeLoadScreenImage = () => {
   return (
     <Fragment>
-      <div className="imgdiv fbgd"></div>
+      <div className="imgdiv fbgdd"></div>
     </Fragment>
   );
 };

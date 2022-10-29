@@ -1,7 +1,9 @@
 .homediv{
   display: flex;
   flex-direction: column;
+  height: 400px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8px;
 }

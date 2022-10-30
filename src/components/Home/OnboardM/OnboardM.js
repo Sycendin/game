@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { HomeScreenMobile } from "../../Random/Loading/Loadscreen/HomeLoadScreen/Mobile/HomeScreenMobile/HomeScreenMobile";
+import { HomeScreenMobile } from "../../Random/Loading/Loadscreen/HomeLoadScreen/Mobile2/HomeScreenMobileDiv/HomeScreenMobile";
 // import { getData } from "../Onboard/OnboardHelper";
 import { data } from "../OnbordData/OnboardData";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -32,8 +32,12 @@ const OnboardDataM = () => {
   };
   // Make requests for markdown data
   getMarkdown(`onboard${select + 1}`, setMOnboard);
+
+  // Return mobile loadscreen if data isn't loaded yet
   if (mOnboard.length < 1) {
     return <HomeScreenMobile />;
+
+    // Otherwise return mobile home page
   } else if (mOnboard.length > 0) {
     return (
       <Fragment>
@@ -55,6 +59,7 @@ const OnboardDataM = () => {
             ></img>
           </div>
           <div className="select-button-div">
+            {/* Return buttons for mobile homescreen */}
             {data.map((element, i) => {
               return (
                 <button

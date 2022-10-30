@@ -66,13 +66,7 @@ const ArchetypeDisplay = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return (
-      // <div className="loading-div">
-      //   <p className="loading-text">Loading... </p>
-      //   <Loading />
-      // </div>
-      <ArchetypeLoadscreen />
-    );
+    return <ArchetypeLoadscreen />;
   } else if (doesexist === false) {
     return <NotFound />;
   } else if (doesexist === true) {

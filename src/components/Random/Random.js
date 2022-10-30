@@ -12,7 +12,6 @@ const Random = () => {
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    // fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Tornado%20Dragon")
     fetch("https://db.ygoprodeck.com/api/v7/randomcard.php")
       .then((res) => res.json())
       .then(

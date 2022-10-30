@@ -49,9 +49,11 @@ const Onboard = () => {
     getMarkdown("onboard4", setOnboard4);
     getMarkdown("onboard5", setOnboard5);
   }, []);
+  // If there is no data then return loadscreen
   if (onboard5.length === 0) {
     return <HomeLoadScreen />;
   }
+  //  Otherwise return onboard
   if (onboard1.length > 0) {
     return (
       <Fragment>

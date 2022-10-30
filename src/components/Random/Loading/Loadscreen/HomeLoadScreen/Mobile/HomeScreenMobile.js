@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { HomeScreenMobileDiv } from "./HomeScreenMobileDiv/HomeScreenMobileDiv";
+import { HomeScreenMobileDiv } from "./HomeScreenMobileDiv";
 import "./HomeScreenMobile.css";
 
 export const HomeScreenMobile = () => {

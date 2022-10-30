@@ -14,7 +14,10 @@ const Home = ({ width }) => {
 
   return (
     <Fragment>
+      {/* Render mobile oboard is width is less than 600
+      otherwise render regular onboard */}
       {width <= 600 ? <OnboardM /> : <Onboard />}
+      {/* Render disqus comments */}
       <Disqus.DiscussionEmbed
         shortname={disqusShortname}
         config={disqusConfig}

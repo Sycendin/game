@@ -49,7 +49,7 @@ const Archetypes = () => {
     // Get data for all archetypes
     const getArchetypes = async () => {
       const content = await fetch(
-        `https://yu-game.herokuapp.com/archetypes/all`,
+        `https://gserver.onrender.com/archetypes/all`,
         {
           method: "GET",
           headers: {

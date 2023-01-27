@@ -30,7 +30,8 @@ const Onboard = () => {
   };
 
   useEffect(() => {
-    // Read data from markdown file after getting link
+    // Read data from markdown file after getting links
+
     const getMarkdown = (name, set) => {
       fetch(`https://gserver.onrender.com/markdown/${name}`, {
         method: "GET",

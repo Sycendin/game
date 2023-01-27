@@ -1,7 +1,7 @@
 // Get link for markdown file
 export const getData = async (onboard) => {
   const rawResponse = await fetch(
-    `https://yu-game.herokuapp.com/markdown/${onboard}`,
+    `https://gserver.onrender.com/markdown/${onboard}`,
     {
       method: "GET",
       headers: {

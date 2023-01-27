@@ -5,7 +5,7 @@ export const combinedCheck = (
 ) => {
   let newstate = [];
   // Fetch from server using url
-  fetch(`https://yu-game.herokuapp.com/combined/${archetypeName}`, {
+  fetch(`https://gserver.onrender.com/combined/${archetypeName}`, {
     method: "GET",
     headers: {
       Accept: "application/json",

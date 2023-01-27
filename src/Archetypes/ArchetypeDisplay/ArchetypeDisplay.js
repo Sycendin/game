@@ -25,7 +25,7 @@ const ArchetypeDisplay = () => {
   };
   useEffect(() => {
     // check if url exists in heroku server
-    fetch(`https://yu-game.herokuapp.com/urlcheck/${currentUrlEnd}`, {
+    fetch(`https://gserver.onrender.com/urlcheck/${currentUrlEnd}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

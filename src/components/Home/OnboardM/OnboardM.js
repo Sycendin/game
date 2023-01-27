@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
-import { HomeScreenMobile } from "../../Random/Loading/Loadscreen/HomeLoadScreen/Mobile2/HomeScreenMobileDiv/HomeScreenMobile";
+import { HomeScreenMobileDiv } from "../../Random/Loading/Loadscreen/HomeLoadScreen/Mobile/HomeScreenMobileDiv/HomeScreenMobileDiv";
+
 // import { getData } from "../Onboard/OnboardHelper";
 import { data } from "../OnbordData/OnboardData";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -10,7 +11,7 @@ const OnboardDataM = () => {
   const [mOnboard, setMOnboard] = useState("");
   // Read data from markdown file after getting link
   const getMarkdown = (name, set) => {
-    fetch(`https://yu-game.herokuapp.com/markdown/${name}`, {
+    fetch(`https://gserver.onrender.com/markdown/${name}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -35,7 +36,7 @@ const OnboardDataM = () => {
 
   // Return mobile loadscreen if data isn't loaded yet
   if (mOnboard.length < 1) {
-    return <HomeScreenMobile />;
+    return <HomeScreenMobileDiv />;
 
     // Otherwise return mobile home page
   } else if (mOnboard.length > 0) {

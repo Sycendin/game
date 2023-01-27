@@ -32,7 +32,7 @@ const Onboard = () => {
   useEffect(() => {
     // Read data from markdown file after getting link
     const getMarkdown = (name, set) => {
-      fetch(`https://yu-game.herokuapp.com/markdown/${name}`, {
+      fetch(`https://gserver.onrender.com/markdown/${name}`, {
         method: "GET",
         headers: {
           Accept: "application/json",
